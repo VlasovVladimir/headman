@@ -53,6 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Event\IEvent.cs" />
+    <Compile Include="Repository\IRepo.cs" />
+    <Compile Include="Region\IRegion.cs" />
     <Page Include="Forms\Maps\PatternMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +92,7 @@
     <Compile Include="Forms\RegionMenu\DefaultRegionMenu.xaml.cs">
       <DependentUpon>DefaultRegionMenu.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Items\IItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -122,6 +126,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Enums\" />
     <Folder Include="Forms\EventMenu\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
