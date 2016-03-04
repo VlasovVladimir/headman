@@ -1,0 +1,8 @@
+﻿<Window x:Class="headman.Forms.Maps.PatternMap"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="PatternMap" Height="300" Width="300">
+    <Grid>
+        
+    </Grid>
+</Window>
