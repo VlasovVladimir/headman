@@ -59,6 +59,9 @@
     </Compile>
     <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
+    <Compile Include="Region\RegionInfo.xaml.cs">
+      <DependentUpon>RegionInfo.xaml</DependentUpon>
+    </Compile>
     <Page Include="Forms\Help\Help.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +107,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Region\RegionInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">

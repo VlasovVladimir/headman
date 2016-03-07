@@ -12,6 +12,7 @@
         <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="70" Margin="40,875,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.933,0.5" FontSize="32"/>
         <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="70" Margin="200,875,0,0" VerticalAlignment="Top" Width="75" FontSize="29.333"/>
         <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="45" Margin="305,900,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
+        <Button x:Name="GoTo" Content="✈" HorizontalAlignment="Left" Height="70" Margin="820,875,0,0" VerticalAlignment="Top" Width="75" FontSize="48"/>
 
     </Grid>
 </Window>
