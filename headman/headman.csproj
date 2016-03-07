@@ -54,8 +54,15 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Event\IEvent.cs" />
+    <Compile Include="Forms\Help\Help.xaml.cs">
+      <DependentUpon>Help.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
+    <Page Include="Forms\Help\Help.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\Maps\PatternMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -128,7 +135,6 @@
   <ItemGroup>
     <Folder Include="Enums\" />
     <Folder Include="Forms\EventMenu\" />
-    <Folder Include="Forms\Help\" />
     <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
