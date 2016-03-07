@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using headman.Forms.Help;
+using headman.Forms.Maps;
 
 namespace headman
 {
@@ -30,9 +32,17 @@ namespace headman
             Application.Current.Shutdown();
         }
 
-        private void Help_Click(object sender, RoutedEventArgs e)
+        private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
+            Help HelpWindow = new Help();
+            HelpWindow.Show();
+        }
 
+        private void NewGame_Click(object sender, RoutedEventArgs e)
+        {
+            PatternMap map = new PatternMap();
+            this.Hide();
+            map.Show();
         }
     }
 }
