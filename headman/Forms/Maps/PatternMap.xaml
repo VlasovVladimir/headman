@@ -8,7 +8,7 @@
     <Grid Margin="0,10,0,0">
         <Frame x:Name="Base" Content="" HorizontalAlignment="Left" Height="634" VerticalAlignment="Top" Width="609" Foreground="#FFEABBBB" Background="#FFFBF6F6" Margin="35,5,0,0"/>
         <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="253" Margin="671,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="#FFE2E0E0"/>
-        <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="50" Margin="107,575,0,0" VerticalAlignment="Top" Width="50" FontSize="36"/>
+        <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="50" Margin="107,575,0,0" VerticalAlignment="Top" Width="50" FontSize="36" Click="Start_Click"/>
         <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="50" Margin="52,575,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="1.933,0.5" FontSize="26"/>
         <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="50" Margin="162,575,0,0" VerticalAlignment="Top" Width="50" FontSize="27"/>
         <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="41" Margin="285,580,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135" IsEnabled="False"/>
