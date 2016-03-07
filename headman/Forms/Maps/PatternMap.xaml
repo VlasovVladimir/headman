@@ -47,11 +47,11 @@
         <TextBox x:Name="StonesInfo_Copy4" HorizontalAlignment="Left" Height="25" Margin="950,875,0,0" TextWrapping="Wrap" Text="Крыша над головой" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
         <TextBox x:Name="StonesInfo_Copy5" HorizontalAlignment="Left" Height="25" Margin="950,903,0,0" TextWrapping="Wrap" Text="Комплект копий" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
         <TextBox x:Name="StonesInfo_Copy6" HorizontalAlignment="Left" Height="25" Margin="1140,765,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy7" HorizontalAlignment="Left" Height="25" Margin="1140,794,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="Black"/>
-        <TextBox x:Name="StonesInfo_Copy8" HorizontalAlignment="Left" Height="25" Margin="1140,822,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="Black"/>
+        <TextBox x:Name="StonesInfo_Copy7" HorizontalAlignment="Left" Height="25" Margin="1140,794,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="StonesInfo_Copy8" HorizontalAlignment="Left" Height="25" Margin="1140,822,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
         <TextBox x:Name="StonesInfo_Copy9" HorizontalAlignment="Left" Height="25" Margin="1140,849,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
         <TextBox x:Name="StonesInfo_Copy10" HorizontalAlignment="Left" Height="25" Margin="1140,877,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" BorderBrush="#FFCF1414" Background="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy11" HorizontalAlignment="Left" Height="25" Margin="1140,903,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="Black"/>
+        <TextBox x:Name="StonesInfo_Copy11" HorizontalAlignment="Left" Height="25" Margin="1140,903,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
 
     </Grid>
 </Window>
