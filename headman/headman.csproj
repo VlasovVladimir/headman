@@ -54,6 +54,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Event\IEvent.cs" />
+    <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
     <Page Include="Forms\Maps\PatternMap.xaml">
       <SubType>Designer</SubType>
@@ -134,6 +135,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Image1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Volcano2.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
