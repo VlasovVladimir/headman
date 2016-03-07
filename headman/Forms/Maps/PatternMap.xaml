@@ -15,8 +15,8 @@
         <Button x:Name="GoTo" Content="✈" HorizontalAlignment="Left" Height="70" Margin="820,875,0,0" VerticalAlignment="Top" Width="75" FontSize="48"/>
         <Frame x:Name="RowResources" Content="" HorizontalAlignment="Left" Height="120" Margin="940,575,0,0" VerticalAlignment="Top" Width="295" Background="#FFACA6A6"/>
         <Frame x:Name="Things" Content="" HorizontalAlignment="Left" Height="230" Margin="940,715,0,0" VerticalAlignment="Top" Width="295" Background="Gray"/>
-        <TextBox x:Name="HeadResources" HorizontalAlignment="Left" Height="30" Margin="950,590,0,0" TextWrapping="Wrap" Text="Ресурсы" VerticalAlignment="Top" Width="90" FontSize="18.667" TextChanged="HeadResources_TextChanged" IsEnabled="False"/>
-        <TextBox x:Name="HeadResources_Copy" HorizontalAlignment="Left" Height="30" Margin="950,730,0,0" TextWrapping="Wrap" Text="Предметы" VerticalAlignment="Top" Width="130" FontSize="18.667" TextChanged="HeadResources_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="HeadResources" HorizontalAlignment="Left" Height="30" Margin="950,590,0,0" TextWrapping="Wrap" Text="Ресурсы" VerticalAlignment="Top" Width="90" FontSize="18.667" IsEnabled="False"/>
+        <TextBox x:Name="HeadResources_Copy" HorizontalAlignment="Left" Height="30" Margin="950,730,0,0" TextWrapping="Wrap" Text="Предметы" VerticalAlignment="Top" Width="130" FontSize="18.667" IsEnabled="False"/>
         <TextBlock x:Name="Wooden" HorizontalAlignment="Left" Height="40" Margin="1045,642,0,0" TextWrapping="Wrap" Text="✿" VerticalAlignment="Top" Width="40" FontSize="32" IsEnabled="False"/>
         <TextBlock x:Name="Water" HorizontalAlignment="Left" Height="40" Margin="1145,639,0,0" TextWrapping="Wrap" Text="☂" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.5,1.833" FontSize="32" IsEnabled="False"/>
         <TextBlock x:Name="Stones" HorizontalAlignment="Left" Height="40" Margin="950,640,0,0" TextWrapping="Wrap" Text="●" VerticalAlignment="Top" Width="40" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
