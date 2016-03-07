@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PatternMap" Height="1024" Width="1280" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="headman/Images/Image1.jpg" Stretch="UniformToFill" TileMode="None"  />
+        <ImageBrush ImageSource="/headman;component/Images/Image1.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
     <Grid>
         <Frame x:Name="Base" Content="" HorizontalAlignment="Left" Height="900" VerticalAlignment="Top" Width="855" Foreground="#FFEABBBB" Background="#FFFBF6F6" Margin="40,45,0,0"/>
@@ -23,35 +23,26 @@
         <TextBox x:Name="StonesInfo" HorizontalAlignment="Left" Height="30" Margin="975,647,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="50" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="WoodenInfo" HorizontalAlignment="Left" Height="30" Margin="1075,649,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="50" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="WaterInfo" HorizontalAlignment="Left" Height="30" Margin="1170,649,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="50" FontSize="18.667" IsEnabled="False"/>
-        <Button x:Name="button" Content="✔" HorizontalAlignment="Left" Margin="1190,765,0,0" VerticalAlignment="Top" Width="30"/>
-        <Button x:Name="button_Copy" Content="✔" HorizontalAlignment="Left" Margin="1190,792,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,2.045"/>
-        <Button x:Name="button_Copy1" Content="✔" HorizontalAlignment="Left" Margin="1190,819,0,0" VerticalAlignment="Top" Width="30"/>
-        <Button x:Name="button_Copy2" Content="✔" HorizontalAlignment="Left" Margin="1190,847,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.5">
-            <Button.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.254"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </Button.RenderTransform>
-        </Button>
-        <Button x:Name="button_Copy3" Content="✔" HorizontalAlignment="Left" Margin="1190,875,0,0" VerticalAlignment="Top" Width="30"/>
-        <Button x:Name="button_Copy4" Content="✔" HorizontalAlignment="Left" Margin="1190,905,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.136"/>
+        <Button x:Name="Get0" Content="✔" HorizontalAlignment="Left" Margin="1190,765,0,0" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="Get1" Content="✔" HorizontalAlignment="Left" Margin="1190,792,0,0" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="Get2" Content="✔" HorizontalAlignment="Left" Margin="1190,819,0,0" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="Get3" Content="✔" HorizontalAlignment="Left" Margin="1190,847,0,0" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="Get4" Content="✔" HorizontalAlignment="Left" Margin="1190,875,0,0" VerticalAlignment="Top" Width="30"/>
+        <Button x:Name="Get5" Content="✔" HorizontalAlignment="Left" Margin="1190,905,0,0" VerticalAlignment="Top" Width="30" RenderTransformOrigin="0.5,0.136"/>
         <TextBlock x:Name="People" HorizontalAlignment="Left" Height="40" Margin="1105,591,0,0" TextWrapping="Wrap" Text="♀♂" VerticalAlignment="Top" Width="55" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
-        <TextBox x:Name="PeopleInfo_Copy" HorizontalAlignment="Left" Height="30" Margin="1145,601,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="50" FontSize="18.667" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy" HorizontalAlignment="Left" Height="25" Margin="950,765,0,0" TextWrapping="Wrap" Text="Лодка" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy1" HorizontalAlignment="Left" Height="25" Margin="950,792,0,0" TextWrapping="Wrap" Text="Комплект топоров" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy2" HorizontalAlignment="Left" Height="25" Margin="950,820,0,0" TextWrapping="Wrap" Text="Комплект фляг" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy3" HorizontalAlignment="Left" Height="25" Margin="950,847,0,0" TextWrapping="Wrap" Text="Комплект кирок" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy4" HorizontalAlignment="Left" Height="25" Margin="950,875,0,0" TextWrapping="Wrap" Text="Крыша над головой" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy5" HorizontalAlignment="Left" Height="25" Margin="950,903,0,0" TextWrapping="Wrap" Text="Комплект копий" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo_Copy6" HorizontalAlignment="Left" Height="25" Margin="1140,765,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy7" HorizontalAlignment="Left" Height="25" Margin="1140,794,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy8" HorizontalAlignment="Left" Height="25" Margin="1140,822,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy9" HorizontalAlignment="Left" Height="25" Margin="1140,849,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy10" HorizontalAlignment="Left" Height="25" Margin="1140,877,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" BorderBrush="#FFCF1414" Background="#FFCF1414"/>
-        <TextBox x:Name="StonesInfo_Copy11" HorizontalAlignment="Left" Height="25" Margin="1140,903,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="PeopleInfo" HorizontalAlignment="Left" Height="30" Margin="1145,601,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="50" FontSize="18.667" IsEnabled="False"/>
+        <TextBox x:Name="Thing0" HorizontalAlignment="Left" Height="25" Margin="950,765,0,0" TextWrapping="Wrap" Text="Лодка" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Thing1" HorizontalAlignment="Left" Height="25" Margin="950,792,0,0" TextWrapping="Wrap" Text="Комплект топоров" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Thing2" HorizontalAlignment="Left" Height="25" Margin="950,820,0,0" TextWrapping="Wrap" Text="Комплект фляг" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Thing3" HorizontalAlignment="Left" Height="25" Margin="950,847,0,0" TextWrapping="Wrap" Text="Комплект кирок" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Thing4" HorizontalAlignment="Left" Height="25" Margin="950,875,0,0" TextWrapping="Wrap" Text="Крыша над головой" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Thing5" HorizontalAlignment="Left" Height="25" Margin="950,903,0,0" TextWrapping="Wrap" Text="Комплект копий" VerticalAlignment="Top" Width="185" FontSize="16" IsEnabled="False"/>
+        <TextBox x:Name="Smile0" HorizontalAlignment="Left" Height="25" Margin="1140,765,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="Smile1" HorizontalAlignment="Left" Height="25" Margin="1140,794,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="Smile2" HorizontalAlignment="Left" Height="25" Margin="1140,822,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="Smile3" HorizontalAlignment="Left" Height="25" Margin="1140,849,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <TextBox x:Name="Smile4" HorizontalAlignment="Left" Height="25" Margin="1140,877,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" BorderBrush="#FFCF1414" Background="#FFCF1414"/>
+        <TextBox x:Name="Smile5" HorizontalAlignment="Left" Height="25" Margin="1140,903,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
 
     </Grid>
 </Window>

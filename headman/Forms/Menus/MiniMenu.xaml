@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="Меню" Height="250" Width="192.537">
     <Window.Background>
-        <ImageBrush ImageSource="headman/Images/village.jpg" Stretch="UniformToFill" TileMode="None"/>
+        <ImageBrush ImageSource="/headman;component/Images/village.jpg" Stretch="UniformToFill" TileMode="None"/>
     </Window.Background>
     <Grid>
         <Button x:Name="Save" Content="Сохранить" HorizontalAlignment="Left" Height="37" Margin="9,10,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
