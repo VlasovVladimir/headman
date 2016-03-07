@@ -56,6 +56,12 @@ namespace headman.Forms.Maps
         private void Start_Click(object sender, RoutedEventArgs e)
         {
             TimeRun();
+            Start.IsEnabled = false;
+        }
+
+        private void Pause_Click(object sender, RoutedEventArgs e)
+        {
+
         }
 
 
