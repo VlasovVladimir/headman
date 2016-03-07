@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace headman.Event
 {
-    class IEvent
+    interface IEvent
     {
+
     }
 }
