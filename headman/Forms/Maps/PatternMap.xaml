@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PatternMap" Height="1024" Width="1280" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="C:/Users/PB/Source/Repos/headman/headman/Forms/Maps/Images/Image1.jpg" Stretch="UniformToFill" TileMode="None" />
+        <ImageBrush ImageSource="Images/Image1.jpg" Stretch="UniformToFill" TileMode="None" />
     </Window.Background>
     <Grid>
 
