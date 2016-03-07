@@ -65,6 +65,8 @@
     <Compile Include="Region\RegionInfo.xaml.cs">
       <DependentUpon>RegionInfo.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Repository\FirstRepo.cs" />
+    <Compile Include="Repository\IRepo.cs" />
     <Page Include="Forms\EventMenu\EventMenu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,7 +150,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Repository\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />

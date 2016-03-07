@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using headman.Repository;
 
 namespace headman.Forms.Menus
 {
@@ -19,9 +20,20 @@ namespace headman.Forms.Menus
     /// </summary>
     public partial class MiniMenu : Window
     {
-        public MiniMenu()
+        IRepo RepositorySingle;
+
+        public MiniMenu(IRepo InputRepositorySingle)
         {
             InitializeComponent();
+
+            RepositorySingle = InputRepositorySingle;
+        }
+
+        private void ToMainMenu_Click(object sender, RoutedEventArgs e)
+        {
+            RepositorySingle.Map.Close();
+            this.Close();
+            RepositorySingle.MainMenu.Show();
         }
     }
 }

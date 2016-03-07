@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using headman.Forms.Help;
 using headman.Forms.Maps;
+using headman.Repository;
 
 namespace headman
 {
@@ -22,9 +23,14 @@ namespace headman
     /// </summary>
     public partial class MainWindow : Window
     {
+        IRepo RepositorySingle;
+
         public MainWindow()
         {
             InitializeComponent();
+
+            RepositorySingle = new FirstRepo();  // задание репозитория
+            RepositorySingle.MainMenu = this;
         }
 
         private void Exit_Click(object sender, RoutedEventArgs e)
@@ -40,7 +46,7 @@ namespace headman
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            PatternMap map = new PatternMap();
+            PatternMap map = new PatternMap(RepositorySingle);
             this.Hide();
             map.Show();
         }
