@@ -3,9 +3,15 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="PatternMap" Height="1024" Width="1280" ResizeMode="NoResize">
     <Window.Background>
-        <ImageBrush ImageSource="Images/Image1.jpg" Stretch="UniformToFill" TileMode="None" />
+        <ImageBrush ImageSource="Images/Image1.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
     <Grid>
+        <Frame x:Name="Base" Content="" HorizontalAlignment="Left" Height="900" VerticalAlignment="Top" Width="855" Foreground="#FFEABBBB" Background="#FFFBF6F6" Margin="40,45,0,0"/>
+        <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="900" Margin="940,45,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295" Background="#FFE2E0E0"/>
+        <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="70" Margin="120,875,0,0" VerticalAlignment="Top" Width="75" FontSize="48"/>
+        <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="70" Margin="40,875,0,0" VerticalAlignment="Top" Width="75" RenderTransformOrigin="1.933,0.5" FontSize="32"/>
+        <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="70" Margin="200,875,0,0" VerticalAlignment="Top" Width="75" FontSize="29.333"/>
+        <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="45" Margin="305,900,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="150"/>
 
     </Grid>
 </Window>
