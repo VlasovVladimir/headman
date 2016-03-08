@@ -15,13 +15,16 @@
         <Grid Margin="35,5,0,0">
             <Canvas xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" x:Name="Layer_1" ClipToBounds="True" Margin="10,10,159,-373">
                 <Canvas x:Name="layer1">
-                    <Rectangle RadiusX="0" RadiusY="0" Fill="#FFF2F2F2" Stroke="#FF000000" StrokeMiterLimit="4" x:Name="rect3336" Width="251" Height="220" Canvas.Left="39" Canvas.Top="90" />
-                    <Rectangle RadiusX="0" RadiusY="0" Fill="#FF00E100" Stroke="#FF000000" StrokeMiterLimit="4" x:Name="rect3338" Width="209" Height="200" Canvas.Left="335" Canvas.Top="260" />
+                    <Rectangle RadiusX="0" RadiusY="0" Fill="#FA82F2F2" Stroke="#FF000000" StrokeMiterLimit="4" x:Name="rect3336" Width="251" Height="220" Canvas.Left="39" Canvas.Top="90" />
+                    <Rectangle RadiusX="0" RadiusY="0" Fill="#FF00E100" Stroke="#FF000000" StrokeMiterLimit="4" x:Name="rect3338" Width="209" Height="200" Canvas.Left="335" Canvas.Top="260" MouseLeftButtonUp="rect3338_MouseLeftButtonUp" />
                     <Ellipse Fill="#FFB50000" Stroke="#FF000000" StrokeMiterLimit="4" x:Name="path4160" Width="144" Height="134" Canvas.Left="400" Canvas.Top="36" />
                 </Canvas>
             </Canvas>
         </Grid>
-        <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="253" Margin="671,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="#FFE2E0E0"/>
+        <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="253" Margin="671,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="#FFE2E0E0"><InlineUIContainer>
+        		<Button x:Name="button" Content="Button" Height="180" Width="219"/>
+        	</InlineUIContainer></TextBlock>
+        
         <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="50" Margin="107,575,0,0" VerticalAlignment="Top" Width="50" FontSize="36" Click="Start_Click"/>
         <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="50" Margin="52,575,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="1.933,0.5" FontSize="26" Click="Pause_Click"/>
         <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="50" Margin="162,575,0,0" VerticalAlignment="Top" Width="50" FontSize="27" Click="SpeedUp_Click"/>
