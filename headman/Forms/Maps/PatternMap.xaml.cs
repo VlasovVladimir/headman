@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Forms.Menus;
 using headman.Repository;
+using headman.Event;
 
 namespace headman.Forms.Maps
 {
@@ -33,10 +34,12 @@ namespace headman.Forms.Maps
             Timer = 0;
             Speed = 0;
             MonthNum = 1;
+            Randomizator = new Random();
             Pause.IsEnabled = false;
 
             Timing.Text = "Месяц №" + MonthNum.ToString();
             MonthFinished += (object obj) => {this.Timing.Text = "Месяц №" + MonthNum.ToString(); MonthNum+=1;};
+            MonthFinished += EventCaller;
         }
 
         private int Timer { get; set; }
@@ -44,9 +47,12 @@ namespace headman.Forms.Maps
         private int MonthNum { get; set; }
         private bool TimeStarted { get; set; }
 
-        Action <object> MonthFinished;
+        private Action <object> MonthFinished;
+        private Random Randomizator;
 
-        private async void TimeRun ()
+        private IEvent[] BadEvents;
+
+        private async void TimeRun ()  // главный цикл программы
         {
             while (true)
             {
@@ -57,14 +63,14 @@ namespace headman.Forms.Maps
                 else
                 {
                     Timer = 0;
-                    MonthFinished(null);
+                    MonthFinished(Randomizator);  // делегат, который вызывает события по "завершению месяца"
                 }
                 await Task.Delay(100);
             }
 
         }
 
-        private void Start_Click(object sender, RoutedEventArgs e)
+        private void Start_Click(object sender, RoutedEventArgs e)  //кнопочка, запускающая время
         {
             if (TimeStarted)
             {
@@ -81,7 +87,7 @@ namespace headman.Forms.Maps
             SpeedUp.IsEnabled = true;
         }
 
-        private void Pause_Click(object sender, RoutedEventArgs e)
+        private void Pause_Click(object sender, RoutedEventArgs e) //кнопочка, останавливающая время
         {
             Speed = 0;
 
@@ -90,7 +96,7 @@ namespace headman.Forms.Maps
             SpeedUp.IsEnabled = true;
         }
 
-        private void SpeedUp_Click(object sender, RoutedEventArgs e)
+        private void SpeedUp_Click(object sender, RoutedEventArgs e) //кнопочка, ускоряющая время
         {
             if (TimeStarted)
             {
@@ -108,13 +114,22 @@ namespace headman.Forms.Maps
 
         }
 
-        private void GoTo_Click(object sender, RoutedEventArgs e)
+        private void GoTo_Click(object sender, RoutedEventArgs e) // вызов маленького меню
         {
             MiniMenu MiniMenuSingle = new MiniMenu(RepositorySingle);
             Pause_Click(null, null);
             MiniMenuSingle.Show();
         }
 
+        private void EventCaller (object secretOfProgramm)
+        {
+            int decision = ((Random)secretOfProgramm).Next(100);
+            if (decision >= 80)
+                MessageBox.Show("Пиздец =(");
+            else
+                if (decision <= 10)
+                    MessageBox.Show("Все круто!");
+        }
 
     }
 }
