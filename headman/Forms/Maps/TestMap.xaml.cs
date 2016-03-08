@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using headman.Forms.Menus;
+using headman.Repository;
 
 namespace headman.Forms.Maps
 {
@@ -19,9 +21,100 @@ namespace headman.Forms.Maps
     /// </summary>
     public partial class TestMap : Window
     {
-        public TestMap()
+        IRepo RepositorySingle;
+
+        public TestMap(IRepo InputRepositorySingle)
         {
             InitializeComponent();
+
+            RepositorySingle = InputRepositorySingle;
+            RepositorySingle.Map = this;
+            
+            Timer = 0;
+            Speed = 0;
+            MonthNum = 1;
+            Pause.IsEnabled = false;
+
+            Timing.Text = "Месяц №" + MonthNum.ToString();
+            MonthFinished += (object obj) => {this.Timing.Text = "Месяц №" + MonthNum.ToString(); MonthNum+=1;};
         }
+
+        private int Timer { get; set; }
+        private int Speed { get; set; }
+        private int MonthNum { get; set; }
+        private bool TimeStarted { get; set; }
+
+        Action <object> MonthFinished;
+
+        private async void TimeRun ()
+        {
+            while (true)
+            {
+                if (Timer<10)
+                {
+                    Timer += Speed;
+                }
+                else
+                {
+                    Timer = 0;
+                    MonthFinished(null);
+                }
+                await Task.Delay(100);
+            }
+
+        }
+
+        private void Start_Click(object sender, RoutedEventArgs e)
+        {
+            if (TimeStarted)
+            {
+                Speed = 1;
+            }
+            else
+            { 
+                TimeRun();
+                Speed = 1;
+            }
+
+            Start.IsEnabled = false;
+            Pause.IsEnabled = true;
+            SpeedUp.IsEnabled = true;
+        }
+
+        private void Pause_Click(object sender, RoutedEventArgs e)
+        {
+            Speed = 0;
+
+            Start.IsEnabled = true;
+            Pause.IsEnabled = false;
+            SpeedUp.IsEnabled = true;
+        }
+
+        private void SpeedUp_Click(object sender, RoutedEventArgs e)
+        {
+            if (TimeStarted)
+            {
+                Speed = 3;
+            }
+            else
+            {
+                TimeRun();
+                Speed = 3;
+            }
+
+            Start.IsEnabled = true;
+            Pause.IsEnabled = true;
+            SpeedUp.IsEnabled = false;
+
+        }
+
+        private void GoTo_Click(object sender, RoutedEventArgs e)
+        {
+            MiniMenu MiniMenuSingle = new MiniMenu(RepositorySingle);
+            Pause_Click(null, null);
+            MiniMenuSingle.Show();
+        }
+
+
     }
 }
