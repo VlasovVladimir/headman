@@ -115,6 +115,14 @@ namespace headman.Forms.Maps
             MiniMenuSingle.Show();
         }
 
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
 
+        }
+
+        private void rect3338_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            MessageBox.Show("эта штука работает");
+        }
     }
 }
