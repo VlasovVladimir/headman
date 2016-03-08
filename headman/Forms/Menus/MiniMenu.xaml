@@ -7,7 +7,7 @@
     </Window.Background>
     <Grid>
         <Button x:Name="Save" Content="Сохранить" HorizontalAlignment="Left" Height="37" Margin="9,10,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
-        <Button x:Name="Help" Content="Справка" HorizontalAlignment="Left" Height="37" Margin="10,92,0,0" VerticalAlignment="Top" Width="166" FontSize="20"/>
+        <Button x:Name="Help" Content="Справка" HorizontalAlignment="Left" Height="37" Margin="10,92,0,0" VerticalAlignment="Top" Width="166" FontSize="20" Click="Help_Click"/>
         <Button x:Name="ToMainMenu" Content="В главное меню" HorizontalAlignment="Left" Height="37" Margin="10,172,0,0" VerticalAlignment="Top" Width="166" FontSize="20" Click="ToMainMenu_Click"/>
 
     </Grid>

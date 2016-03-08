@@ -54,11 +54,13 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Event\IEvent.cs" />
-    <Compile Include="Forms\EventMenu\EventMenu.xaml.cs">
-      <DependentUpon>EventMenu.xaml</DependentUpon>
+    <Compile Include="Event\TestBadEvent.cs" />
+    <Compile Include="Event\TestGoodEvent.cs" />
+    <Compile Include="Forms\EventMenu\EventMenuForm.xaml.cs">
+      <DependentUpon>EventMenuForm.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Help\Help.xaml.cs">
-      <DependentUpon>Help.xaml</DependentUpon>
+    <Compile Include="Forms\Help\HelpWindow.xaml.cs">
+      <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
@@ -73,11 +75,11 @@
     <Compile Include="XMap\Output.xaml.cs">
       <DependentUpon>Output.xaml</DependentUpon>
     </Compile>
-    <Page Include="Forms\EventMenu\EventMenu.xaml">
+    <Page Include="Forms\EventMenu\EventMenuForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\Help\Help.xaml">
+    <Page Include="Forms\Help\HelpWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

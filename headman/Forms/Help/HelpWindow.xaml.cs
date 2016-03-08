@@ -17,9 +17,9 @@ namespace headman.Forms.Help
     /// <summary>
     /// Interaction logic for Help.xaml
     /// </summary>
-    public partial class Help : Window
+    public partial class HelpWindow : Window
     {
-        public Help()
+        public HelpWindow()
         {
             InitializeComponent();
         }

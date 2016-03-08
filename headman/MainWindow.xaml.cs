@@ -40,7 +40,7 @@ namespace headman
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
-            Help HelpWindow = new Help();
+            HelpWindow HelpWindow = new HelpWindow();
             HelpWindow.Show();
         }
 

@@ -21,7 +21,6 @@ namespace headman.XMap
     {
         public Output()
         {
-
             InitializeComponent();
         }
     }

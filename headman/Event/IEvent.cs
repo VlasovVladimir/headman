@@ -10,6 +10,7 @@ namespace headman.Event
     {
         string Name { get; set; }
         string Description { get; set; }
+        string Log{get;set;}
 
         string Exit1 { get; set; }
         string Exit2 { get; set; }

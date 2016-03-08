@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Repository;
+using headman.Forms.Help;
 
 namespace headman.Forms.Menus
 {
@@ -34,6 +35,12 @@ namespace headman.Forms.Menus
             RepositorySingle.Map.Close();
             this.Close();
             RepositorySingle.MainMenu.Show();
+        }
+
+        private void Help_Click(object sender, RoutedEventArgs e)
+        {
+            HelpWindow HelpWindowSingle = new HelpWindow();
+            HelpWindowSingle.Show();
         }
     }
 }

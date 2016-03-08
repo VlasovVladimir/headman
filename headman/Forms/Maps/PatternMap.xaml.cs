@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using headman.Forms.Menus;
 using headman.Repository;
 using headman.Event;
+using headman.Forms.EventMenu;
 
 namespace headman.Forms.Maps
 {
@@ -30,11 +31,23 @@ namespace headman.Forms.Maps
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
-            
+
+            //Загоняем все события внутрь массивов
+            #region SetEvents 
+
+            TestGoodEvent smthGood = new TestGoodEvent();
+            GoodEvents = new IEvent[] {smthGood};
+
+            TestBadEvent smthBad = new TestBadEvent();
+            BadEvents = new IEvent[] { smthBad };
+
+            #endregion
+
             Timer = 0;
             Speed = 0;
             MonthNum = 1;
             Randomizator = new Random();
+            currentEvent = null;
             Pause.IsEnabled = false;
 
             Timing.Text = "Месяц №" + MonthNum.ToString();
@@ -51,6 +64,8 @@ namespace headman.Forms.Maps
         private Random Randomizator;
 
         private IEvent[] BadEvents;
+        private IEvent[] GoodEvents;
+        private IEvent currentEvent;
 
         private async void TimeRun ()  // главный цикл программы
         {
@@ -125,10 +140,23 @@ namespace headman.Forms.Maps
         {
             int decision = ((Random)secretOfProgramm).Next(100);
             if (decision >= 80)
-                MessageBox.Show("Пиздец =(");
+                currentEvent = BadEvents[((Random)secretOfProgramm).Next(BadEvents.Length)];
             else
                 if (decision <= 10)
-                    MessageBox.Show("Все круто!");
+                    currentEvent = GoodEvents[((Random)secretOfProgramm).Next(GoodEvents.Length)];
+            
+            if (currentEvent!=null)
+            {
+                EventMenuForm curentEventMenu = new EventMenuForm(currentEvent);
+                Pause_Click(null, null);
+                curentEventMenu.ShowDialog();
+                
+                Log.Text += "Месяц №" + MonthNum.ToString() + ": " + currentEvent.Log + "\n";
+                currentEvent = null;
+                Start_Click(null, null);
+            }
+
+
         }
 
     }

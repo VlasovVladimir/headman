@@ -6,7 +6,7 @@
         <ImageBrush ImageSource="/headman;component/Images/Image1.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
     <Grid Margin="0,10,0,0">
-        <Frame x:Name="Base" Content="" HorizontalAlignment="Left" Height="634" VerticalAlignment="Top" Width="609" Foreground="#FFEABBBB" Margin="35,5,0,0">
+        <Frame x:Name="Base" Content="" HorizontalAlignment="Left" Height="634" VerticalAlignment="Top" Width="609" Foreground="#FFEABBBB" Margin="35,5,0,0" BorderBrush="Black" >
             <Frame.Background>
                 <ImageBrush ImageSource="/headman;component/Images/water.jpg"/>
             </Frame.Background>
@@ -15,7 +15,7 @@
         <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="50" Margin="107,575,0,0" VerticalAlignment="Top" Width="50" FontSize="36" Click="Start_Click"/>
         <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="50" Margin="52,575,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="1.933,0.5" FontSize="26" Click="Pause_Click"/>
         <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="50" Margin="162,575,0,0" VerticalAlignment="Top" Width="50" FontSize="27" Click="SpeedUp_Click"/>
-        <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="41" Margin="285,580,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135" IsEnabled="False"/>
+        <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="41" Margin="285,580,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135" IsEnabled="False" Background="#FFCFBEBE"/>
         <Button x:Name="GoTo" Content="✈" HorizontalAlignment="Left" Height="50" Margin="577,571,0,0" VerticalAlignment="Top" Width="50" FontSize="28" RenderTransformOrigin="0.4,1.143" Click="GoTo_Click"/>
         <Frame x:Name="RowResources" Content="" HorizontalAlignment="Left" Height="111" Margin="671,290,0,0" VerticalAlignment="Top" Width="264" Background="#FFACA6A6"/>
         <Frame x:Name="Things" Content="" HorizontalAlignment="Left" Height="206" Margin="671,433,0,0" VerticalAlignment="Top" Width="264" Background="Gray"/>
