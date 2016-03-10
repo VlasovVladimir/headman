@@ -12,8 +12,16 @@
                 <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button.Content>
         </Button>
-        <Button x:Name="Exit2" Content="" HorizontalAlignment="Left" Margin="285,358,0,0" VerticalAlignment="Top" Width="195" Height="82" Click="Exit2_Click"/>
-        <Button x:Name="Exit3" Content="" HorizontalAlignment="Left" Margin="530,358,0,0" VerticalAlignment="Top" Width="195" Height="82" Click="Exit3_Click"/>
+        <Button x:Name="Exit2" HorizontalAlignment="Left" Height="82" Margin="285,358,0,0" VerticalAlignment="Top" Width="195" Click="Exit2_Click">
+            <Button.Content>
+                <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="Exit3" HorizontalAlignment="Left" Height="82" Margin="530,358,0,0" VerticalAlignment="Top" Width="195" Click="Exit3_Click">
+            <Button.Content>
+                <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
         <TextBox x:Name="Name" HorizontalAlignment="Left" Height="35" Margin="40,35,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="685" IsEnabled="False" FontSize="16"/>
         <TextBox x:Name="Description" HorizontalAlignment="Left" Height="240" Margin="40,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="685" IsEnabled="False" FontSize="16"/>
 
