@@ -33,10 +33,9 @@ namespace headman.Forms.Maps
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
-            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator();
+            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator(); // тут менять при создании новой карты
             RepositorySingle.currentSituation = momentCreator.Create();
 
-            //Загоняем все события внутрь массивов
             Timer = 0;
             Speed = 0;
             Randomizator = new Random();
@@ -46,6 +45,7 @@ namespace headman.Forms.Maps
 
             MiniMenuOpened = false;
 
+            this.InfoRefresh();
             Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString();
             MonthFinished += (object obj) => {RepositorySingle.currentSituation.GameMonth+=1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
             MonthFinished += EventCaller;
@@ -173,9 +173,12 @@ namespace headman.Forms.Maps
         }
 
 
-        private void SetWindowsBinding()
+        private void InfoRefresh()
         {
-
+            StonesInfo.Text = RepositorySingle.currentSituation.Stone.ToString();
+            WoodenInfo.Text = RepositorySingle.currentSituation.Wood.ToString();
+            WaterInfo.Text = RepositorySingle.currentSituation.Water.ToString();
+            PeopleInfo.Text = RepositorySingle.currentSituation.Population.ToString();
         }
     }
 }
