@@ -53,7 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Event\FabricOfAllEvents.cs" />
     <Compile Include="Event\IEvent.cs" />
+    <Compile Include="Event\IFabricEvent.cs" />
     <Compile Include="Event\TestBadEvent.cs" />
     <Compile Include="Event\TestGoodEvent.cs" />
     <Compile Include="Forms\EventMenu\EventMenuForm.xaml.cs">
