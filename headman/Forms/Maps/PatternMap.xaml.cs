@@ -47,7 +47,7 @@ namespace headman.Forms.Maps
 
             this.InfoRefresh();
             Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString();
-            MonthFinished += (object obj) => {RepositorySingle.currentSituation.GameMonth+=1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
+            MonthFinished += () => {RepositorySingle.currentSituation.GameMonth+=1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
             MonthFinished += EventCaller;
         }
 
@@ -58,7 +58,7 @@ namespace headman.Forms.Maps
         private bool TimeStarted { get; set; }
         public bool MiniMenuOpened { get; set; }
 
-        private Action <object> MonthFinished;
+        private Action MonthFinished;
         private Random Randomizator;
 
         private IEvent currentEvent;
@@ -74,7 +74,7 @@ namespace headman.Forms.Maps
                 else
                 {
                     Timer = 0;
-                    MonthFinished(Randomizator);  // делегат, который вызывает события по "завершению месяца"
+                    MonthFinished();  // делегат, который вызывает события по "завершению месяца"
                 }
                 await Task.Delay(TikTacSpeed);
             }
@@ -134,14 +134,14 @@ namespace headman.Forms.Maps
             MiniMenuOpened = false;
         }
 
-        private void EventCaller (object secretOfProgramm)
+        private void EventCaller ()
         {
-            int decision = ((Random)secretOfProgramm).Next(100);
+            int decision = (Randomizator).Next(100);
             if (decision >= 80)
-                currentEvent = RepositorySingle.currentSituation.BadEvents[((Random)secretOfProgramm).Next(RepositorySingle.currentSituation.BadEvents.Count)];
+                currentEvent = RepositorySingle.currentSituation.BadEvents[(Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count))];
             else
                 if (decision <= 10)
-                    currentEvent = RepositorySingle.currentSituation.GoodEvents[((Random)secretOfProgramm).Next(RepositorySingle.currentSituation.GoodEvents.Count)];
+                    currentEvent = RepositorySingle.currentSituation.GoodEvents[(Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count))];
             
             if (currentEvent!=null)
             {
@@ -164,6 +164,7 @@ namespace headman.Forms.Maps
 
         private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
         {
+            Pause_Click(null, null);
             Sure sureQuestion = new Sure();
             sureQuestion.ShowDialog();
             if (!(bool)sureQuestion.DialogResult)
