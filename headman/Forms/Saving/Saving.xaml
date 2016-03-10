@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.Saving"
         mc:Ignorable="d"
-        Title="Saving" Height="400" Width="600">
+        Title="Сохранения меню" Height="400" Width="600">
     <Grid>
         <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="350" Margin="25,10,0,0" VerticalAlignment="Top" Width="250" IsEnabled="False"/>
         <TextBox x:Name="Info1" HorizontalAlignment="Left" Height="20" Margin="310,10,0,0" TextWrapping="Wrap" Text="Номер слота" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
@@ -13,6 +13,12 @@
         <TextBox x:Name="Info3" HorizontalAlignment="Left" Height="20" Margin="310,60,0,0" TextWrapping="Wrap" Text="Число выживших" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
         <TextBox x:Name="Info4" HorizontalAlignment="Left" Height="20" Margin="310,85,0,0" TextWrapping="Wrap" Text="Номер месяца" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
         <TextBox x:Name="Info5" HorizontalAlignment="Left" Height="20" Margin="310,110,0,0" TextWrapping="Wrap" Text="Дата сохранения" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
+        <TextBox x:Name="DataNum" HorizontalAlignment="Left" Height="20" Margin="440,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <TextBox x:Name="DataName" HorizontalAlignment="Left" Height="20" Margin="440,35,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <TextBox x:Name="DataPopulation" HorizontalAlignment="Left" Height="20" Margin="440,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <TextBox x:Name="DataGameDate" HorizontalAlignment="Left" Height="20" Margin="440,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <TextBox x:Name="DataRealDate" HorizontalAlignment="Left" Height="20" Margin="440,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
+        <Image x:Name="MapPicture" HorizontalAlignment="Left" Height="225" Margin="310,135,0,0" VerticalAlignment="Top" Width="255"/>
 
     </Grid>
 </Window>

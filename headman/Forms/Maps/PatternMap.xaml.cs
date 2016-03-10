@@ -36,10 +36,10 @@ namespace headman.Forms.Maps
             #region SetEvents 
 
             TestGoodEvent smthGood = new TestGoodEvent();
-            GoodEvents = new IEvent[] {smthGood};
+            GoodEvents = new List<IEvent>{smthGood};
 
             TestBadEvent smthBad = new TestBadEvent();
-            BadEvents = new IEvent[] { smthBad };
+            BadEvents = new List<IEvent> { smthBad };
 
             #endregion
 
@@ -49,6 +49,7 @@ namespace headman.Forms.Maps
             Randomizator = new Random();
             currentEvent = null;
             Pause.IsEnabled = false;
+            TikTacSpeed = 1000;
 
             MiniMenuOpened = false;
 
@@ -60,6 +61,7 @@ namespace headman.Forms.Maps
         private int Timer { get; set; }
         private int Speed { get; set; }
         private int MonthNum { get; set; }
+        private int TikTacSpeed { get; set; }
         
         private bool TimeStarted { get; set; }
         public bool MiniMenuOpened { get; set; }
@@ -67,8 +69,8 @@ namespace headman.Forms.Maps
         private Action <object> MonthFinished;
         private Random Randomizator;
 
-        private IEvent[] BadEvents;
-        private IEvent[] GoodEvents;
+        private List<IEvent> BadEvents;
+        private List<IEvent> GoodEvents;
         private IEvent currentEvent;
 
         private async void TimeRun ()  // главный цикл программы
@@ -84,7 +86,7 @@ namespace headman.Forms.Maps
                     Timer = 0;
                     MonthFinished(Randomizator);  // делегат, который вызывает события по "завершению месяца"
                 }
-                await Task.Delay(100);
+                await Task.Delay(TikTacSpeed);
             }
 
         }
@@ -146,10 +148,10 @@ namespace headman.Forms.Maps
         {
             int decision = ((Random)secretOfProgramm).Next(100);
             if (decision >= 80)
-                currentEvent = BadEvents[((Random)secretOfProgramm).Next(BadEvents.Length)];
+                currentEvent = BadEvents[((Random)secretOfProgramm).Next(BadEvents.Count)];
             else
                 if (decision <= 10)
-                    currentEvent = GoodEvents[((Random)secretOfProgramm).Next(GoodEvents.Length)];
+                    currentEvent = GoodEvents[((Random)secretOfProgramm).Next(GoodEvents.Count)];
             
             if (currentEvent!=null)
             {

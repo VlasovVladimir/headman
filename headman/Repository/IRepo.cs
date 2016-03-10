@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using headman.СurrentMoment;
 
 
 namespace headman.Repository
@@ -13,6 +14,6 @@ namespace headman.Repository
         Window MainMenu { get; set; }
         Window Map { get; set; }
 
-
+        CurrentMoment currentSituation { get; set; }
     }
 }

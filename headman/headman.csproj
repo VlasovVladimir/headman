@@ -53,7 +53,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Event\FabricOfAllEvents.cs" />
     <Compile Include="Event\IEvent.cs" />
+    <Compile Include="Event\IFabricEvent.cs" />
     <Compile Include="Event\TestBadEvent.cs" />
     <Compile Include="Event\TestGoodEvent.cs" />
     <Compile Include="Forms\EventMenu\EventMenuForm.xaml.cs">
@@ -61,6 +63,9 @@
     </Compile>
     <Compile Include="Forms\Help\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MapChoise\MapChoise.xaml.cs">
+      <DependentUpon>MapChoise.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
@@ -74,6 +79,7 @@
     <Compile Include="Forms\Sure.xaml.cs">
       <DependentUpon>Sure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneralInfo.cs" />
     <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
     <Compile Include="Region\RegionInfo.xaml.cs">
@@ -93,6 +99,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\Help\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MapChoise\MapChoise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -141,7 +151,6 @@
     <Compile Include="Forms\RegionMenu\DefaultRegionMenu.xaml.cs">
       <DependentUpon>DefaultRegionMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Items\IItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -186,9 +195,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />
   </ItemGroup>
