@@ -139,18 +139,18 @@ namespace headman.Forms.Maps
         private void EventCaller ()
         {
             int decision = (Randomizator).Next(100);
-            if (decision >= 91)
+            if ((decision >= 91) && (RepositorySingle.currentSituation.BadEvents.Count != 0))
             {
                 RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
                 currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
                 RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
             }
             else
-                if (decision <= 3)
+                if ((decision <= 3) && (RepositorySingle.currentSituation.GoodEvents.Count != 0))
                 {
-                    RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
-                    currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
-                    RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
+                    RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
+                    currentEvent = RepositorySingle.currentSituation.GoodEvents[RandomNum];
+                    RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
                 }
             
             if (currentEvent!=null)
