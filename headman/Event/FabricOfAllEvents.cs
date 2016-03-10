@@ -22,6 +22,7 @@ namespace headman.Event
             List<IEvent> output = new List<IEvent>();
 
             output.Add(new TestBadEvent());
+            output.Add(new _01_plague());
 
             return output;
         }

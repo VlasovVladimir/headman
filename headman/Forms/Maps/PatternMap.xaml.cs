@@ -160,7 +160,7 @@ namespace headman.Forms.Maps
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();
                 
-                Log.Text += "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString() + ": " + currentEvent.Log + "\n";
+                Log.Text += "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString() + ". " + currentEvent.Log + "\n";
                 currentEvent = null;
                 Start_Click(null, null);
             }

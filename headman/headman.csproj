@@ -53,6 +53,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Event\01_plague.cs" />
+    <Compile Include="Event\02_drought.cs" />
     <Compile Include="Event\FabricOfAllEvents.cs" />
     <Compile Include="Event\IEvent.cs" />
     <Compile Include="Event\IFabricEvent.cs" />
