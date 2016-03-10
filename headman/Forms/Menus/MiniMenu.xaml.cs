@@ -35,7 +35,8 @@ namespace headman.Forms.Menus
         {
             RepositorySingle.Map.Close();
             this.Close();
-            RepositorySingle.MainMenu.Show();
+            if (!RepositorySingle.Map.IsActive)
+                RepositorySingle.MainMenu.Show();
         }
 
         private void Help_Click(object sender, RoutedEventArgs e)

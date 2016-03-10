@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Xml.Serialization;
-
+using headman.СurrentMoment;
 
 namespace headman.Event
 {
@@ -13,6 +13,7 @@ namespace headman.Event
     public class TestGoodEvent: IEvent 
     {
 
+            public CurrentMoment Moment { get; set; }
             public string Name { get; set; }
             public string Description { get; set; }
             public string Log { get; set; }

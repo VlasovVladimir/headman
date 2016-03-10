@@ -137,10 +137,10 @@ namespace headman.Forms.Maps
         private void EventCaller ()
         {
             int decision = (Randomizator).Next(100);
-            if (decision >= 80)
+            if (decision >= 91)
                 currentEvent = RepositorySingle.currentSituation.BadEvents[(Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count))];
             else
-                if (decision <= 10)
+                if (decision <= 3)
                     currentEvent = RepositorySingle.currentSituation.GoodEvents[(Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count))];
             
             if (currentEvent!=null)
