@@ -31,7 +31,10 @@ namespace headman.Event
             output.Add(new _03_bark_beetles());
             output.Add(new _04_earthquake());
             output.Add(new _05_landslide());
-
+            output.Add(new _06_eruption());
+            output.Add(new _07_predators());
+            output.Add(new _08_coconuts());
+        
             return output;
         }
     }
