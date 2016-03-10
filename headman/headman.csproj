@@ -64,16 +64,23 @@
     <Compile Include="Forms\Help\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Maps\StartCurrentMomentCreator.cs" />
+    <Compile Include="Forms\MapChoise\MapChoise.xaml.cs">
+      <DependentUpon>MapChoise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Maps\StartCurrentPatternMomentCreator.cs" />
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewGameMenu\NewGameChoise.xaml.cs">
       <DependentUpon>NewGameChoise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Saving\Saving.xaml.cs">
+      <DependentUpon>Saving.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Sure.xaml.cs">
       <DependentUpon>Sure.xaml</DependentUpon>
     </Compile>
+    <Compile Include="GeneralInfo.cs" />
     <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
     <Compile Include="Region\RegionInfo.xaml.cs">
@@ -81,7 +88,10 @@
     </Compile>
     <Compile Include="Repository\FirstRepo.cs" />
     <Compile Include="Repository\IRepo.cs" />
-    <Compile Include="XMap\Output.xaml.cs">
+    <Compile Include="XamlMaps\FirstMap.xaml.cs">
+      <DependentUpon>FirstMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlMaps\Output.xaml.cs">
       <DependentUpon>Output.xaml</DependentUpon>
     </Compile>
     <Compile Include="СurrentMoment\CurrentMoment.cs" />
@@ -90,6 +100,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\Help\HelpWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\MapChoise\MapChoise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -110,6 +124,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\RegionMenu\DefaultRegionMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Saving\Saving.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,7 +152,6 @@
     <Compile Include="Forms\RegionMenu\DefaultRegionMenu.xaml.cs">
       <DependentUpon>DefaultRegionMenu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Items\IItem.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -143,7 +160,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="XMap\Output.xaml">
+    <Page Include="XamlMaps\FirstMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlMaps\Output.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -175,10 +196,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Enums\" />
-    <Folder Include="Forms\Saves\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />
   </ItemGroup>
