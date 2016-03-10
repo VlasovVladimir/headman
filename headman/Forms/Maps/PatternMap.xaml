@@ -11,30 +11,30 @@
                 <ImageBrush ImageSource="/headman;component/Images/water.jpg"/>
             </Frame.Background>
         </Frame>
-        <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="253" Margin="671,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="#FFE2E0E0"/>
+        <TextBlock x:Name="Log" HorizontalAlignment="Left" Height="215" Margin="671,5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="264" Background="#FFE2E0E0" ScrollViewer.VerticalScrollBarVisibility="Auto"/>
         <Button x:Name="Start" Content="►" HorizontalAlignment="Left" Height="50" Margin="107,575,0,0" VerticalAlignment="Top" Width="50" FontSize="36" Click="Start_Click"/>
         <Button x:Name="Pause" Content="▌▐" HorizontalAlignment="Left" Height="50" Margin="52,575,0,0" VerticalAlignment="Top" Width="50" RenderTransformOrigin="1.933,0.5" FontSize="26" Click="Pause_Click"/>
         <Button x:Name="SpeedUp" Content="►►" HorizontalAlignment="Left" Height="50" Margin="162,575,0,0" VerticalAlignment="Top" Width="50" FontSize="27" Click="SpeedUp_Click"/>
         <TextBox x:Name="Timing" HorizontalAlignment="Left" Height="41" Margin="285,580,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="135" IsEnabled="False" Background="#FFCFBEBE"/>
         <Button x:Name="GoTo" Content="✈" HorizontalAlignment="Left" Height="50" Margin="577,571,0,0" VerticalAlignment="Top" Width="50" FontSize="28" RenderTransformOrigin="0.4,1.143" Click="GoTo_Click"/>
-        <Frame x:Name="RowResources" Content="" HorizontalAlignment="Left" Height="111" Margin="671,290,0,0" VerticalAlignment="Top" Width="264" Background="#FFACA6A6"/>
+        <Frame x:Name="RowResources" Content="" HorizontalAlignment="Left" Height="156" Margin="671,249,0,0" VerticalAlignment="Top" Width="264" Background="#FFACA6A6"/>
         <Frame x:Name="Things" Content="" HorizontalAlignment="Left" Height="206" Margin="671,433,0,0" VerticalAlignment="Top" Width="264" Background="Gray"/>
-        <TextBox x:Name="HeadResources" HorizontalAlignment="Left" Height="27" Margin="680,297,0,0" TextWrapping="Wrap" Text="Ресурсы" VerticalAlignment="Top" Width="80" FontSize="18.667" IsEnabled="False"/>
+        <TextBox x:Name="HeadResources" HorizontalAlignment="Left" Height="27" Margin="680,264,0,0" TextWrapping="Wrap" Text="Ресурсы" VerticalAlignment="Top" Width="80" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="HeadResources_Copy" HorizontalAlignment="Left" Height="28" Margin="684,442,0,0" TextWrapping="Wrap" Text="Предметы" VerticalAlignment="Top" Width="117" FontSize="18.667" IsEnabled="False"/>
-        <TextBlock x:Name="Wooden" HorizontalAlignment="Left" Height="36" Margin="765,344,0,0" TextWrapping="Wrap" Text="✿" VerticalAlignment="Top" Width="36" FontSize="32" IsEnabled="False"/>
-        <TextBlock x:Name="Water" HorizontalAlignment="Left" Height="36" Margin="863,344,0,0" TextWrapping="Wrap" Text="☂" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.5,1.833" FontSize="32" IsEnabled="False"/>
-        <TextBlock x:Name="Stones" HorizontalAlignment="Left" Height="37" Margin="680,343,0,0" TextWrapping="Wrap" Text="●" VerticalAlignment="Top" Width="36" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
-        <TextBox x:Name="StonesInfo" HorizontalAlignment="Left" Height="27" Margin="707,353,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="44" FontSize="18.667" IsEnabled="False"/>
-        <TextBox x:Name="WoodenInfo" HorizontalAlignment="Left" Height="28" Margin="801,352,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="44" FontSize="18.667" IsEnabled="False"/>
-        <TextBox x:Name="WaterInfo" HorizontalAlignment="Left" Height="28" Margin="890,352,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
+        <TextBlock x:Name="Wooden" HorizontalAlignment="Left" Height="36" Margin="765,302,0,0" TextWrapping="Wrap" Text="✿" VerticalAlignment="Top" Width="36" FontSize="32" IsEnabled="False"/>
+        <TextBlock x:Name="Water" HorizontalAlignment="Left" Height="36" Margin="859,303,0,0" TextWrapping="Wrap" Text="☂" VerticalAlignment="Top" Width="36" RenderTransformOrigin="0.5,1.833" FontSize="32" IsEnabled="False"/>
+        <TextBlock x:Name="Stones" HorizontalAlignment="Left" Height="37" Margin="680,300,0,0" TextWrapping="Wrap" Text="●" VerticalAlignment="Top" Width="36" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
+        <TextBox x:Name="StonesInfo" HorizontalAlignment="Left" Height="27" Margin="706,310,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="44" FontSize="18.667" IsEnabled="False"/>
+        <TextBox x:Name="WoodenInfo" HorizontalAlignment="Left" Height="28" Margin="801,310,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="44" FontSize="18.667" IsEnabled="False"/>
+        <TextBox x:Name="WaterInfo" HorizontalAlignment="Left" Height="28" Margin="890,309,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
         <Button x:Name="Get0" Content="✔" HorizontalAlignment="Left" Margin="904,477,0,0" VerticalAlignment="Top" Width="27" Height="20"/>
         <Button x:Name="Get1" Content="✔" HorizontalAlignment="Left" Margin="904,505,0,0" VerticalAlignment="Top" Width="27" Height="20"/>
         <Button x:Name="Get2" Content="✔" HorizontalAlignment="Left" Margin="904,532,0,0" VerticalAlignment="Top" Width="27" Height="21"/>
         <Button x:Name="Get3" Content="✔" HorizontalAlignment="Left" Margin="904,560,0,0" VerticalAlignment="Top" Width="27" Height="20"/>
         <Button x:Name="Get4" Content="✔" HorizontalAlignment="Left" Margin="904,587,0,0" VerticalAlignment="Top" Width="27" Height="21"/>
         <Button x:Name="Get5" Content="✔" HorizontalAlignment="Left" Margin="904,615,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.5,0.136" Height="20"/>
-        <TextBlock x:Name="People" HorizontalAlignment="Left" Height="37" Margin="814,287,0,0" TextWrapping="Wrap" Text="♀♂" VerticalAlignment="Top" Width="49" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
-        <TextBox x:Name="PeopleInfo" HorizontalAlignment="Left" Height="27" Margin="863,297,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
+        <TextBlock x:Name="People" HorizontalAlignment="Left" Height="37" Margin="814,263,0,0" TextWrapping="Wrap" Text="♀♂" VerticalAlignment="Top" Width="49" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
+        <TextBox x:Name="PeopleInfo" HorizontalAlignment="Left" Height="27" Margin="863,274,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="Thing0" HorizontalAlignment="Left" Height="23" Margin="684,474,0,0" TextWrapping="Wrap" Text="Какая-то лодка" VerticalAlignment="Top" Width="166" FontSize="16" IsEnabled="False"/>
         <TextBox x:Name="Thing1" HorizontalAlignment="Left" Height="23" Margin="684,502,0,0" TextWrapping="Wrap" Text="Комплект топоров" VerticalAlignment="Top" Width="166" FontSize="16" IsEnabled="False"/>
         <TextBox x:Name="Thing2" HorizontalAlignment="Left" Height="24" Margin="684,529,0,0" TextWrapping="Wrap" Text="Комплект фляг" VerticalAlignment="Top" Width="166" FontSize="16" IsEnabled="False"/>
@@ -47,6 +47,18 @@
         <TextBox x:Name="Smile3" HorizontalAlignment="Left" Height="23" Margin="859,557,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="40" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
         <TextBox x:Name="Smile4" HorizontalAlignment="Left" Height="23" Margin="859,585,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="40" FontSize="18.667" IsEnabled="False" BorderBrush="#FFCF1414" Background="#FFCF1414"/>
         <TextBox x:Name="Smile5" HorizontalAlignment="Left" Height="23" Margin="859,612,0,0" TextWrapping="Wrap" Text=" ☹" VerticalAlignment="Top" Width="40" FontSize="18.667" IsEnabled="False" Background="#FFCF1414" BorderBrush="#FFCF1414"/>
+        <Button x:Name="GetStones" HorizontalAlignment="Left" Height="40" Margin="680,355,0,0" VerticalAlignment="Top" Width="70">
+            <Button.Content>
+                <TextBlock Text="Добыть камни!" TextWrapping="Wrap" TextAlignment="Center"/>
+            </Button.Content>
+        </Button>
+        <Button x:Name="GetWood" HorizontalAlignment="Left" Height="40" Margin="775,355,0,0" VerticalAlignment="Top" Width="70">
+            <TextBlock Text="Добыть дерево!" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+        <Button x:Name="GetWater" HorizontalAlignment="Left" Height="40" Margin="861,355,0,0" VerticalAlignment="Top" Width="70">
+            <TextBlock Text="Добыть воду!" TextWrapping="Wrap" TextAlignment="Center"/>
+        </Button>
+
 
     </Grid>
 </Window>

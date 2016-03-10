@@ -23,7 +23,11 @@ namespace headman.Event
 
         public void Exit_1()
         {
-            Moment.Water -= 10;
+            if (Moment.Water >= 10)
+                Moment.Water -= 10;
+            else
+                Moment.Water = 0;
+            
             result = "Вы потеряли 10ед. воды.";
             Log += result;
             Description desk = new Description(result, null);
@@ -32,8 +36,16 @@ namespace headman.Event
 
         public void Exit_2()
         {
-            Moment.Population -= 1;
-            Moment.Water -= 12;
+            if (Moment.Water >= 12)
+                Moment.Water -= 12;
+            else
+                Moment.Water = 0;
+
+            if (Moment.Population >= 1)
+                Moment.Population -= 1;
+            else
+                Moment.Population = 0;
+
             result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только 12ед. воды, но 1 особенно рьяного копателя.";
             Log += "Вы потеряли 12 ед.воды и 1 товарища.";
             Description desk = new Description(result, null);
@@ -42,7 +54,11 @@ namespace headman.Event
 
         public void Exit_3()
         {
-            Moment.Water -= 10;
+            if (Moment.Water >= 10)
+                Moment.Water -= 10;
+            else
+                Moment.Water = 0;
+
             result = "Ваши молитвы были услышаны, но не сразу. Вы потеряли 10ед.воды.";
             Log += result;
             Description desk = new Description(result, null);

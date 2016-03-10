@@ -113,12 +113,12 @@ namespace headman.Forms.Maps
         {
             if (TimeStarted)
             {
-                Speed = 3;
+                Speed = 300;
             }
             else
             {
                 TimeRun();
-                Speed = 3;
+                Speed = 300;
             }
 
             Start.IsEnabled = true;

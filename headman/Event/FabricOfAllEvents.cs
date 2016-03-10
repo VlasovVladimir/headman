@@ -23,6 +23,8 @@ namespace headman.Event
             
             output.Add(new _01_plague());
             output.Add(new _02_drought());
+            output.Add(new _03_bark_beetles());
+            output.Add(new _04_earthquake());
 
             return output;
         }
