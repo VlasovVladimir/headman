@@ -215,6 +215,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Images\svgMaps\pattern.svg" />
     <Content Include="Images\svgMaps\test_islands.svg" />
   </ItemGroup>
   <ItemGroup>

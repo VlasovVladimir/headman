@@ -59,23 +59,20 @@ namespace headman.Event
 
         public void Exit_3()
         {
-            if (Moment.Items[0])
-            {
-                if (Moment.Population >= 1)
-                    Moment.Population -= 1;
-                else
-                    Moment.Population = 0;
+            Moment.Items[4] = false;
 
-                result = "Вы приняли верное решение. Однако, один ваш товарищ погиб. Такова жизнь.";
-                Log += "Вы потеряли 1 товарища.";
-                Description desk = new Description(result, null);
-                desk.Show();
-            }
+            if (Moment.Population >= 2)
+                Moment.Population -= 2;
             else
-            {
-                MessageBox.Show("Упс. У вас нет лодки.");
-                Exit_1();
-            }
+                Moment.Population = 0;
+
+            Moment.Stone += 2;
+            
+            result = "Ваши дома разрушены. Двое товарищей своим криком призвали камни на себя и погибли. Зато, благодаря им, у вас прибавилось 2ед. камня.";
+            Log += "Вы потеряли дома и 2 товарищей. Число камней увеличилось на 2.";
+            Description desk = new Description(result, null);
+            desk.Show();
+            
         }
 
         public _05_landslide()
