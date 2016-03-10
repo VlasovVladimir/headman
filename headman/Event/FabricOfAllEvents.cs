@@ -33,6 +33,7 @@ namespace headman.Event
             output.Add(new _05_landslide());
             output.Add(new _06_eruption());
             output.Add(new _07_predators());
+            output.Add(new _08_coconuts());
         
             return output;
         }

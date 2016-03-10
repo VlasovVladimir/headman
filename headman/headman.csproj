@@ -60,6 +60,7 @@
     <Compile Include="Event\05_landslide.cs" />
     <Compile Include="Event\06_eruption.cs" />
     <Compile Include="Event\07_predators.cs" />
+    <Compile Include="Event\08_coconuts.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />
     <Compile Include="Event\93_flack.cs" />
