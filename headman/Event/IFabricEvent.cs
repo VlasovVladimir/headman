@@ -8,7 +8,7 @@ namespace headman.Event
 {
      public interface IFabricEvent
     {
-         public List<IEvent> GoodEvents();
-         public List<IEvent> BadEvents();
+         List<IEvent> GoodEvents();
+         List<IEvent> BadEvents();
     }
 }

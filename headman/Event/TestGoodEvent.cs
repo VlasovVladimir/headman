@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace headman.Event
 {
-    class TestGoodEvent: IEvent 
+    [Serializable]
+    public class TestGoodEvent: IEvent 
     {
 
             public string Name { get; set; }

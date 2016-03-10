@@ -64,6 +64,7 @@
     <Compile Include="Forms\Help\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Maps\StartCurrentMomentCreator.cs" />
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>

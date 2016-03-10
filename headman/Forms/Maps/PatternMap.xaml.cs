@@ -15,6 +15,8 @@ using headman.Forms.Menus;
 using headman.Repository;
 using headman.Event;
 using headman.Forms.EventMenu;
+using headman.Forms.Maps;
+
 
 namespace headman.Forms.Maps
 {
@@ -31,36 +33,26 @@ namespace headman.Forms.Maps
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
+            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator();
+            RepositorySingle.currentSituation = momentCreator.Create();
 
             //Загоняем все события внутрь массивов
-            #region SetEvents 
-
-            TestGoodEvent smthGood = new TestGoodEvent();
-            GoodEvents = new List<IEvent>{smthGood};
-
-            TestBadEvent smthBad = new TestBadEvent();
-            BadEvents = new List<IEvent> { smthBad };
-
-            #endregion
-
             Timer = 0;
             Speed = 0;
-            MonthNum = 1;
             Randomizator = new Random();
             currentEvent = null;
             Pause.IsEnabled = false;
-            TikTacSpeed = 1000;
+            TikTacSpeed = 500;
 
             MiniMenuOpened = false;
 
-            Timing.Text = "Месяц №" + MonthNum.ToString();
-            MonthFinished += (object obj) => {this.Timing.Text = "Месяц №" + MonthNum.ToString(); MonthNum+=1;};
+            Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString();
+            MonthFinished += (object obj) => {RepositorySingle.currentSituation.GameMonth+=1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
             MonthFinished += EventCaller;
         }
 
         private int Timer { get; set; }
         private int Speed { get; set; }
-        private int MonthNum { get; set; }
         private int TikTacSpeed { get; set; }
         
         private bool TimeStarted { get; set; }
@@ -69,8 +61,6 @@ namespace headman.Forms.Maps
         private Action <object> MonthFinished;
         private Random Randomizator;
 
-        private List<IEvent> BadEvents;
-        private List<IEvent> GoodEvents;
         private IEvent currentEvent;
 
         private async void TimeRun ()  // главный цикл программы
@@ -148,10 +138,10 @@ namespace headman.Forms.Maps
         {
             int decision = ((Random)secretOfProgramm).Next(100);
             if (decision >= 80)
-                currentEvent = BadEvents[((Random)secretOfProgramm).Next(BadEvents.Count)];
+                currentEvent = RepositorySingle.currentSituation.BadEvents[((Random)secretOfProgramm).Next(RepositorySingle.currentSituation.BadEvents.Count)];
             else
                 if (decision <= 10)
-                    currentEvent = GoodEvents[((Random)secretOfProgramm).Next(GoodEvents.Count)];
+                    currentEvent = RepositorySingle.currentSituation.GoodEvents[((Random)secretOfProgramm).Next(RepositorySingle.currentSituation.GoodEvents.Count)];
             
             if (currentEvent!=null)
             {
@@ -159,7 +149,7 @@ namespace headman.Forms.Maps
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();
                 
-                Log.Text += "Месяц №" + MonthNum.ToString() + ": " + currentEvent.Log + "\n";
+                Log.Text += "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString() + ": " + currentEvent.Log + "\n";
                 currentEvent = null;
                 Start_Click(null, null);
             }
@@ -182,5 +172,10 @@ namespace headman.Forms.Maps
             }
         }
 
+
+        private void SetWindowsBinding()
+        {
+
+        }
     }
 }
