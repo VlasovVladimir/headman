@@ -20,9 +20,9 @@ namespace headman.Event
         public List<IEvent> BadEvents()
         {
             List<IEvent> output = new List<IEvent>();
-
-            output.Add(new TestBadEvent());
+            
             output.Add(new _01_plague());
+            output.Add(new _02_drought());
 
             return output;
         }
