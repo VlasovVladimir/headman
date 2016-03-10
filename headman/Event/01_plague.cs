@@ -23,7 +23,10 @@ namespace headman.Event
 
         public void Exit_1()
         {
-            Moment.Population -= 15;
+            if (Moment.Population >= 15)
+                Moment.Population -= 15;
+            else
+                Moment.Population = 0;
             result = "Ваше бездействие повлекло гибель 15 товарищей.";
             Log += result;
             Description desk = new Description(result, null);
@@ -32,7 +35,11 @@ namespace headman.Event
 
         public void Exit_2()
         {
-            Moment.Population -= 20;
+            if (Moment.Population >= 20)
+                Moment.Population -= 20;
+            else
+                Moment.Population = 0;
+            
             result = "Изгнанники обозлились, вернулись и покусали часть племени. В конечном счете вы лишились 20 товарищей.";
             Log += "Брат пошел на брата. Погибло 20 человек.";
             Description desk = new Description(result, null);
@@ -41,7 +48,11 @@ namespace headman.Event
 
         public void Exit_3()
         {
-            Moment.Population -= 10;
+            if (Moment.Population >= 10)
+                Moment.Population -= 10;
+            else
+                Moment.Population = 0;
+            
             result = "Дым от молитвенных жезлов изгнал чуму из вашего племени. Ранее зараженных спасти не удалось. Погибло 10 человек.";
             Log += "Ваши молитвы спасли всех кроме 10 товарищей.";
             Description desk = new Description(result, null);
