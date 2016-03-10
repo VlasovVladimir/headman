@@ -13,7 +13,6 @@ namespace headman.СurrentMoment
         public int Water { get; set; }
         public int Wood { get; set; }
         public int Stone { get; set; }
-
-        pub
+        
     }
 }

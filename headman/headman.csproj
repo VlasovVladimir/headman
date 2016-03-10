@@ -68,6 +68,9 @@
     <Compile Include="Forms\NewGameMenu\NewGameChoise.xaml.cs">
       <DependentUpon>NewGameChoise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Saving\Saving.xaml.cs">
+      <DependentUpon>Saving.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Sure.xaml.cs">
       <DependentUpon>Sure.xaml</DependentUpon>
     </Compile>
@@ -78,7 +81,10 @@
     </Compile>
     <Compile Include="Repository\FirstRepo.cs" />
     <Compile Include="Repository\IRepo.cs" />
-    <Compile Include="XMap\Output.xaml.cs">
+    <Compile Include="XamlMaps\FirstMap.xaml.cs">
+      <DependentUpon>FirstMap.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlMaps\Output.xaml.cs">
       <DependentUpon>Output.xaml</DependentUpon>
     </Compile>
     <Compile Include="СurrentMoment\CurrentMoment.cs" />
@@ -107,6 +113,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\RegionMenu\DefaultRegionMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Saving\Saving.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -140,7 +150,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="XMap\Output.xaml">
+    <Page Include="XamlMaps\FirstMap.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlMaps\Output.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -174,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
-    <Folder Include="Forms\Saves\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />
