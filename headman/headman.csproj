@@ -57,6 +57,7 @@
     <Compile Include="Event\02_drought.cs" />
     <Compile Include="Event\03_bark_beetles.cs" />
     <Compile Include="Event\04_earthquake.cs" />
+    <Compile Include="Event\05_landslide.cs" />
     <Compile Include="Event\91_Boat.cs" />
     <Compile Include="Event\92_Axe.cs" />
     <Compile Include="Event\93_flack.cs" />
@@ -213,7 +214,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Images\svgMaps\test_islands.svg" />
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />
   </ItemGroup>
