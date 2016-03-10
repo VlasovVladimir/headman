@@ -35,7 +35,7 @@ namespace headman.Event
             Moment.Population -= 1;
             Moment.Water -= 12;
             result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только 12ед. воды, но 1 особенно рьяного копателя.";
-            Log += "Брат пошел на брата. Погибло 20 человек.";
+            Log += "Вы потеряли 12 ед.воды и 1 товарища.";
             Description desk = new Description(result, null);
             desk.Show();
         }
@@ -61,4 +61,4 @@ namespace headman.Event
         }
     }
 }
-}
+
