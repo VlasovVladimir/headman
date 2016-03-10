@@ -12,7 +12,12 @@ namespace headman.Event
         {
             List<IEvent> output = new List<IEvent>();
 
-            output.Add(new TestGoodEvent());
+            output.Add(new _91_Boat());
+            output.Add(new _92_Axe());
+            output.Add(new _93_flack());
+            output.Add(new _94_hack());
+            output.Add(new _95_house());
+            output.Add(new _96_pike());
 
             return output;
         }
