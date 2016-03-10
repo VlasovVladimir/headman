@@ -54,6 +54,7 @@ namespace headman.Forms.Maps
         private int Timer { get; set; }
         private int Speed { get; set; }
         private int TikTacSpeed { get; set; }
+        private int RandomNum { get; set; }
         
         private bool TimeStarted { get; set; }
         public bool MiniMenuOpened { get; set; }
@@ -75,6 +76,7 @@ namespace headman.Forms.Maps
                 {
                     Timer = 0;
                     MonthFinished();  // делегат, который вызывает события по "завершению месяца"
+                    this.InfoRefresh();
                 }
                 await Task.Delay(TikTacSpeed);
             }
@@ -138,13 +140,22 @@ namespace headman.Forms.Maps
         {
             int decision = (Randomizator).Next(100);
             if (decision >= 91)
-                currentEvent = RepositorySingle.currentSituation.BadEvents[(Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count))];
+            {
+                RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
+                currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
+                RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
+            }
             else
                 if (decision <= 3)
-                    currentEvent = RepositorySingle.currentSituation.GoodEvents[(Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count))];
+                {
+                    RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
+                    currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
+                    RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
+                }
             
             if (currentEvent!=null)
             {
+                currentEvent.Moment = RepositorySingle.currentSituation;
                 EventMenuForm curentEventMenu = new EventMenuForm(currentEvent);
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();

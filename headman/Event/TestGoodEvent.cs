@@ -17,6 +17,7 @@ namespace headman.Event
             public string Name { get; set; }
             public string Description { get; set; }
             public string Log { get; set; }
+            public string result { get; set; }
 
             public string Exit1 { get; set; }
             public string Exit2 { get; set; }

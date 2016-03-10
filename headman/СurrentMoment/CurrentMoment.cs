@@ -23,6 +23,7 @@ namespace headman.СurrentMoment
         public List<IRegion> Regions {get; set;}
         public List<IEvent> GoodEvents { get; set; }
         public List<IEvent> BadEvents { get; set; }
+        public bool[] Items { get; set; }
 
 
     }

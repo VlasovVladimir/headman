@@ -26,7 +26,10 @@ namespace headman.Forms.Maps
             output.Wood = 0;
             output.Water = 5;
             output.GameMonth = 1;
-
+            for (int i = 0; i < output.Items.Length; i++)
+            {
+                output.Items[i] = false;
+            }
 
             return output;
 
