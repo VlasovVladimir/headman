@@ -58,6 +58,9 @@
     <Compile Include="Event\IFabricEvent.cs" />
     <Compile Include="Event\TestBadEvent.cs" />
     <Compile Include="Event\TestGoodEvent.cs" />
+    <Compile Include="Forms\EventMenu\Description.xaml.cs">
+      <DependentUpon>Description.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\EventMenu\EventMenuForm.xaml.cs">
       <DependentUpon>EventMenuForm.xaml</DependentUpon>
     </Compile>
@@ -95,6 +98,10 @@
       <DependentUpon>Output.xaml</DependentUpon>
     </Compile>
     <Compile Include="СurrentMoment\CurrentMoment.cs" />
+    <Page Include="Forms\EventMenu\Description.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\EventMenu\EventMenuForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
