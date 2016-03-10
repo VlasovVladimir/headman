@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Repository;
 using headman.Forms.Help;
+using headman.Forms.Maps;
 
 namespace headman.Forms.Menus
 {
@@ -41,6 +42,11 @@ namespace headman.Forms.Menus
         {
             HelpWindow HelpWindowSingle = new HelpWindow();
             HelpWindowSingle.Show();
+        }
+
+        private void BackToGame_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

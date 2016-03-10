@@ -12,5 +12,7 @@ namespace headman.Repository
     {
         Window MainMenu { get; set; }
         Window Map { get; set; }
+
+
     }
 }

@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Forms.Menus;
 using headman.Repository;
+using headman.Forms;
 
 namespace headman.Forms.Maps
 {
@@ -123,6 +124,21 @@ namespace headman.Forms.Maps
         private void rect3338_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             MessageBox.Show("эта штука работает");
+        }
+
+        private void MapClose(object sender, EventArgs e)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Sure sureQuestion = new Sure();
+            sureQuestion.ShowDialog();
+            if (!(bool)sureQuestion.DialogResult)
+            {
+                e.Cancel = false;
+             }
         }
     }
 }

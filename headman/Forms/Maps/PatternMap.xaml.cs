@@ -50,6 +50,8 @@ namespace headman.Forms.Maps
             currentEvent = null;
             Pause.IsEnabled = false;
 
+            MiniMenuOpened = false;
+
             Timing.Text = "Месяц №" + MonthNum.ToString();
             MonthFinished += (object obj) => {this.Timing.Text = "Месяц №" + MonthNum.ToString(); MonthNum+=1;};
             MonthFinished += EventCaller;
@@ -58,7 +60,9 @@ namespace headman.Forms.Maps
         private int Timer { get; set; }
         private int Speed { get; set; }
         private int MonthNum { get; set; }
+        
         private bool TimeStarted { get; set; }
+        public bool MiniMenuOpened { get; set; }
 
         private Action <object> MonthFinished;
         private Random Randomizator;
@@ -131,9 +135,11 @@ namespace headman.Forms.Maps
 
         private void GoTo_Click(object sender, RoutedEventArgs e) // вызов маленького меню
         {
+            MiniMenuOpened = true;
             MiniMenu MiniMenuSingle = new MiniMenu(RepositorySingle);
             Pause_Click(null, null);
-            MiniMenuSingle.Show();
+            MiniMenuSingle.ShowDialog();
+            MiniMenuOpened = false;
         }
 
         private void EventCaller (object secretOfProgramm)
@@ -155,8 +161,23 @@ namespace headman.Forms.Maps
                 currentEvent = null;
                 Start_Click(null, null);
             }
+        }
 
+        // обработка нажатия на крестик сверху
+        private void MapClose(object sender, EventArgs e)
+        {
+            if(!MiniMenuOpened)
+                Application.Current.Shutdown();
+        }
 
+        private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            Sure sureQuestion = new Sure();
+            sureQuestion.ShowDialog();
+            if (!(bool)sureQuestion.DialogResult)
+            {
+                e.Cancel = true;
+            }
         }
 
     }

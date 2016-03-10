@@ -65,6 +65,12 @@
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\NewGameMenu\NewGameChoise.xaml.cs">
+      <DependentUpon>NewGameChoise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Sure.xaml.cs">
+      <DependentUpon>Sure.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Places.cs" />
     <Compile Include="Region\IRegion.cs" />
     <Compile Include="Region\RegionInfo.xaml.cs">
@@ -75,6 +81,7 @@
     <Compile Include="XMap\Output.xaml.cs">
       <DependentUpon>Output.xaml</DependentUpon>
     </Compile>
+    <Compile Include="СurrentMoment\CurrentMoment.cs" />
     <Page Include="Forms\EventMenu\EventMenuForm.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -95,7 +102,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\NewGameMenu\NewGameChoise.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\RegionMenu\DefaultRegionMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\Sure.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -159,6 +174,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Enums\" />
+    <Folder Include="Forms\Saves\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\Volcano.jpg" />
