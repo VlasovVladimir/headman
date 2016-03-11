@@ -8,7 +8,11 @@ namespace headman
 {
     class GeneralInfo
     {
-        List<string> Maps = new List<string>();
-        List<string> Savings = new List<string>();
+        public List<string> Maps = new List<string>()
+        {
+            "Pattern",
+            "Test map"
+        };
+        public List<string> Savings = new List<string>();
     }
 }

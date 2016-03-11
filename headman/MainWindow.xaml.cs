@@ -16,6 +16,7 @@ using System.Media;
 using headman.Forms.Help;
 using headman.Forms.Maps;
 using headman.Repository;
+using headman.Forms.MapChoise;
 
 namespace headman
 {
@@ -48,9 +49,9 @@ namespace headman
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            PatternMap map = new PatternMap(RepositorySingle);
+            MapChoise choise = new MapChoise(RepositorySingle);
             this.Hide();
-            map.Show();
+            choise.Show();
         }
     }
 }
