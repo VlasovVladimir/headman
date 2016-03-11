@@ -61,6 +61,9 @@
     <Compile Include="Event\06_eruption.cs" />
     <Compile Include="Event\07_predators.cs" />
     <Compile Include="Event\08_coconuts.cs" />
+    <Compile Include="Event\09_fireball.cs" />
+    <Compile Include="Event\10_cannibals.cs" />
+    <Compile Include="Event\22_meneaters.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />
     <Compile Include="Event\93_flack.cs" />

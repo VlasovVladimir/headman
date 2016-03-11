@@ -34,6 +34,9 @@ namespace headman.Event
             output.Add(new _06_eruption());
             output.Add(new _07_predators());
             output.Add(new _08_coconuts());
+            output.Add(new _09_fireball());
+            output.Add(new _10_cannibals());
+            output.Add(new _22_meneaters());
         
             return output;
         }
