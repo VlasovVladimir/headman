@@ -18,6 +18,12 @@ namespace headman.Event
             output.Add(new _94_hack());
             output.Add(new _95_house());
             output.Add(new _96_pike());
+            output.Add(new _13_people());
+            output.Add(new _14_visitors());
+            output.Add(new _15_resources());
+            output.Add(new _16_resources());
+            output.Add(new _17_resources());
+            output.Add(new _70_Bzzz());
 
             return output;
         }

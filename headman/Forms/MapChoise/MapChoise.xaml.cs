@@ -33,25 +33,28 @@ namespace headman.Forms.MapChoise
 
         private void NewGame_Click(object sender, RoutedEventArgs e)
         {
-            switch (MapsList.SelectedItem.ToString())
+            if (MapsList.SelectedIndex >= 0)        // обработка исключения - ФУ ее не проводить!
             {
-                case ("Pattern"):
-                    {
-                        PatternMap map = new PatternMap(currentRepository);
-                        this.Close();
-                        map.Show();
-                        return;
-                    }
-                    
+                switch (MapsList.SelectedItem.ToString())
+                {
+                    case ("Pattern"):
+                        {
+                            PatternMap map = new PatternMap(currentRepository);
+                            this.Close();
+                            map.Show();
+                            return;
+                        }
 
-                case ("Test map"):
-                    {
-                        TestMap map = new TestMap(currentRepository);
-                        this.Close();
-                        map.Show();
-                        return;
-                    }
-            }
+
+                    case ("Test map"):
+                        {
+                            TestMap map = new TestMap(currentRepository);
+                            this.Close();
+                            map.Show();
+                            return;
+                        }
+                }
+            }    
 
         }
 

@@ -24,6 +24,6 @@
         </Button>
         <TextBox x:Name="Name" HorizontalAlignment="Left" Height="35" Margin="35,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" IsEnabled="False" FontSize="16"/>
         <TextBox x:Name="Description" HorizontalAlignment="Left" Height="145" Margin="35,65,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="480" IsEnabled="False" FontSize="16"/>
-
+    
     </Grid>
 </Window>

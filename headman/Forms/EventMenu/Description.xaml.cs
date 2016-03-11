@@ -19,15 +19,17 @@ namespace headman.Forms.EventMenu
     /// </summary>
     public partial class Description : Window
     {
-        public Description(string description, string path)
+        public Description(string info, string path)
         {
+            InitializeComponent();
             if (path != null)
             {
                 ImageBrush myBrush = new ImageBrush();
                 myBrush.ImageSource = new BitmapImage(new Uri(path, UriKind.Absolute));
                 this.Background = myBrush;
             }
-            InitializeComponent();
+            
+            description.Text = info;
         }
     }
 }

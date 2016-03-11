@@ -63,7 +63,13 @@
     <Compile Include="Event\08_coconuts.cs" />
     <Compile Include="Event\09_fireball.cs" />
     <Compile Include="Event\10_cannibals.cs" />
+    <Compile Include="Event\13_people.cs" />
+    <Compile Include="Event\14_visitors.cs" />
+    <Compile Include="Event\15_resources.cs" />
+    <Compile Include="Event\16_resources.cs" />
+    <Compile Include="Event\17_resources.cs" />
     <Compile Include="Event\22_meneaters.cs" />
+    <Compile Include="Event\70_Bzzz.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />
     <Compile Include="Event\93_flack.cs" />
