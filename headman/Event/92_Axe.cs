@@ -40,36 +40,12 @@ namespace headman.Event
 
         public void Exit_2()
         {
-            if (!Moment.Items[1])
-            {
-                Moment.Items[1] = true;
-                result = "Боги даровали вам топоры";
-                Log += result;
-            }
-            else
-            {
-                result = "Боги даровали вам топоры, но они у вас есть. Очень жаль!";
-                Log += " Как жаль,что они у вас есть.";
-            }
-            Description desk = new Description(result, null);
-            desk.Show();
+            Exit_1();
         }
 
         public void Exit_3()
         {
-            if (!Moment.Items[1])
-            {
-                Moment.Items[1] = true;
-                result = "Боги даровали вам топоры";
-                Log += result;
-            }
-            else
-            {
-                result = "Боги даровали вам топоры, но они у вас есть. Очень жаль!";
-                Log += " Как жаль,что они у вас есть.";
-            }
-            Description desk = new Description(result, null);
-            desk.Show();
+            Exit_1();
         }
 
         public _92_Axe()
