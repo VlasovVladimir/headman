@@ -25,6 +25,8 @@ namespace headman.Event
             output.Add(new _17_resources());
             output.Add(new _70_Bzzz());
             output.Add(new _51_music());
+            output.Add(new _52_treasures());
+            output.Add(new _53_why());
 
             return output;
         }
@@ -44,6 +46,7 @@ namespace headman.Event
             output.Add(new _09_fireball());
             output.Add(new _10_cannibals());
             output.Add(new _22_meneaters());
+            output.Add(new _54_letter());
         
             return output;
         }

@@ -12,7 +12,7 @@ using System.Xml.Serialization;
 namespace headman.Event
 {
     [Serializable]
-    class _70_Bzzz : IEvent
+    class _53_why : IEvent
     {
         public CurrentMoment Moment { get; set; }
         public string Name { get; set; }
@@ -26,32 +26,36 @@ namespace headman.Event
 
         public void Exit_1()
         {
-            Moment.Stone += 15;
+            Log += "";
 
-            result = "☃ бзю-бзю, мой мальчик!";
-            Log += "☃";
-            MessageBox.Show(result);
+            MessageBox.Show("Удивительно, насколько Вы аморфны.");
         }
 
         public void Exit_2()
         {
-            Exit_1();
+            Log += "";
+
+            MessageBox.Show("Вы подозрительно похожи на Сергея Леонидовича.");
         }
 
         public void Exit_3()
         {
-            Exit_1();
+            Log += "";
+
+            MessageBox.Show("Вы подозрительно похожи на человека, который просит приготовить биф-ролл без сыра.");
         }
 
-        public _70_Bzzz()
+        public _53_why()
         {
-            Name = "Бззззз!";
-            Description = "Бзаааааа-бза!";
-            Log = "Бз. ";
+            Name = "Время вопросов";
+            Description = "Как вы думаете, почему?";
+            Log = "Странный вопрос. ";
 
-            Exit1 = "бза";
-            Exit2 = "бза-бза-бза";
-            Exit3 = "бзюк";
+            Exit1 = "Прост)";
+            Exit2 = "Жиза";
+            Exit3 = "Потому что бесплатно";
         }
     }
 }
+
+

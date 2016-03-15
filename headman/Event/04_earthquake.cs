@@ -7,9 +7,11 @@ using headman.Event;
 using headman.СurrentMoment;
 using headman.Forms.EventMenu;
 using System.Windows;
+using System.Xml.Serialization;
 
 namespace headman.Event
 {
+    [Serializable]
     class _04_earthquake : IEvent
     {
         public CurrentMoment Moment { get; set; }

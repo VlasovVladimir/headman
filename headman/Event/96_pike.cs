@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 using headman.Event;
 using headman.СurrentMoment;
 using headman.Forms.EventMenu;
+using System.Xml.Serialization;
 
 namespace headman.Event
 {
+    [Serializable]
     public class _96_pike: IEvent
     {
         public CurrentMoment Moment { get; set; }
