@@ -28,11 +28,11 @@
         <TextBox x:Name="WoodenInfo" HorizontalAlignment="Left" Height="28" Margin="801,310,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="44" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="WaterInfo" HorizontalAlignment="Left" Height="28" Margin="890,309,0,0" TextWrapping="Wrap" Text="Сколько-та там" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
         <Button x:Name="Get0" Content="✔" HorizontalAlignment="Left" Margin="904,477,0,0" VerticalAlignment="Top" Width="27" Height="20" Click="Get0_Click"/>
-        <Button x:Name="Get1" Content="✔" HorizontalAlignment="Left" Margin="904,505,0,0" VerticalAlignment="Top" Width="27" Height="20"/>
-        <Button x:Name="Get2" Content="✔" HorizontalAlignment="Left" Margin="904,532,0,0" VerticalAlignment="Top" Width="27" Height="21"/>
-        <Button x:Name="Get3" Content="✔" HorizontalAlignment="Left" Margin="904,560,0,0" VerticalAlignment="Top" Width="27" Height="20"/>
-        <Button x:Name="Get4" Content="✔" HorizontalAlignment="Left" Margin="904,587,0,0" VerticalAlignment="Top" Width="27" Height="21"/>
-        <Button x:Name="Get5" Content="✔" HorizontalAlignment="Left" Margin="904,615,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.5,0.136" Height="20"/>
+        <Button x:Name="Get1" Content="✔" HorizontalAlignment="Left" Margin="904,505,0,0" VerticalAlignment="Top" Width="27" Height="20" Click="Get1_Click"/>
+        <Button x:Name="Get2" Content="✔" HorizontalAlignment="Left" Margin="904,532,0,0" VerticalAlignment="Top" Width="27" Height="21" Click="Get2_Click"/>
+        <Button x:Name="Get3" Content="✔" HorizontalAlignment="Left" Margin="904,560,0,0" VerticalAlignment="Top" Width="27" Height="20" Click="Get3_Click"/>
+        <Button x:Name="Get4" Content="✔" HorizontalAlignment="Left" Margin="904,587,0,0" VerticalAlignment="Top" Width="27" Height="21" Click="Get4_Click"/>
+        <Button x:Name="Get5" Content="✔" HorizontalAlignment="Left" Margin="904,615,0,0" VerticalAlignment="Top" Width="27" RenderTransformOrigin="0.5,0.136" Height="20" Click="Get5_Click"/>
         <TextBlock x:Name="People" HorizontalAlignment="Left" Height="37" Margin="814,263,0,0" TextWrapping="Wrap" Text="♀♂" VerticalAlignment="Top" Width="49" RenderTransformOrigin="1,4" FontSize="32" IsEnabled="False"/>
         <TextBox x:Name="PeopleInfo" HorizontalAlignment="Left" Height="27" Margin="863,274,0,0" TextWrapping="Wrap" Text="Сколько-та тут" VerticalAlignment="Top" Width="45" FontSize="18.667" IsEnabled="False"/>
         <TextBox x:Name="Thing0" HorizontalAlignment="Left" Height="23" Margin="684,474,0,0" TextWrapping="Wrap" Text="Какая-то лодка" VerticalAlignment="Top" Width="166" FontSize="16" IsEnabled="False"/>

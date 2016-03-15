@@ -380,7 +380,108 @@ namespace headman.Forms.Maps
 
         private void Get0_Click(object sender, RoutedEventArgs e)
         {
-            RepositorySingle.currentSituation.Items[0] = true;
+            if ((!RepositorySingle.currentSituation.Items[0])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= (RepositorySingle.currentSituation.Population / 4)))
+            {
+                RepositorySingle.currentSituation.Items[0] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= RepositorySingle.currentSituation.Population / 4;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
+        }
+
+        private void Get1_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!RepositorySingle.currentSituation.Items[1])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= 12)
+                && (RepositorySingle.currentSituation.Stone >= 10))
+            {
+                RepositorySingle.currentSituation.Items[1] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= 12;
+                RepositorySingle.currentSituation.Stone -= 10;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
+        }
+
+        private void Get2_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!RepositorySingle.currentSituation.Items[2])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= 25))
+            {
+                RepositorySingle.currentSituation.Items[2] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= 25;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
+        }
+
+        private void Get3_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!RepositorySingle.currentSituation.Items[3])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= 12)
+                && (RepositorySingle.currentSituation.Stone >= 8))
+            {
+                RepositorySingle.currentSituation.Items[3] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= 12;
+                RepositorySingle.currentSituation.Stone -= 10;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
+
+        }
+
+        private void Get4_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!RepositorySingle.currentSituation.Items[4])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= 10)
+                && (RepositorySingle.currentSituation.Stone >= 2))
+            {
+                RepositorySingle.currentSituation.Items[4] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= 10;
+                RepositorySingle.currentSituation.Stone -= 2;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
+
+        }
+
+        private void Get5_Click(object sender, RoutedEventArgs e)
+        {
+            if ((!RepositorySingle.currentSituation.Items[5])
+                && (RepositorySingle.currentSituation.Water >= 1)
+                && (RepositorySingle.currentSituation.Wood >= 15)
+                && (RepositorySingle.currentSituation.Stone >= 15))
+            {
+                RepositorySingle.currentSituation.Items[5] = true;
+                RepositorySingle.currentSituation.Water -= 1;
+                RepositorySingle.currentSituation.Wood -= 15;
+                RepositorySingle.currentSituation.Stone -= 15;
+            }
+            else
+            {
+                MessageBox.Show("Не хватает ресурсов");
+            }
         }
     }
 }
