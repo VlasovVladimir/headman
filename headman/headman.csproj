@@ -69,6 +69,7 @@
     <Compile Include="Event\16_resources.cs" />
     <Compile Include="Event\17_resources.cs" />
     <Compile Include="Event\22_meneaters.cs" />
+    <Compile Include="Event\51_music.cs" />
     <Compile Include="Event\70_Bzzz.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />

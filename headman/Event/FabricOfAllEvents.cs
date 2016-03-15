@@ -24,6 +24,7 @@ namespace headman.Event
             output.Add(new _16_resources());
             output.Add(new _17_resources());
             output.Add(new _70_Bzzz());
+            output.Add(new _51_music());
 
             return output;
         }
