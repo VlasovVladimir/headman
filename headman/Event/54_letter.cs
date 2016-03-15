@@ -32,8 +32,6 @@ namespace headman.Event
 
             result = "Вы прочитали письмо. Его автором оказался Луиджи. Человек с необычайно сильной злобной энергетикой и раскидистыми усами. Эти усы погубили двоих ваших товарищей. А письмо можно будет и дома дочитать.";
             Log += "Проклятие Луиджи погубило 2х ваших товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -42,8 +40,6 @@ namespace headman.Event
 
             result = "Как водится, на нет и суда нет. Играем дальше.";
             Log += "И ничего не изменилось.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -52,8 +48,6 @@ namespace headman.Event
 
             result = "Ваша медлительность заставила письмо самооткрыться. Про громовещатель слышали? А тут внутри было проклятье. Лишь флаг от вашей лодки остался в живых и полощется в водах океана.";
             Log += "Проклятье письма уничтожило лодку.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _54_letter()

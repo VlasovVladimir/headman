@@ -34,10 +34,8 @@ namespace headman.Event
             else
             {
                 result = "Боги даровали вам фляги, но они у вас есть. Очень жаль!";
-                Log += " Как жаль, что они у вас есть.";
+                Log += result;
             }
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()

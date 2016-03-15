@@ -33,8 +33,6 @@ namespace headman.Event
              
             result = "Вы потеряли 8ед. дерева.";
             Log += result;
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -43,8 +41,6 @@ namespace headman.Event
             Moment.Wood = 0;
             result = "Бесполезно пытаться идти против Властителей. Вы сожгли зараженное дерево, но огонь перекинулся на выши жилища. Вы лишились и крыши над головой, и всех деревянных ресурсов.";
             Log += "Вы потеряли все дерево и дом.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -60,8 +56,6 @@ namespace headman.Event
 
                 result = "Вам удалось победить вредителей. Потеряны лишь 3ед. дерева";
                 Log += "Вы потеряли 3ед. дерева";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {

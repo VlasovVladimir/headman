@@ -34,8 +34,6 @@ namespace headman.Event
 
             result = "Обвал разрушил ваши дома и загубил двоих товарищей.";
             Log += "Вы потеряли дома и 2 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -49,8 +47,6 @@ namespace headman.Event
 
                 result = "Ополозень прошел стороной от вашего дома. Ушло чуть больше воды, чем обычно.";
                 Log += "Вы потеряли 1ед. воды.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
@@ -72,9 +68,6 @@ namespace headman.Event
             
             result = "Ваши дома разрушены. Двое товарищей своим криком призвали камни на себя и погибли. Зато, благодаря им, у вас прибавилось 2ед. камня.";
             Log += "Вы потеряли дома и 2 товарищей. Число камней увеличилось на 2.";
-            Description desk = new Description(result, null);
-            desk.Show();
-            
         }
 
         public _05_landslide()

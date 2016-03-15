@@ -32,8 +32,6 @@ namespace headman.Event
 
             result = "Аборигены считают деньги презренным металлом. Они настолько обезумели, что убили троих ваших товарищей.";
             Log += "3 ваших товарищей поплатились за них жизнью.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -42,8 +40,6 @@ namespace headman.Event
 
             result = "Аборигены приняли ваше пожертвование и отплатили вам 2ед. дерева.";
             Log += "Торг завершился успешно и увеличи ваши запасы дерева на 2.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -53,8 +49,6 @@ namespace headman.Event
 
             result = "Вы сделали верный выбор! Аборигены считают все, что сделано из дерева и имеет крышку, священным! В благодарность за подаренный сундук они отстроили вам дома и подарили 10ед. дерева.";
             Log += "Успешный торг принес вам10ед.дерева и отстроенные дома.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _52_treasures()

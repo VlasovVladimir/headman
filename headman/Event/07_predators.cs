@@ -34,8 +34,6 @@ namespace headman.Event
 
                 result = "А вы неплохо подготовились! Оборона с использованием топоров дала свои блистательные результаты. В ваших редах лишь одна потеря.";
                 Log += "Вы потеряли 1 товарища.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
@@ -51,8 +49,6 @@ namespace headman.Event
 
                 result = "Звери беспощадны. 10 ваших бойцов убито. 5ед. воды потеряно.";
                 Log += "10 человек погибло. 5ед. воды потеряно";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
         }
 
@@ -60,8 +56,6 @@ namespace headman.Event
         {
             result = "Удивительно, но факт. Вы настолько плохо поете, что звери сбежали, поджав хвост.";
             Log += "Без потерь.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -77,9 +71,7 @@ namespace headman.Event
                 Moment.Water = 0;
 
             result = "Попытаться приручить хищных зверей? Удивительно, что вы вообще еще живы. Они выпили всю предложенную им воду и закусили вашими товарищами.";
-            Log += "Вы потеряли 12 человек и 8ед. воды.";
-            Description desk = new Description(result, null);
-            desk.Show();            
+            Log += "Вы потеряли 12 человек и 8ед. воды.";     
         }
 
         public _07_predators()

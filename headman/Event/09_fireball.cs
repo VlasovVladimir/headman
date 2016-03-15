@@ -30,8 +30,6 @@ namespace headman.Event
 
             result = "Ваша попытка провести ритуал в пользу Властителей с сжиганием лодки не принесла результатов. Ваш дом разрушен. Зато все живы!";
             Log += "Вы потеряли лодку и дома.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -39,8 +37,6 @@ namespace headman.Event
             Moment.Items[4] = false;
             result = "Молния разрушила ваши дома. Зато никого из людей не задело, ведь все смотрели на огонечки!";
             Log += "Вы потеряли дома.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -54,8 +50,6 @@ namespace headman.Event
 
             result = "Доисследовались? Дом разрушен, 5 главных исследователей погибло. Не дорожите вы своими людьми.";
             Log += "Вы потеряли 5х товарищей и крышу над головой.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _09_fireball()

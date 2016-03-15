@@ -29,8 +29,6 @@ namespace headman.Event
 
             result = "Число Ваших камней увеличилось на 15.";
             Log += "Вы получили 15ед. камней.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -39,8 +37,6 @@ namespace headman.Event
 
             result = "Число Вашего дерева увеличилось на 15.";
             Log += "Вы получили 15ед. дерева.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -49,8 +45,6 @@ namespace headman.Event
 
             result = "Число Вашей воды увеличилось на 15.";
             Log += "Вы получили 15ед. воды.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _17_resources()

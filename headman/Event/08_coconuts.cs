@@ -32,8 +32,6 @@ namespace headman.Event
 
             result = "Кокос убил одного вашего товарища.";
             Log += "Вы потеряли 1 товарища.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -45,8 +43,6 @@ namespace headman.Event
 
             result = "Кокос убил 2х ваших товарищей.";
             Log += "Вы потеряли 2 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -58,8 +54,6 @@ namespace headman.Event
 
             result = "Кокос убил трех ваших товарищей.";
             Log += "Вы потеряли 3х товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _08_coconuts()

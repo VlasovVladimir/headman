@@ -31,8 +31,7 @@ namespace headman.Event
                 Moment.Population = 0;
             result = "Ваше бездействие повлекло гибель 15 товарищей.";
             Log += result;
-            Description desk = new Description(result, null);
-            desk.Show();
+            
         }
 
         public void Exit_2()
@@ -44,8 +43,7 @@ namespace headman.Event
             
             result = "Изгнанники обозлились, вернулись и покусали часть племени. В конечном счете вы лишились 20 товарищей.";
             Log += "Брат пошел на брата. Погибло 20 человек.";
-            Description desk = new Description(result, null);
-            desk.Show();
+            
         }
 
         public void Exit_3()
@@ -57,8 +55,7 @@ namespace headman.Event
             
             result = "Дым от молитвенных жезлов изгнал чуму из вашего племени. Ранее зараженных спасти не удалось. Погибло 10 человек.";
             Log += "Ваши молитвы спасли всех кроме 10 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
+           
         }
 
         public _01_plague()

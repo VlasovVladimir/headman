@@ -34,10 +34,8 @@ namespace headman.Event
             else
             {
                 result = "Боги даровали вам копья, но они у вас есть. Очень жаль!";
-                Log += " Как жаль, что они у вас есть.";
+                Log += result;
             }
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -53,7 +51,7 @@ namespace headman.Event
         public _96_pike()
         {
             Name = "Вы нашли копья";
-            Description = "Вы гуляли по острову и нашли топоры!";
+            Description = "Вы гуляли по острову и нашли копья!";
             Log = "";
 
             Exit1 = "Спасибо большое! ^_^";

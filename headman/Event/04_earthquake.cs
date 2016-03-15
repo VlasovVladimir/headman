@@ -30,8 +30,6 @@ namespace headman.Event
 
             result = "Землетрясение разрушило ваши дома";
             Log += result;
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -47,8 +45,6 @@ namespace headman.Event
 
                 result = "Не самое разумное решение - бежать под своды зданий во время землетрясения. Ваши дома разрушены. Трое товарищей погребены под их стенами.";
                 Log += "Вы потеряли дома и 3 товарищей.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
@@ -68,8 +64,6 @@ namespace headman.Event
 
                 result = "Вы приняли верное решение. Однако, один ваш товарищ погиб. Такова жизнь.";
                 Log += "Вы потеряли 1 товарища.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {

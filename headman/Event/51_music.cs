@@ -32,8 +32,6 @@ namespace headman.Event
 
             result = "Рэп сказался на психическом сознание ваших товарищей. Оказалось несколько настолько слабых духом, что, пропитавшись прослушанной музыкой, они ушли в леса. Их было пятеро.";
             Log += "Вы решили послушать рэп и потеряли 5 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -42,8 +40,6 @@ namespace headman.Event
 
             result = "Звуки шансона привлекли в ваши ряды одного аборигена, несмотря на то, что он немного тюремного вида, это дополнительные рабочие руки!";
             Log += "Шансон помог вам увеличить ваши ряды на 1 человека.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -55,8 +51,6 @@ namespace headman.Event
 
             result = "Колыбельная же усыпляет, не очевидно было, да? А спящие люди подвержены нападениям. В общем, ваши ряды поредели. На пятерых.";
             Log += "Колыбельная убила 5 ваших товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _51_music()

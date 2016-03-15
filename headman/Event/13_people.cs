@@ -33,15 +33,11 @@ namespace headman.Event
 
                 result = "Вы прогнали гостей. А они обозлились. И прихватили ваши фляги.";
                 Log += "Вы потеряли фляги.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
                 result = "Вы прогнали гостей. Ну, они и ушли. С вас и взять-то нечего.";
                 Log += "Вы их выгнали.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
         }
 
@@ -50,8 +46,6 @@ namespace headman.Event
 
             result = "А вы удивительно не удачливый стратег. Аборигены оказались натуральными хлебофобами. Убежали, даже и тени не видать.";
             Log += "Сбежали.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -60,8 +54,6 @@ namespace headman.Event
 
             result = "Аборигены к вам присоединились. Теперь ваша команда больше на 15 человек.";
             Log += "Вы приобрели 15 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _13_people()

@@ -38,8 +38,6 @@ namespace headman.Event
 
             result = "Вы достойно приняли неизбежное. Ваши дома разрушены. Погибло 5 отважных героев, которым удалось спасти половину ваших ресурсов.";
             Log += "Дома разрушены. 5 человек погибло. Половина ресурсов уничтожена.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()

@@ -30,8 +30,6 @@ namespace headman.Event
 
             result = "Вы попытались прогнать гостей, а они проявили свое уважение и признали ваше превосходство. Теперь в вашей команде 15 новых членов. И копья в придачу.";
             Log += "Вы приобрели 15 товарищей и набор копий.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }            
 
         public void Exit_2()
@@ -40,16 +38,12 @@ namespace headman.Event
 
             result = "Аборигены присоединились к вам. Теперь в вашей команде 15 новых членов.";
             Log += "Вы приобрели 15 товарищей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
         {
             result = "Аборигены удивились вашей аморфности и предпочли уйти от такого безэмоционального предводителя.";
             Log += "Ушли ни с чем.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _14_visitors()

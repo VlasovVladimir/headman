@@ -27,8 +27,6 @@ namespace headman.Event
         {
             result = "Людоеды решили, что ваша покладистость скрывает страшную угрозу. И ушли. Вот так.";
             Log += "Пришли и ушли.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -41,15 +39,11 @@ namespace headman.Event
                     Moment.Population = 0;
                 result = "Сражаться здорово. Но без пик как-то глупо. Мало того, что пять человек погибло в бою, еще пятерых съели.";
                 Log += "Вы потеряли 10 человек.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
                 result = "Вы приняли верное решение! Людоеды повержены, ваши потери нулевые.";
                 Log += "Без потерь.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
         }
 
@@ -62,8 +56,6 @@ namespace headman.Event
 
             result = "Неразговорчивые вам попались ганнибалы. Огрызнулись и устроили широкую трапезу. Ваши ряды проредились. На 8 человек.";
             Log += "Вы потеряли 8 человек.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _22_meneaters()

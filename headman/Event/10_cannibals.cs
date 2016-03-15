@@ -32,8 +32,6 @@ namespace headman.Event
 
             result = "Сдались. Принесли пятерых в жертву. Людоеды ушли.";
             Log += "Вы потеряли 5х людей.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -46,15 +44,11 @@ namespace headman.Event
                     Moment.Population = 0;
                 result = "Сражаться здорово. Но без пик как-то глупо. Мало того, что пять человек погибло в бою, еще пятерых съели.";
                 Log += "Вы потеряли 10 человек.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
             else
             {
                 result = "Вы приняли верное решение! Людоеды повержены, ваши потери нулевые.";
                 Log += "Без потерь.";
-                Description desk = new Description(result, null);
-                desk.Show();
             }
         }
 
@@ -64,8 +58,6 @@ namespace headman.Event
             
             result = "Да у вас дар убеждения! В вашем полку прибыло.";
             Log += "Вы получили 5 человек в команду.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _10_cannibals()

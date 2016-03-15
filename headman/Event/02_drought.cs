@@ -32,8 +32,6 @@ namespace headman.Event
             
             result = "Вы потеряли 10ед. воды.";
             Log += result;
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_2()
@@ -50,8 +48,6 @@ namespace headman.Event
 
             result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только 12ед. воды, но 1 особенно рьяного копателя.";
             Log += "Вы потеряли 12 ед.воды и 1 товарища.";
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public void Exit_3()
@@ -63,8 +59,6 @@ namespace headman.Event
 
             result = "Ваши молитвы были услышаны, но не сразу. Вы потеряли 10ед.воды.";
             Log += result;
-            Description desk = new Description(result, null);
-            desk.Show();
         }
 
         public _02_drought()
