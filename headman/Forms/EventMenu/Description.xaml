@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.EventMenu"
         mc:Ignorable="d"
-        Title="Description" Height="126" Width="300">
+        Title="Description" Height="126" Width="300" WindowStartupLocation="CenterScreen">
     <Grid>
         <TextBox x:Name="description" HorizontalAlignment="Left" Height="76" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272" IsEnabled="False"/>
 

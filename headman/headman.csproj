@@ -153,10 +153,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Forms\RegionMenu\DefaultRegionMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Forms\Saving\Saving.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,9 +174,6 @@
     </Compile>
     <Compile Include="Forms\Menus\MiniMenu.xaml.cs">
       <DependentUpon>MiniMenu.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\RegionMenu\DefaultRegionMenu.xaml.cs">
-      <DependentUpon>DefaultRegionMenu.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
