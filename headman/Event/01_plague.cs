@@ -25,37 +25,63 @@ namespace headman.Event
 
         public void Exit_1()
         {
+            int buf = Moment.Population;
+
             if (Moment.Population >= 15)
                 Moment.Population -= 15;
             else
                 Moment.Population = 0;
-            result = "Ваше бездействие повлекло гибель 15 товарищей.";
+
+            if (buf != 0)
+                result = "Ваше бездействие повлекло гибель " + buf + " товарищей.";
+            else
+                result = "";
             Log += result;
             
         }
 
         public void Exit_2()
         {
+            int buf = Moment.Population;
+
             if (Moment.Population >= 20)
                 Moment.Population -= 20;
             else
                 Moment.Population = 0;
-            
-            result = "Изгнанники обозлились, вернулись и покусали часть племени. В конечном счете вы лишились 20 товарищей.";
-            Log += "Брат пошел на брата. Погибло 20 человек.";
-            
+
+            if (buf != 0)
+            {
+                result = "Изгнанники обозлились, вернулись и покусали часть племени. В конечном счете вы лишились " + buf + " товарищей.";
+                Log += "Брат пошел на брата. Погибло " + buf + " человек.";
+            }
+            else
+            {
+                result = "";
+                Log += "";
+            }
+
         }
 
         public void Exit_3()
         {
+            int buf = Moment.Population;
+
             if (Moment.Population >= 10)
                 Moment.Population -= 10;
             else
                 Moment.Population = 0;
-            
-            result = "Дым от молитвенных жезлов изгнал чуму из вашего племени. Ранее зараженных спасти не удалось. Погибло 10 человек.";
-            Log += "Ваши молитвы спасли всех кроме 10 товарищей.";
-           
+
+            if (buf != 0)
+            {
+                result = "Дым от молитвенных жезлов изгнал чуму из вашего племени. Ранее зараженных спасти не удалось. Погибло " + buf + " человек.";
+                Log += "Ваши молитвы спасли всех кроме " + buf + " человек.";
+            }
+            else
+            {
+                result = "";
+                Log += "";
+            }
+                   
         }
 
         public _01_plague()

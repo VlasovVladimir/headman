@@ -26,13 +26,23 @@ namespace headman.Event
 
         public void Exit_1()
         {
-            if (Moment.Water >= 8)
-                Moment.Water -= 8;
+            int buf = Moment.Wood;
+
+            if (Moment.Wood >= 8)
+                Moment.Wood -= 8;
             else
-                Moment.Water = 0;
-             
-            result = "Вы потеряли 8ед. дерева.";
-            Log += result;
+                Moment.Wood = 0;
+
+            if (buf != 0)
+            {
+                result = "Вы потеряли " + buf + "ед. дерева.";
+                Log += result;
+            }
+            else
+            {
+                result = "";
+                Log += "";
+            }
         }
 
         public void Exit_2()
@@ -47,6 +57,7 @@ namespace headman.Event
         {
             if (Moment.Water >= 2)
             {
+                int bufW = Moment.Wood;
                 Moment.Water -= 2;
 
                 if (Moment.Wood >= 3)
@@ -54,8 +65,16 @@ namespace headman.Event
                 else
                     Moment.Wood = 0;
 
-                result = "Вам удалось победить вредителей. Потеряны лишь 3ед. дерева";
-                Log += "Вы потеряли 3ед. дерева";
+                if (bufW != 0)
+                {
+                    result = "Вам удалось победить вредителей. Потеряны лишь " + bufW + "ед. дерева";
+                    Log += "Вы потеряли " + bufW + "ед. дерева";
+                }
+                else
+                {
+                    result = "";
+                    Log += "";
+                }
             }
             else
             {

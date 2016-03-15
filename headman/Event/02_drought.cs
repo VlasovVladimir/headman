@@ -25,17 +25,30 @@ namespace headman.Event
 
         public void Exit_1()
         {
+            int buf = Moment.Water;
+
             if (Moment.Water >= 10)
                 Moment.Water -= 10;
             else
                 Moment.Water = 0;
-            
-            result = "Вы потеряли 10ед. воды.";
-            Log += result;
+
+            if (buf != 0)
+            {
+                result = "Вы потеряли " + buf + " ед.воды";
+                Log += result;
+            }
+            else
+            {
+                result = "";
+                Log += "";
+            }
         }
 
         public void Exit_2()
         {
+            int bufW = Moment.Water;
+            int bufP = Moment.Population;
+
             if (Moment.Water >= 12)
                 Moment.Water -= 12;
             else
@@ -46,19 +59,36 @@ namespace headman.Event
             else
                 Moment.Population = 0;
 
-            result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только 12ед. воды, но 1 особенно рьяного копателя.";
-            Log += "Вы потеряли 12 ед.воды и 1 товарища.";
+            if ((bufW != 0) && (bufP != 0))
+            {
+                result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только " + bufW + " ед.воды, но 1 особенно рьяного копателя.";
+                Log += "Вы потеряли " + bufW + " ед.воды и 1 товарища.";
+            }
+            else
+            {
+                result = "Бесполезно пытаться идти против Властителей. Вы потеряли 1 особо рьяного копателя.";
+                Log += "Вы потеряли 1 товарища";
+                
+            }
         }
 
         public void Exit_3()
         {
+            int buf = Moment.Water;
+
             if (Moment.Water >= 10)
                 Moment.Water -= 10;
             else
                 Moment.Water = 0;
 
-            result = "Ваши молитвы были услышаны, но не сразу. Вы потеряли 10ед.воды.";
-            Log += result;
+            if (buf != 0)
+            {
+                result = "Ваши молитвы были услышаны, но не сразу. Вы потеряли " + buf + "ед. воды.";
+                Log += result;
+            }
+            else
+                result = "";
+                Log += "";            
         }
 
         public _02_drought()

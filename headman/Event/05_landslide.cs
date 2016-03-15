@@ -40,13 +40,23 @@ namespace headman.Event
         {
             if (Moment.Items[4])
             {
+                int buf = Moment.Water;
+
                 if (Moment.Water >= 1)
                     Moment.Water -= 1;
                 else
                     Moment.Water = 0;
 
-                result = "Ополозень прошел стороной от вашего дома. Ушло чуть больше воды, чем обычно.";
-                Log += "Вы потеряли 1ед. воды.";
+                if (buf != 0)
+                {
+                    result = "Ополозень прошел стороной от вашего дома. Ушло чуть больше воды, чем обычно.";
+                    Log += "Вы потеряли " + buf + "ед. воды.";
+                }
+                else
+                {
+                    result = "Ополозень прошел стороной от вашего дома.";
+                    Log += result;
+                }
             }
             else
             {
