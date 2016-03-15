@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.EventMenu"
         mc:Ignorable="d"
-        Title="Упс!" Height="351" Width="564" Closing="StopWindowClosing">
+        Title="Упс!" Height="351" Width="564" Closing="StopWindowClosing" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-8,0">
         <Button x:Name="Exit1" HorizontalAlignment="Left" Height="71" Margin="35,235,0,0" VerticalAlignment="Top" Width="145" Click="Exit1_Click">
             <Button.Content>

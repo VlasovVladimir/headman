@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.Saving"
         mc:Ignorable="d"
-        Title="Сохранения меню" Height="400" Width="600">
+        Title="Сохранения меню" Height="400" Width="600" WindowStartupLocation="CenterScreen">
     <Grid>
         <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="350" Margin="25,10,0,0" VerticalAlignment="Top" Width="250" IsEnabled="False"/>
         <TextBox x:Name="Info1" HorizontalAlignment="Left" Height="20" Margin="310,10,0,0" TextWrapping="Wrap" Text="Номер слота" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
