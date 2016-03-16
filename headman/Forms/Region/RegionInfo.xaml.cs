@@ -27,7 +27,7 @@ namespace headman.Forms.Region
         {
             InitializeComponent();
             Moment = moment;
-            this.Name.Text = moment.Regions[ind].Name;
+            this.NameInfo.Text = moment.Regions[ind].Name;
             this.StonesInfo.Text = moment.Regions[ind].Stone.ToString();
             this.WaterInfo.Text = moment.Regions[ind].Water.ToString();
             this.WoodenInfo.Text = moment.Regions[ind].Wood.ToString();
