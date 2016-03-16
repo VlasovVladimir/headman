@@ -14,5 +14,7 @@ namespace headman.Event
         string Name { get; set; }
         string Description { get; set; }
         string Log { get; set; }
+
+        void action();
     }
 }

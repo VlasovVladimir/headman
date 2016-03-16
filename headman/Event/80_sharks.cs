@@ -18,9 +18,9 @@ namespace headman.Event
         public string Description { get; set; }
         public string Log { get; set; }
 
-        public _80_sharks()
+        public void action()
         {
-            Name = "Нападение акул";
+
             int buf = Moment.Population;
 
             if (Moment.Population >= 7)
@@ -30,7 +30,12 @@ namespace headman.Event
 
             buf = buf - Moment.Population;
             Description = "Пока вы переплывали с острова на остров, Вам повстречалась стая акул. Вы мужественно старались сражаться, однако, понесли потери. Ваша лодка пошла ко дну, и " + buf + " человек вместе с ней.";
-            Log = "Нападение. Потеря лодки и " + buf + " товарищей.";
+            Log = "Нападение акул. Потеря лодки и " + buf + " товарищей.";
+        }
+
+        public _80_sharks()
+        {
+            Name = "Нападение акул";
         }
     }
 }
