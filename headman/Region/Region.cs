@@ -22,6 +22,15 @@ namespace headman.Region
             Stone = stone;
             Water = water;
         }
+
+        public Region(string name, int stone, int wood, int water, IRegionEvent someEvent)
+        {
+            Name = name;
+            Wood = wood;
+            Stone = stone;
+            Water = water;
+            Event = someEvent;
+        }
         
     }
 }

@@ -96,6 +96,9 @@
     <Compile Include="Forms\EventMenu\EventMenuForm.xaml.cs">
       <DependentUpon>EventMenuForm.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\EventMenu\IslandEvent.xaml.cs">
+      <DependentUpon>IslandEvent.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Help\HelpWindow.xaml.cs">
       <DependentUpon>HelpWindow.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\EventMenu\EventMenuForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\EventMenu\IslandEvent.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
