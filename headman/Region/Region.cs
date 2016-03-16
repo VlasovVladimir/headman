@@ -8,10 +8,10 @@ namespace headman.Region
 {
     public class Region 
     {
-        string Name;
-        int Wood;
-        int Stone;
-        int Water;
+        public string Name;
+        public int Wood;
+        public int Stone;
+        public int Water;
         bool IsAvailabled;
 
         public Region(string name, int stone, int wood, int water)
