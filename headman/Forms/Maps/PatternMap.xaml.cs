@@ -162,7 +162,8 @@ namespace headman.Forms.Maps
                 EventMenuForm curentEventMenu = new EventMenuForm(currentEvent);
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();
-
+                Description desc = new Description(currentEvent.result, null);
+                desc.ShowDialog();
                 Log.Text += "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString() + ". " + currentEvent.Log + "\n";
                 currentEvent = null;
                 Start_Click(null, null);
@@ -340,6 +341,7 @@ namespace headman.Forms.Maps
 
         private void MoveToAnotherIsland()
         {
+            
 
         }
 
