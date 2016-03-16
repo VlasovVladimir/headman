@@ -31,7 +31,11 @@ namespace headman.Forms.Region
             this.StonesInfo.Text = moment.Regions[ind].Stone.ToString();
             this.WaterInfo.Text = moment.Regions[ind].Water.ToString();
             this.WoodenInfo.Text = moment.Regions[ind].Wood.ToString();
+            if ((this.Moment.CurrentRegionIndex != ind) && (Math.Abs(this.Moment.CurrentRegionIndex - ind) <= 2 ))
+                this.MoveTo.IsEnabled = true;
         }
+
+        
 
         private void button_Click(object sender, RoutedEventArgs e)
         {

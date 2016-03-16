@@ -12,7 +12,6 @@ namespace headman.Region
         public int Wood;
         public int Stone;
         public int Water;
-        bool IsAvailabled;
 
         public Region(string name, int stone, int wood, int water)
         {
@@ -20,7 +19,6 @@ namespace headman.Region
             Wood = wood;
             Stone = stone;
             Water = water;
-            IsAvailabled = false;
         }
         
     }
