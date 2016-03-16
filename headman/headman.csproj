@@ -77,6 +77,7 @@
     <Compile Include="Event\54_letter.cs" />
     <Compile Include="Event\70_Bzzz.cs" />
     <Compile Include="Event\80_sharks.cs" />
+    <Compile Include="Event\81_aborigens.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />
     <Compile Include="Event\93_flack.cs" />
