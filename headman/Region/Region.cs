@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using headman.Event;
 
 namespace headman.Region
 {
     public class Region 
     {
+        public IRegionEvent Event;
         public string Name;
         public int Wood;
         public int Stone;
