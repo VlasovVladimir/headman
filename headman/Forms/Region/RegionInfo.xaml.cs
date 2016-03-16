@@ -10,7 +10,9 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
+using headman.СurrentMoment;
 
 namespace headman.Forms.Region
 {
@@ -19,8 +21,16 @@ namespace headman.Forms.Region
     /// </summary>
     public partial class RegionInfo : Window
     {
-        public RegionInfo()
+        CurrentMoment Moment;
+        public RegionInfo(CurrentMoment moment)
         {
+            InitializeComponent();
+            Moment = moment;
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
