@@ -41,7 +41,7 @@ namespace headman.Forms.Maps
             Randomizator = new Random();
             currentEvent = null;
             Pause.IsEnabled = false;
-            TikTacSpeed = 2000;
+            TikTacSpeed = 200;
 
             MiniMenuOpened = false;
 
@@ -302,13 +302,6 @@ namespace headman.Forms.Maps
         {
 
             int people = this.RepositorySingle.currentSituation.Population;
-            if (people <= 0)
-            {
-                Pause_Click(null, null);
-                Start.IsEnabled = false;
-                SpeedUp.IsEnabled = false;
-                MessageBox.Show("GAME OVER");
-            }
 
             if (people <= 50)
                 this.RepositorySingle.currentSituation.Water -= 1;
@@ -327,11 +320,21 @@ namespace headman.Forms.Maps
                 people -= 1;
 
 
-            this.RepositorySingle.currentSituation.Population = people;
 
             GetStones.IsEnabled = true;
             GetWood.IsEnabled = true;
             GetWater.IsEnabled = true;
+
+            if (people <= 0)
+            {
+                people = 0;
+                Pause_Click(null, null);
+                Start.IsEnabled = false;
+                SpeedUp.IsEnabled = false;
+                MessageBox.Show("GAME OVER");
+            }
+
+            this.RepositorySingle.currentSituation.Population = people;
 
         }
 
@@ -377,6 +380,8 @@ namespace headman.Forms.Maps
             GetWater.IsEnabled = false;
         }
         #endregion
+
+        #region Building
 
         private void Get0_Click(object sender, RoutedEventArgs e)
         {
@@ -483,5 +488,6 @@ namespace headman.Forms.Maps
                 MessageBox.Show("Не хватает ресурсов");
             }
         }
+        #endregion
     }
 }
