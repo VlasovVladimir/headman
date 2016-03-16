@@ -32,6 +32,7 @@ namespace headman.Event
             else
                 Moment.Population = 0;
 
+            buf = buf - Moment.Population;
             if (buf != 0)
                 result = "Ваше бездействие повлекло гибель " + buf + " товарищей.";
             else
@@ -49,6 +50,7 @@ namespace headman.Event
             else
                 Moment.Population = 0;
 
+            buf = buf - Moment.Population;
             if (buf != 0)
             {
                 result = "Изгнанники обозлились, вернулись и покусали часть племени. В конечном счете вы лишились " + buf + " товарищей.";
@@ -71,6 +73,7 @@ namespace headman.Event
             else
                 Moment.Population = 0;
 
+            buf = buf - Moment.Population;
             if (buf != 0)
             {
                 result = "Дым от молитвенных жезлов изгнал чуму из вашего племени. Ранее зараженных спасти не удалось. Погибло " + buf + " человек.";

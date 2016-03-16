@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace headman.Region
+namespace headman.Forms.Region
 {
     /// <summary>
     /// Логика взаимодействия для RegionInfo.xaml
@@ -21,7 +21,6 @@ namespace headman.Region
     {
         public RegionInfo()
         {
-            InitializeComponent();
         }
     }
 }

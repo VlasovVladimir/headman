@@ -32,6 +32,7 @@ namespace headman.Event
             else
                 Moment.Water = 0;
 
+            buf = buf - Moment.Water;
             if (buf != 0)
             {
                 result = "Вы потеряли " + buf + " ед.воды";
@@ -59,6 +60,8 @@ namespace headman.Event
             else
                 Moment.Population = 0;
 
+            bufW = bufW - Moment.Water;
+            bufP = bufP - Moment.Population;
             if ((bufW != 0) && (bufP != 0))
             {
                 result = "Бесполезно пытаться идти против Властителей. Вы потеряли не только " + bufW + " ед.воды, но 1 особенно рьяного копателя.";
@@ -81,6 +84,7 @@ namespace headman.Event
             else
                 Moment.Water = 0;
 
+            buf = buf - Moment.Water;
             if (buf != 0)
             {
                 result = "Ваши молитвы были услышаны, но не сразу. Вы потеряли " + buf + "ед. воды.";

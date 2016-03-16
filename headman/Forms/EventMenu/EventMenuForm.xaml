@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Упс!" Height="351" Width="564" Closing="StopWindowClosing" WindowStartupLocation="CenterScreen">
     <Grid Margin="0,0,-8,0">
-        <Button x:Name="Exit1" HorizontalAlignment="Left" Height="36" Margin="35,195,0,0" VerticalAlignment="Top" Width="480" Click="Exit1_Click">
+        <Button x:Name="Exit1" HorizontalAlignment="Left" Height="35" Margin="35,195,0,0" VerticalAlignment="Top" Width="480" Click="Exit1_Click">
             <Button.Content>
                 <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button.Content>
@@ -17,7 +17,7 @@
                 <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button.Content>
         </Button>
-        <Button x:Name="Exit3" HorizontalAlignment="Left" Height="36" Margin="35,275,0,0" VerticalAlignment="Top" Width="480" Click="Exit3_Click">
+        <Button x:Name="Exit3" HorizontalAlignment="Left" Height="35" Margin="35,275,0,0" VerticalAlignment="Top" Width="480" Click="Exit3_Click">
             <Button.Content>
                 <TextBlock Text="" TextWrapping="Wrap" TextAlignment="Center"/>
             </Button.Content>

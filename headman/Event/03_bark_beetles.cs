@@ -33,6 +33,7 @@ namespace headman.Event
             else
                 Moment.Wood = 0;
 
+            buf = buf - Moment.Wood;
             if (buf != 0)
             {
                 result = "Вы потеряли " + buf + "ед. дерева.";
@@ -65,6 +66,7 @@ namespace headman.Event
                 else
                     Moment.Wood = 0;
 
+                bufW = bufW - Moment.Wood;
                 if (bufW != 0)
                 {
                     result = "Вам удалось победить вредителей. Потеряны лишь " + bufW + "ед. дерева";

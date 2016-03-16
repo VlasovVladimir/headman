@@ -20,7 +20,8 @@ namespace headman.СurrentMoment
         public int Wood { get; set; }
         public int Stone { get; set; }
 
-        public List<IRegion> Regions {get; set;}
+        public Region.Region Region { get; set; }
+        public List<Region.Region> Regions {get; set;}
         public List<IEvent> GoodEvents { get; set; }
         public List<IEvent> BadEvents { get; set; }
         public bool[] Items { get; set; }

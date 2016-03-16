@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -97,12 +99,16 @@
     <Compile Include="Forms\MapChoise\MapChoise.xaml.cs">
       <DependentUpon>MapChoise.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Maps\First\MomentCreator_First.cs" />
     <Compile Include="Forms\Maps\StartCurrentPatternMomentCreator.cs" />
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\NewGameMenu\NewGameChoise.xaml.cs">
       <DependentUpon>NewGameChoise.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Region\RegionInfo.xaml.cs">
+      <DependentUpon>RegionInfo.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Saving\Saving.xaml.cs">
       <DependentUpon>Saving.xaml</DependentUpon>
@@ -112,10 +118,7 @@
     </Compile>
     <Compile Include="GeneralInfo.cs" />
     <Compile Include="Places.cs" />
-    <Compile Include="Region\IRegion.cs" />
-    <Compile Include="Region\RegionInfo.xaml.cs">
-      <DependentUpon>RegionInfo.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Region\Region.cs" />
     <Compile Include="Repository\FirstRepo.cs" />
     <Compile Include="Repository\IRepo.cs" />
     <Compile Include="XamlMaps\FirstMap.xaml.cs">
@@ -157,6 +160,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\Region\RegionInfo.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\Saving\Saving.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -183,10 +190,6 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Region\RegionInfo.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="XamlMaps\FirstMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

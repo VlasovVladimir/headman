@@ -47,6 +47,7 @@ namespace headman.Event
                 else
                     Moment.Water = 0;
 
+                buf = buf - Moment.Water;
                 if (buf != 0)
                 {
                     result = "Ополозень прошел стороной от вашего дома. Ушло чуть больше воды, чем обычно.";
