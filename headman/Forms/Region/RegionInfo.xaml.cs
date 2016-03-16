@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using headman.СurrentMoment;
 using headman.Region;
+using headman.Forms.EventMenu;
 
 namespace headman.Forms.Region
 {
@@ -51,9 +52,16 @@ namespace headman.Forms.Region
 
             for (int i = 0; i < Moment.Items.Length; i++)
             {
-                if ((i != 0) && (i != 2))
+                if ((i != 0) && (i != 2) && (i != 5))
                     Moment.Items[i] = false;                
             }
+
+            if (Moment.Regions[index].Event!=null)
+            {
+                IslandEvent EventWindow = new IslandEvent(Moment.Regions[index].Event);
+
+            }
+                
             
         }
     }
