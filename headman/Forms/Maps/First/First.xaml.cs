@@ -507,6 +507,8 @@ namespace headman.Forms.Maps.First
             this.Start_Click(null, null);
         }
 
+        #region RegionInfoCall
+
         private void Green_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
             AddInformation(0);
@@ -601,5 +603,6 @@ namespace headman.Forms.Maps.First
         {
             AddInformation(18);
         }
+        #endregion
     }
 }

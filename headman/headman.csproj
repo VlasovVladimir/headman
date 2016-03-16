@@ -76,6 +76,7 @@
     <Compile Include="Event\53_why.cs" />
     <Compile Include="Event\54_letter.cs" />
     <Compile Include="Event\70_Bzzz.cs" />
+    <Compile Include="Event\80_sharks.cs" />
     <Compile Include="Event\91_boat.cs" />
     <Compile Include="Event\92_axe.cs" />
     <Compile Include="Event\93_flack.cs" />
@@ -85,6 +86,7 @@
     <Compile Include="Event\FabricOfAllEvents.cs" />
     <Compile Include="Event\IEvent.cs" />
     <Compile Include="Event\IFabricEvent.cs" />
+    <Compile Include="Event\IRegionEvent.cs" />
     <Compile Include="Event\TestBadEvent.cs" />
     <Compile Include="Event\TestGoodEvent.cs" />
     <Compile Include="Forms\EventMenu\Description.xaml.cs">
