@@ -23,23 +23,38 @@ namespace headman.Forms.Region
     public partial class RegionInfo : Window
     {
         CurrentMoment Moment;
+        int index;
+
         public RegionInfo(CurrentMoment moment, int ind)
         {
             InitializeComponent();
             Moment = moment;
+            index = ind;
             this.NameInfo.Text = moment.Regions[ind].Name;
             this.StonesInfo.Text = moment.Regions[ind].Stone.ToString();
             this.WaterInfo.Text = moment.Regions[ind].Water.ToString();
             this.WoodenInfo.Text = moment.Regions[ind].Wood.ToString();
-            if ((this.Moment.CurrentRegionIndex != ind) && (Math.Abs(this.Moment.CurrentRegionIndex - ind) <= 2 ))
+            if ((this.Moment.CurrentRegionIndex != ind) && (Moment.Items[0]) && (Math.Abs(this.Moment.CurrentRegionIndex - ind) <= 2 ))
                 this.MoveTo.IsEnabled = true;
         }
 
         
 
-        private void button_Click(object sender, RoutedEventArgs e)
+        private void MoveTo_Click(object sender, RoutedEventArgs e)
         {
+            Moment.CurrentRegionIndex = this.index;
+            Moment.Wood = 0;
+            Moment.Stone = 0;
 
+            if (!Moment.Items[2])
+                Moment.Water = 0;
+
+            for (int i = 0; i < Moment.Items.Length; i++)
+            {
+                if ((i != 0) && (i != 2))
+                    Moment.Items[i] = false;                
+            }
+            
         }
     }
 }
