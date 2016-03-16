@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Repository;
 using headman.Forms.Maps;
+using headman.Forms.Maps.First;
 
 namespace headman.Forms.MapChoise
 {
@@ -49,6 +50,14 @@ namespace headman.Forms.MapChoise
                     case ("Test map"):
                         {
                             TestMap map = new TestMap(currentRepository);
+                            this.Close();
+                            map.Show();
+                            return;
+                        }
+
+                    case ("First"):
+                        {
+                            First map = new First(currentRepository);
                             this.Close();
                             map.Show();
                             return;

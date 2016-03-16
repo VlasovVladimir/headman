@@ -11,7 +11,8 @@ namespace headman
         public List<string> Maps = new List<string>()
         {
             "Pattern",
-            "Test map"
+            "Test map",
+            "First"
         };
         public List<string> Savings = new List<string>();
     }
