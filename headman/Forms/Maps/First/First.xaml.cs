@@ -16,6 +16,7 @@ using headman.Repository;
 using headman.Event;
 using headman.Forms.EventMenu;
 using headman.Forms.Maps;
+using headman.Forms.Region;
 
 
 namespace headman.Forms.Maps.First
@@ -33,7 +34,7 @@ namespace headman.Forms.Maps.First
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
-            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator(); // тут менять при создании новой карты
+            MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
             RepositorySingle.currentSituation = momentCreator.Create();
 
             Timer = 0;
@@ -498,99 +499,107 @@ namespace headman.Forms.Maps.First
         }
         #endregion
 
+        private void AddInformation(int ind)
+        {
+            RegionInfo Info = new RegionInfo(RepositorySingle.currentSituation, ind);
+            this.Pause_Click(null, null);
+            Info.ShowDialog();
+            this.Start_Click(null, null);
+        }
+
         private void Green_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            MessageBox.Show("эта штука работает");
+            AddInformation(0);
         }
 
         private void DarkBlue_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(1);
         }
 
         private void Turquoise_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(2);
         }
 
         private void Violet_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(3);
         }
 
         private void Blue_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(4);
         }
 
         private void Lilac_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(5);
         }
 
         private void Gray_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(6);
         }
 
         private void Eared_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(7);
         }
 
         private void Marsh_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(8);
         }
 
         private void Ruby_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(9);
         }
 
         private void Pink_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(10);
         }
 
         private void Black_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(11);
         }
 
         private void Orange_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(12);
         }
 
         private void LittleTurquoise_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(13);
         }
 
         private void DarkGreen_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(14);
         }
 
         private void LightGreen_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(15);
         }
 
         private void Left_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(16);
         }
 
         private void Right_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(17);
         }
 
         private void Red_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-
+            AddInformation(18);
         }
     }
 }

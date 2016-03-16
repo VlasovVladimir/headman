@@ -22,7 +22,7 @@ namespace headman.Forms.Maps.First
             output.GoodEvents = eFabric.GoodEvents();
 
             output.Population = 100;
-            output.Regions = null; //тут тоже
+            output.Regions = new List<headman.Region.Region>();
             output.Stone = 0;
             output.Wood = 0;
             output.Water = 5;
