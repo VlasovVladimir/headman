@@ -7,12 +7,15 @@ using headman.Region;
 using headman.СurrentMoment;
 using headman.Event;
 
+using System.Windows.Shapes;
+
 namespace headman.Forms.Maps.First
 {
     class MomentCreator_First
     {
+        List<Path> Islands;
 
-        public CurrentMoment Create()
+        public CurrentMoment Create(List<Path> islands)
         {
 
             CurrentMoment output = new CurrentMoment();
@@ -22,6 +25,7 @@ namespace headman.Forms.Maps.First
             output.GoodEvents = eFabric.GoodEvents();
 
             //output.CurrentRegionIndex = 0;
+            output.Islands = islands;
             output.Population = 100;
             output.Regions = new List<headman.Region.Region>();
             output.Stone = 0;

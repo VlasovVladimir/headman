@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,11 @@ namespace headman.Forms.Region
 
         private void MoveTo_Click(object sender, RoutedEventArgs e)
         {
+            int ind = Moment.CurrentRegionIndex;
+
+            Moment.Islands[ind].Stroke = new SolidColorBrush(Colors.Black);
+            Moment.Islands[this.index].Stroke = new SolidColorBrush(Colors.Gold);
+
             Moment.CurrentRegionIndex = this.index;
             Moment.Wood = 0;
             Moment.Stone = 0;
@@ -60,6 +66,8 @@ namespace headman.Forms.Region
 
             if (Moment.Regions[index].Event!=null)
             {
+                Moment.Regions[index].Event.Moment = Moment;
+                Moment.Regions[index].Event.action();
                 IslandEvent EventWindow = new IslandEvent(Moment.Regions[index].Event);
                 EventWindow.ShowDialog();
             }

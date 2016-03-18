@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using headman.Region;
 using headman.Event;
 using System.Xml.Serialization;
+using System.Windows.Shapes;
 
 namespace headman.СurrentMoment
 {
@@ -21,6 +22,7 @@ namespace headman.СurrentMoment
         public int Stone { get; set; }
 
         public int CurrentRegionIndex { get; set; }
+        public List<Path> Islands { get; set; }
         public List<Region.Region> Regions {get; set;}
         public List<IEvent> GoodEvents { get; set; }
         public List<IEvent> BadEvents { get; set; }

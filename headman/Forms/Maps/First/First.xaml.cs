@@ -32,11 +32,6 @@ namespace headman.Forms.Maps.First
         {
             InitializeComponent();
 
-            RepositorySingle = InputRepositorySingle;
-            RepositorySingle.Map = this;
-            MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
-            RepositorySingle.currentSituation = momentCreator.Create();
-
             Islands.Add(this.Green);
             Islands.Add(this.DarkBlue);
             Islands.Add(this.Turquoise);
@@ -57,6 +52,13 @@ namespace headman.Forms.Maps.First
             Islands.Add(this.Right);
             Islands.Add(this.Red);
 
+            RepositorySingle = InputRepositorySingle;
+            RepositorySingle.Map = this;
+            MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
+            RepositorySingle.currentSituation = momentCreator.Create(Islands);
+
+            //Islands.Clear();
+
       
 
 
@@ -71,6 +73,9 @@ namespace headman.Forms.Maps.First
 
             this.InfoRefresh();
             Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
+            RepositorySingle.currentSituation.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
+                    = new SolidColorBrush(Colors.Gold);
+
             MonthFinished += () => { RepositorySingle.currentSituation.GameMonth += 1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
             MonthFinished += EventCaller;
             MonthFinished += StandartTurn;
@@ -375,12 +380,6 @@ namespace headman.Forms.Maps.First
 
         }
 
-        private void MoveToAnotherIsland()
-        {
-            
-
-        }
-
         #region Get_Resourses
         private void GetStones_Click(object sender, RoutedEventArgs e)
         {
@@ -392,6 +391,8 @@ namespace headman.Forms.Maps.First
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
 
         private void GetWood_Click(object sender, RoutedEventArgs e)
@@ -404,6 +405,8 @@ namespace headman.Forms.Maps.First
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
 
         private void GetWater_Click(object sender, RoutedEventArgs e)
@@ -416,6 +419,8 @@ namespace headman.Forms.Maps.First
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
         #endregion
 
@@ -430,6 +435,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Items[0] = true;
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= RepositorySingle.currentSituation.Population / 4;
+                this.InfoRefresh();
             }
             else
             {
@@ -448,6 +454,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 12;
                 RepositorySingle.currentSituation.Stone -= 10;
+                this.InfoRefresh();
             }
             else
             {
@@ -464,6 +471,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Items[2] = true;
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 25;
+                this.InfoRefresh();
             }
             else
             {
@@ -482,6 +490,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 12;
                 RepositorySingle.currentSituation.Stone -= 10;
+                this.InfoRefresh();
             }
             else
             {
@@ -501,6 +510,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 10;
                 RepositorySingle.currentSituation.Stone -= 2;
+                this.InfoRefresh();
             }
             else
             {
@@ -520,6 +530,7 @@ namespace headman.Forms.Maps.First
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 15;
                 RepositorySingle.currentSituation.Stone -= 15;
+                this.InfoRefresh();
             }
             else
             {
@@ -534,7 +545,7 @@ namespace headman.Forms.Maps.First
             this.Pause_Click(null, null);
             Info.ShowDialog();
             this.Start_Click(null, null);
-            
+            this.InfoRefresh();
         }
 
         #region RegionInfoCall
