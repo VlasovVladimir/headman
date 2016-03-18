@@ -56,6 +56,7 @@ namespace headman
 
         private void Upload_Click(object sender, RoutedEventArgs e)
         {
+            this.Hide();
             Saving uploadMenu = new Saving(RepositorySingle);
             uploadMenu.Show();
         }

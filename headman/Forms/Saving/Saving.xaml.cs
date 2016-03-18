@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
+using System.Xml.Serialization;
 using headman.Repository;
 using headman.Forms.Maps;
 using headman.Forms.Maps.First;
@@ -31,6 +33,23 @@ namespace headman.Forms.Saving
         {
             this.RepositirySingle = inputSingle;
             InitializeComponent();
+            List<string> saves = new List<string>();
+            string path = @"\\Saves\list.txt";
+            
+            if (File.Exists(path))
+                using (StreamReader sr = new StreamReader(path, true))      
+                {
+                    string line;
+                    while ((line =  sr.ReadLine()) != null)
+                    {
+                        saves.Add(line);
+                    }
+                }
+            else
+                using (FileStream fs = new FileStream(path, FileMode.CreateNew))
+                {
+                }
+
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
@@ -40,6 +59,82 @@ namespace headman.Forms.Saving
                 RepositirySingle.MainMenu.Show();
             else
                 RepositirySingle.MiniMenu.Show();
+        }
+
+        private void Load_Click(object sender, RoutedEventArgs e)
+        {
+            if (SavingList.SelectedItem!=null)
+                if (RepositirySingle.Map == null)
+                {
+                    CurrentMoment moment = LoadMoment((string)(SavingList.SelectedItem));
+                
+                    switch (moment.MapName)
+                    {
+                        case ("Pattern"):
+                            {
+                                PatternMap map = new PatternMap(RepositirySingle);
+                                this.Close();
+                                map.Show();
+                                RepositirySingle.currentSituation = moment;
+                                return;
+                            }
+
+
+                        case ("Test map"):
+                            {
+                                TestMap map = new TestMap(RepositirySingle);
+                                this.Close();
+                                map.Show();
+                                RepositirySingle.currentSituation = moment;
+                                return;
+                            }
+
+                        case ("First"):
+                            {
+                                First map = new First(RepositirySingle);
+                                this.Close();
+                                map.Show();
+                                RepositirySingle.currentSituation = moment;
+                                return;
+                            }
+
+                        case ("Second"):
+                            {
+                                Second map = new Second(RepositirySingle);
+                                this.Close();
+                                map.Show();
+                                RepositirySingle.currentSituation = moment;
+                                return;
+                            }
+                    }
+            }
+        }
+
+        private CurrentMoment LoadMoment(string name)
+        {
+            CurrentMoment output = new CurrentMoment();
+
+            XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
+            string path = @"\Saves\" + name + ".xml";
+            if (File.Exists(path))
+                using (FileStream fs = new FileStream(path, FileMode.Open))
+                {
+                    output = (CurrentMoment)(ser.Deserialize(fs));
+                }
+            return output;
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
+
+            if (this.Name.Text !=null)
+                using (FileStream fs = new FileStream(@"\Saves\" + this.Name.Text +".xml", FileMode.OpenOrCreate))
+                {
+                    ser.Serialize(fs, RepositirySingle.currentSituation );
+                    MessageBox.Show("Готово");
+                }
+
         }
     }
 }
