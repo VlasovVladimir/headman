@@ -5,20 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.Saving"
         mc:Ignorable="d"
-        Title="Сохранения меню" Height="400" Width="600" WindowStartupLocation="CenterScreen">
+        Title="Сохранения меню" Height="400" Width="623" WindowStartupLocation="CenterScreen">
     <Grid>
-        <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="350" Margin="25,10,0,0" VerticalAlignment="Top" Width="250" IsEnabled="False"/>
-        <TextBox x:Name="Info1" HorizontalAlignment="Left" Height="20" Margin="310,10,0,0" TextWrapping="Wrap" Text="Номер слота" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
-        <TextBox x:Name="Info2" HorizontalAlignment="Left" Height="20" Margin="310,35,0,0" TextWrapping="Wrap" Text="Название карты" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
-        <TextBox x:Name="Info3" HorizontalAlignment="Left" Height="20" Margin="310,60,0,0" TextWrapping="Wrap" Text="Число выживших" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
-        <TextBox x:Name="Info4" HorizontalAlignment="Left" Height="20" Margin="310,85,0,0" TextWrapping="Wrap" Text="Номер месяца" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
-        <TextBox x:Name="Info5" HorizontalAlignment="Left" Height="20" Margin="310,110,0,0" TextWrapping="Wrap" Text="Дата сохранения" VerticalAlignment="Top" Width="115" IsEnabled="False"/>
-        <TextBox x:Name="DataNum" HorizontalAlignment="Left" Height="20" Margin="440,10,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <TextBox x:Name="DataName" HorizontalAlignment="Left" Height="20" Margin="440,35,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <TextBox x:Name="DataPopulation" HorizontalAlignment="Left" Height="20" Margin="440,60,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <TextBox x:Name="DataGameDate" HorizontalAlignment="Left" Height="20" Margin="440,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <TextBox x:Name="DataRealDate" HorizontalAlignment="Left" Height="20" Margin="440,110,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="125" IsEnabled="False"/>
-        <Image x:Name="MapPicture" HorizontalAlignment="Left" Height="225" Margin="310,135,0,0" VerticalAlignment="Top" Width="255"/>
+        <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="349" Margin="25,10,0,0" VerticalAlignment="Top" Width="250" IsEnabled="False"/>
+        <TextBox x:Name="Info"  HorizontalAlignment="Left" Height="276" Margin="291,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" IsEnabled="False"/>
+        <Button x:Name ="Save" Content="Сохранить" HorizontalAlignment="Left" Height="29" Margin="291,330,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button x:Name ="Load" Content="Загрузить" HorizontalAlignment="Left" Height="29" Margin="398,330,0,0" VerticalAlignment="Top" Width="102"/>
+        <TextBox x:Name="Name"  HorizontalAlignment="Left" Height="34" Margin="291,291,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314"/>
+        <Button x:Name ="Back" Content="Назад" HorizontalAlignment="Left" Height="29" Margin="505,330,-15,0" VerticalAlignment="Top" Width="102" Click="Back_Click"/>
 
     </Grid>
 </Window>

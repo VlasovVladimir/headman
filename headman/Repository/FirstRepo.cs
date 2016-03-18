@@ -12,6 +12,7 @@ namespace headman.Repository
     {
         public Window MainMenu { get; set; }
         public Window Map { get; set; }
+        public Window MiniMenu { get; set; }
 
         public CurrentMoment currentSituation { get; set; }
         

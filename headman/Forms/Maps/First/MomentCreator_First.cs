@@ -20,6 +20,7 @@ namespace headman.Forms.Maps.First
 
             CurrentMoment output = new CurrentMoment();
 
+            output.MapName = "Первая";
             IFabricEvent eFabric = new FabricOfAllEvents();   // тут поменять при добавлении новой карты
             output.BadEvents = eFabric.BadEvents();
             output.GoodEvents = eFabric.GoodEvents();

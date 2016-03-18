@@ -13,6 +13,7 @@ namespace headman.СurrentMoment
     [Serializable]
     public class CurrentMoment
     {
+        public string MapName { get; set; }
         public int GameMonth { get; set; }
         public DateTime SaveDate { get; set; }
 

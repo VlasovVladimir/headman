@@ -24,7 +24,6 @@ namespace headman.Forms.EventMenu
         {
             InitializeComponent();
             this.Description.Text = regEvent.Description;
-            this.Content = regEvent.Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

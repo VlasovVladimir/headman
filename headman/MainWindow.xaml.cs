@@ -14,9 +14,9 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
 using headman.Forms.Help;
-using headman.Forms.Maps;
 using headman.Repository;
 using headman.Forms.MapChoise;
+using headman.Forms.Saving;
 
 namespace headman
 {
@@ -52,6 +52,12 @@ namespace headman
             MapChoise choise = new MapChoise(RepositorySingle);
             this.Hide();
             choise.Show();
+        }
+
+        private void Upload_Click(object sender, RoutedEventArgs e)
+        {
+            Saving uploadMenu = new Saving(RepositorySingle);
+            uploadMenu.Show();
         }
     }
 }

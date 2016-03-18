@@ -11,6 +11,12 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using headman.Repository;
+using headman.Forms.Maps;
+using headman.Forms.Maps.First;
+using headman.Forms.Maps.Second;
+using headman.СurrentMoment;
+
 
 namespace headman.Forms.Saving
 {
@@ -19,9 +25,21 @@ namespace headman.Forms.Saving
     /// </summary>
     public partial class Saving : Window
     {
-        public Saving()
+        IRepo RepositirySingle;
+
+        public Saving(IRepo inputSingle)
         {
+            this.RepositirySingle = inputSingle;
             InitializeComponent();
+        }
+
+        private void Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+            if (RepositirySingle.MiniMenu == null)
+                RepositirySingle.MainMenu.Show();
+            else
+                RepositirySingle.MiniMenu.Show();
         }
     }
 }
