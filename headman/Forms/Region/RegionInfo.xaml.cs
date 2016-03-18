@@ -56,10 +56,12 @@ namespace headman.Forms.Region
                     Moment.Items[i] = false;                
             }
 
+            this.Close();
+
             if (Moment.Regions[index].Event!=null)
             {
                 IslandEvent EventWindow = new IslandEvent(Moment.Regions[index].Event);
-
+                EventWindow.ShowDialog();
             }
                 
             

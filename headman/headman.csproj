@@ -119,9 +119,6 @@
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\NewGameMenu\NewGameChoise.xaml.cs">
-      <DependentUpon>NewGameChoise.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Region\RegionInfo.xaml.cs">
       <DependentUpon>RegionInfo.xaml</DependentUpon>
     </Compile>
@@ -180,10 +177,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\Menus\MiniMenu.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Forms\NewGameMenu\NewGameChoise.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

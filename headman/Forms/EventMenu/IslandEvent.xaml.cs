@@ -23,6 +23,8 @@ namespace headman.Forms.EventMenu
         public IslandEvent(IRegionEvent regEvent)
         {
             InitializeComponent();
+            this.Description.Text = regEvent.Description;
+            this.Content = regEvent.Name;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
