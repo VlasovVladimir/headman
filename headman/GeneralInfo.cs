@@ -12,7 +12,8 @@ namespace headman
         {
             "Pattern",
             "Test map",
-            "First"
+            "First",
+            "Second"
         };
         public List<string> Savings = new List<string>();
     }

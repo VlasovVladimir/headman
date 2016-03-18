@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using headman.Repository;
 using headman.Forms.Maps;
 using headman.Forms.Maps.First;
+using headman.Forms.Maps.Second;
 
 namespace headman.Forms.MapChoise
 {
@@ -58,6 +59,14 @@ namespace headman.Forms.MapChoise
                     case ("First"):
                         {
                             First map = new First(currentRepository);
+                            this.Close();
+                            map.Show();
+                            return;
+                        }
+
+                    case ("Second"):
+                        {
+                            Second map = new Second(currentRepository);
                             this.Close();
                             map.Show();
                             return;
@@ -119,20 +128,32 @@ namespace headman.Forms.MapChoise
                         return;
                     }
 
+                case ("Second"):
+                    {
+                        description.Text = "Название: вторая (она же демо)" + "\n" +
+                            "Описание: Здесь-таки может быть не одна карта!" + "\n" + "\n" +
+                            "Стартовые условия" + "\n" +
+                            "Человек: 100" + "\n" +
+                            "Камня: 0" + "\n" +
+                            "Дерева: 0" + "\n" +
+                            "Воды: 5" + "\n" +
+                            "Сложность: как знать..";
+                        return;
+                    }
 
 
-                //case ("Test map"):
-                //    {
-                //        description.Text = "Название: ой... Оно еще осталось тут, ну ладно..." + "\n" +
-                //            "Описание: тут вы можете посмотреть на какую-то карту, Но зачем?" + "\n" + "\n" +
-                //            "Стартовые условия" + "\n" +
-                //            "Человек: 0" + "\n" +
-                //            "Камня: 0" + "\n" +
-                //            "Дерева: 0" + "\n" +
-                //            "Воды: 0" + "\n" +
-                //            "Сложность: какая сложность?";
-                //        return;
-                //    }
+                    //case ("Test map"):
+                    //    {
+                    //        description.Text = "Название: ой... Оно еще осталось тут, ну ладно..." + "\n" +
+                    //            "Описание: тут вы можете посмотреть на какую-то карту, Но зачем?" + "\n" + "\n" +
+                    //            "Стартовые условия" + "\n" +
+                    //            "Человек: 0" + "\n" +
+                    //            "Камня: 0" + "\n" +
+                    //            "Дерева: 0" + "\n" +
+                    //            "Воды: 0" + "\n" +
+                    //            "Сложность: какая сложность?";
+                    //        return;
+                    //    }
             }
 
         }

@@ -111,6 +111,10 @@
     <Compile Include="Forms\Maps\First\First.xaml.cs">
       <DependentUpon>First.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Maps\Second\MomentCreator_Second.cs" />
+    <Compile Include="Forms\Maps\Second\Second.xaml.cs">
+      <DependentUpon>Second.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Maps\StartCurrentPatternMomentCreator.cs" />
     <Compile Include="Forms\Maps\TestMap.xaml.cs">
       <DependentUpon>TestMap.xaml</DependentUpon>
@@ -162,6 +166,10 @@
     <Page Include="Forms\Maps\First\First.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Forms\Maps\Second\Second.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Forms\Maps\TestMap.xaml">
       <Generator>MSBuild:Compile</Generator>
