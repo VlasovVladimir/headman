@@ -37,6 +37,29 @@ namespace headman.Forms.Maps.First
             MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
             RepositorySingle.currentSituation = momentCreator.Create();
 
+            Islands.Add(this.Green);
+            Islands.Add(this.DarkBlue);
+            Islands.Add(this.Turquoise);
+            Islands.Add(this.Violet);
+            Islands.Add(this.Blue);
+            Islands.Add(this.Lilac);
+            Islands.Add(this.Gray);
+            Islands.Add(this.Eared);
+            Islands.Add(this.Marsh);
+            Islands.Add(this.Ruby);
+            Islands.Add(this.Pink);
+            Islands.Add(this.Black);
+            Islands.Add(this.Orange);
+            Islands.Add(this.LittleTurquoise);
+            Islands.Add(this.DarkGreen);
+            Islands.Add(this.LightGreen);
+            Islands.Add(this.Left);
+            Islands.Add(this.Right);
+            Islands.Add(this.Red);
+
+      
+
+
             Timer = 0;
             Speed = 0;
             Randomizator = new Random();
@@ -67,6 +90,9 @@ namespace headman.Forms.Maps.First
         private Random Randomizator;
 
         private IEvent currentEvent;
+
+        List<Path> Islands = new List<Path>();
+        
 
         private async void TimeRun()  // главный цикл программы
         {
@@ -202,6 +228,7 @@ namespace headman.Forms.Maps.First
             WoodenInfo.Text = RepositorySingle.currentSituation.Wood.ToString();
             WaterInfo.Text = RepositorySingle.currentSituation.Water.ToString();
             PeopleInfo.Text = RepositorySingle.currentSituation.Population.ToString();
+
 
             bool[] items = RepositorySingle.currentSituation.Items;
 
@@ -505,6 +532,7 @@ namespace headman.Forms.Maps.First
             this.Pause_Click(null, null);
             Info.ShowDialog();
             this.Start_Click(null, null);
+            
         }
 
         #region RegionInfoCall

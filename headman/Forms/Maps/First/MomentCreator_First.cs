@@ -21,6 +21,7 @@ namespace headman.Forms.Maps.First
             output.BadEvents = eFabric.BadEvents();
             output.GoodEvents = eFabric.GoodEvents();
 
+            //output.CurrentRegionIndex = 0;
             output.Population = 100;
             output.Regions = new List<headman.Region.Region>();
             output.Stone = 0;
