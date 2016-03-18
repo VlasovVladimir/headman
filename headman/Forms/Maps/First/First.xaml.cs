@@ -65,7 +65,7 @@ namespace headman.Forms.Maps.First
             Randomizator = new Random();
             currentEvent = null;
             Pause.IsEnabled = false;
-            TikTacSpeed = 200;
+            TikTacSpeed = 2000;
 
             MiniMenuOpened = false;
 
@@ -353,6 +353,8 @@ namespace headman.Forms.Maps.First
 
             if (!RepositorySingle.currentSituation.Items[4])
                 people -= 1;
+            else
+                people += 1;
 
 
 

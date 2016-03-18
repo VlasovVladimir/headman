@@ -54,7 +54,8 @@ namespace headman.Event
 
         public _81_aborigens()
         {
-            Name = "Злобные местные жители";  
+            Name = "Злобные местные жители";
+            this.action();
         }
     }
 }
