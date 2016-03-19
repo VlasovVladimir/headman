@@ -28,13 +28,15 @@ namespace headman.Forms.Saving
     public partial class Saving : Window
     {
         IRepo RepositirySingle;
+        string DirectoryPath;
 
         public Saving(IRepo inputSingle)
         {
             this.RepositirySingle = inputSingle;
             InitializeComponent();
             List<string> saves = new List<string>();
-            string path = @"\\Saves\list.txt";
+            DirectoryPath = @"C:\Users\СаняВолков\Source\Repos\headman2\headman\Saves\";
+            string path = DirectoryPath + "list.txt";
             
             if (File.Exists(path))
                 using (StreamReader sr = new StreamReader(path, true))      
@@ -115,7 +117,7 @@ namespace headman.Forms.Saving
             CurrentMoment output = new CurrentMoment();
 
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
-            string path = @"\Saves\" + name + ".xml";
+            string path = DirectoryPath + name + ".xml";
             if (File.Exists(path))
                 using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
@@ -127,12 +129,18 @@ namespace headman.Forms.Saving
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
+            CurrentMoment savingMoment= RepositirySingle.currentSituation;
+
 
             if (this.Name.Text !=null)
-                using (FileStream fs = new FileStream(@"\Saves\" + this.Name.Text +".xml", FileMode.OpenOrCreate))
+                using (FileStream fs = new FileStream(DirectoryPath + this.Name.Text + ".xml", FileMode.OpenOrCreate))
                 {
-                    ser.Serialize(fs, RepositirySingle.currentSituation );
+                    ser.Serialize(fs, savingMoment);
                     MessageBox.Show("Готово");
+                    using (StreamWriter sw = new StreamWriter (new FileStream(DirectoryPath + "list.txt", FileMode.Append, FileAccess.Write)))
+                    {
+                        sw.WriteLine(Name.Text);
+                    }
                 }
 
         }

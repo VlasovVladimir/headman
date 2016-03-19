@@ -29,6 +29,7 @@ namespace headman.СurrentMoment
         public List<IEvent> BadEvents { get; set; }
         public bool[] Items { get; set; }
 
+        public CurrentMoment() { }
 
     }
 }
