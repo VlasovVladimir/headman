@@ -13,7 +13,6 @@ namespace headman.Forms.Maps.First
 {
     class MomentCreator_First
     {
-        List<Path> Islands;
 
         public CurrentMoment Create(List<Path> islands)
         {
