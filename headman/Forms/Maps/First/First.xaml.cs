@@ -36,7 +36,7 @@ namespace headman.Forms.Maps.First
         private int RandomNum { get; set; }
 
         private bool TimeStarted { get; set; }
-        public bool MiniMenuOpened { get; set; }
+        public bool UnstandartClose { get; set; }
 
         private Action MonthFinished;
         private Random Randomizator;
@@ -88,7 +88,7 @@ namespace headman.Forms.Maps.First
             Pause.IsEnabled = false;
             TikTacSpeed = 2000;
 
-            MiniMenuOpened = false;
+            UnstandartClose = false;
 
             this.InfoRefresh();
             Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
@@ -112,7 +112,6 @@ namespace headman.Forms.Maps.First
                 {
                     Timer = 0;
                     MonthFinished();  // делегат, который вызывает события по "завершению месяца"
-                    this.InfoRefresh();
                 }
                 await Task.Delay(TikTacSpeed);
             }
@@ -165,11 +164,11 @@ namespace headman.Forms.Maps.First
 
         private void GoTo_Click(object sender, RoutedEventArgs e) // вызов маленького меню
         {
-            MiniMenuOpened = true;
+            UnstandartClose = true;
             MiniMenu MiniMenuSingle = new MiniMenu(RepositorySingle);
             Pause_Click(null, null);
             MiniMenuSingle.ShowDialog();
-            MiniMenuOpened = false;
+            UnstandartClose = false;
         }
 
         private void EventCaller()
@@ -212,18 +211,21 @@ namespace headman.Forms.Maps.First
         // обработка нажатия на крестик сверху
         private void MapClose(object sender, EventArgs e)
         {
-            if (!MiniMenuOpened)
+            if (!UnstandartClose)
                 Application.Current.Shutdown();
         }
 
         private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Pause_Click(null, null);
-            Sure sureQuestion = new Sure();
-            sureQuestion.ShowDialog();
-            if (!(bool)sureQuestion.DialogResult)
+            if (!UnstandartClose)
             {
-                e.Cancel = true;
+                Pause_Click(null, null);
+                Sure sureQuestion = new Sure();
+                sureQuestion.ShowDialog();
+                if (!(bool)sureQuestion.DialogResult)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -368,18 +370,21 @@ namespace headman.Forms.Maps.First
             GetWood.IsEnabled = true;
             GetWater.IsEnabled = true;
 
+
+            this.RepositorySingle.currentSituation.Population = people;
+
+            this.InfoRefresh();
+
             if (people <= 0)
             {
                 people = 0;
                 Pause_Click(null, null);
                 Start.IsEnabled = false;
                 SpeedUp.IsEnabled = false;
-                Finish finish = new Finish();
+                UnstandartClose = true;
+                Finish finish = new Finish(RepositorySingle);
                 finish.ShowDialog();
             }
-
-            this.RepositorySingle.currentSituation.Population = people;
-
         }
 
         #region Get_Resourses

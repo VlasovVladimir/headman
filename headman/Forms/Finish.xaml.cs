@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using headman.Repository;
 
 namespace headman.Forms
 {
@@ -19,15 +20,23 @@ namespace headman.Forms
     /// </summary>
     public partial class Finish : Window
     {
-        public Finish()
+        IRepo RepositorySingle;
+
+        public Finish(IRepo InputRepositorySingle)
         {
             InitializeComponent();
+            RepositorySingle = InputRepositorySingle;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            RepositorySingle.Map.Close();
 
+            this.Close();
+            RepositorySingle.MainMenu.Show();
+            RepositorySingle.Map = null;
+            RepositorySingle.currentSituation = null;
+            RepositorySingle.Islands = null;
         }
     }
 }

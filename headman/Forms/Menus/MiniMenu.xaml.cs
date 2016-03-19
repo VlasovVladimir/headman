@@ -42,6 +42,7 @@ namespace headman.Forms.Menus
             RepositorySingle.Map = null;
             //RepositorySingle.MainMenu = null;
             RepositorySingle.currentSituation = null;
+            RepositorySingle.Islands = null;
         }
 
         private void Help_Click(object sender, RoutedEventArgs e)

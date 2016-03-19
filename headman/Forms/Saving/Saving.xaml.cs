@@ -18,7 +18,7 @@ using headman.Forms.Maps;
 using headman.Forms.Maps.First;
 using headman.Forms.Maps.Second;
 using headman.СurrentMoment;
-
+using System.Reflection;
 
 namespace headman.Forms.Saving
 {
@@ -35,7 +35,7 @@ namespace headman.Forms.Saving
             this.RepositirySingle = inputSingle;
             InitializeComponent();
             List<string> saves = new List<string>();
-            DirectoryPath = @"C:\Users\Asus\Source\Repos\headman2\headman\Saves\";
+            DirectoryPath =  @"..\..\Saves\";
             string path = DirectoryPath + "list.txt";
             
             if (File.Exists(path))
@@ -95,8 +95,8 @@ namespace headman.Forms.Saving
                             {
                                 First map = new First(RepositirySingle);
                                 this.Close();
-                                map.Show();
                                 RepositirySingle.currentSituation = moment;
+                                map.Show();
                                 return;
                             }
 
@@ -104,8 +104,8 @@ namespace headman.Forms.Saving
                             {
                                 Second map = new Second(RepositirySingle);
                                 this.Close();
-                                map.Show();
                                 RepositirySingle.currentSituation = moment;
+                                map.Show();
                                 return;
                             }
                     }
