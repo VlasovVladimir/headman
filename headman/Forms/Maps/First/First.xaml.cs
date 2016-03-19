@@ -47,33 +47,34 @@ namespace headman.Forms.Maps.First
         {
             InitializeComponent();
 
-            List<Path> Islands = new List<Path>();
+            List<Path> newIslands = new List<Path>();
 
-            Islands.Add(this.Green);
-            Islands.Add(this.DarkBlue);
-            Islands.Add(this.Turquoise);
-            Islands.Add(this.Violet);
-            Islands.Add(this.Blue);
-            Islands.Add(this.Lilac);
-            Islands.Add(this.Gray);
-            Islands.Add(this.Eared);
-            Islands.Add(this.Marsh);
-            Islands.Add(this.Ruby);
-            Islands.Add(this.Pink);
-            Islands.Add(this.Black);
-            Islands.Add(this.Orange);
-            Islands.Add(this.LittleTurquoise);
-            Islands.Add(this.DarkGreen);
-            Islands.Add(this.LightGreen);
-            Islands.Add(this.Left);
-            Islands.Add(this.Right);
-            Islands.Add(this.Red);
+            newIslands.Add(this.Green);
+            newIslands.Add(this.DarkBlue);
+            newIslands.Add(this.Turquoise);
+            newIslands.Add(this.Violet);
+            newIslands.Add(this.Blue);
+            newIslands.Add(this.Lilac);
+            newIslands.Add(this.Gray);
+            newIslands.Add(this.Eared);
+            newIslands.Add(this.Marsh);
+            newIslands.Add(this.Ruby);
+            newIslands.Add(this.Pink);
+            newIslands.Add(this.Black);
+            newIslands.Add(this.Orange);
+            newIslands.Add(this.LittleTurquoise);
+            newIslands.Add(this.DarkGreen);
+            newIslands.Add(this.LightGreen);
+            newIslands.Add(this.Left);
+            newIslands.Add(this.Right);
+            newIslands.Add(this.Red);
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
             eventGetter = new EventGetter();
             MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
-            RepositorySingle.currentSituation = momentCreator.Create(Islands);
+            RepositorySingle.currentSituation = momentCreator.Create();
+            RepositorySingle.Islands = newIslands;
 
             //Islands.Clear();
 
@@ -91,7 +92,7 @@ namespace headman.Forms.Maps.First
 
             this.InfoRefresh();
             Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
-            RepositorySingle.currentSituation.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
+            RepositorySingle.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
                     = new SolidColorBrush(Colors.Gold);
 
             MonthFinished += () => { RepositorySingle.currentSituation.GameMonth += 1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
@@ -542,7 +543,7 @@ namespace headman.Forms.Maps.First
 
         private void AddInformation(int ind)
         {
-            RegionInfo Info = new RegionInfo(RepositorySingle.currentSituation, ind);
+            RegionInfo Info = new RegionInfo(RepositorySingle, ind);
             this.Pause_Click(null, null);
             Info.ShowDialog();
             this.Start_Click(null, null);

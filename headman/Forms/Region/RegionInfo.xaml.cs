@@ -16,6 +16,8 @@ using System.Windows.Shapes;
 using headman.СurrentMoment;
 using headman.Region;
 using headman.Forms.EventMenu;
+using headman.Event;
+using headman.Repository;
 
 namespace headman.Forms.Region
 {
@@ -24,19 +26,19 @@ namespace headman.Forms.Region
     /// </summary>
     public partial class RegionInfo : Window
     {
-        CurrentMoment Moment;
+        IRepo Repo;
         int index;
 
-        public RegionInfo(CurrentMoment moment, int ind)
+        public RegionInfo(IRepo repo, int ind)
         {
             InitializeComponent();
-            Moment = moment;
+            Repo = repo;
             index = ind;
-            this.NameInfo.Text = moment.Regions[ind].Name;
-            this.StonesInfo.Text = moment.Regions[ind].Stone.ToString();
-            this.WaterInfo.Text = moment.Regions[ind].Water.ToString();
-            this.WoodenInfo.Text = moment.Regions[ind].Wood.ToString();
-            if ((this.Moment.CurrentRegionIndex != ind) && (Moment.Items[0]) && (Math.Abs(this.Moment.CurrentRegionIndex - ind) <= 2 ))
+            this.NameInfo.Text = Repo.currentSituation.Regions[ind].Name;
+            this.StonesInfo.Text = Repo.currentSituation.Regions[ind].Stone.ToString();
+            this.WaterInfo.Text = Repo.currentSituation.Regions[ind].Water.ToString();
+            this.WoodenInfo.Text = Repo.currentSituation.Regions[ind].Wood.ToString();
+            if ((this.Repo.currentSituation.CurrentRegionIndex != ind) && (Repo.currentSituation.Items[0]) && (Math.Abs(this.Repo.currentSituation.CurrentRegionIndex - ind) <= 2))
                 this.MoveTo.IsEnabled = true;
         }
 
@@ -44,35 +46,37 @@ namespace headman.Forms.Region
 
         private void MoveTo_Click(object sender, RoutedEventArgs e)
         {
-            int prev_ind = Moment.CurrentRegionIndex;
-            int ind = Moment.CurrentRegionIndex;
+            int prev_ind = Repo.currentSituation.CurrentRegionIndex;
+            int ind = Repo.currentSituation.CurrentRegionIndex;
 
-            Moment.Islands[ind].Stroke = new SolidColorBrush(Colors.Black);
-            Moment.Islands[this.index].Stroke = new SolidColorBrush(Colors.Gold);
+            Repo.Islands[ind].Stroke = new SolidColorBrush(Colors.Black);
+            Repo.Islands[this.index].Stroke = new SolidColorBrush(Colors.Gold);
 
-            Moment.CurrentRegionIndex = this.index;
-            Moment.Regions[prev_ind].Wood += Moment.Wood;
-            Moment.Regions[prev_ind].Stone += Moment.Stone;
-            Moment.Wood = 0;
-            Moment.Stone = 0;
+            Repo.currentSituation.CurrentRegionIndex = this.index;
+            Repo.currentSituation.Regions[prev_ind].Wood += Repo.currentSituation.Wood;
+            Repo.currentSituation.Regions[prev_ind].Stone += Repo.currentSituation.Stone;
+            Repo.currentSituation.Wood = 0;
+            Repo.currentSituation.Stone = 0;
 
 
-            if (!Moment.Items[2])
-                Moment.Water = 0;
+            if (!Repo.currentSituation.Items[2])
+                Repo.currentSituation.Water = 0;
 
-            for (int i = 0; i < Moment.Items.Length; i++)
+            for (int i = 0; i < Repo.currentSituation.Items.Length; i++)
             {
                 if ((i != 0) && (i != 2) && (i != 5))
-                    Moment.Items[i] = false;                
+                    Repo.currentSituation.Items[i] = false;                
             }
 
             this.Close();
 
-            if (Moment.Regions[index].Event!=null)
+            if (Repo.currentSituation.Regions[index].Event!= 0)
             {
-                Moment.Regions[index].Event.Moment = Moment;
-                Moment.Regions[index].Event.action();
-                IslandEvent EventWindow = new IslandEvent(Moment.Regions[index].Event);
+                EventGetter getter = new EventGetter();
+                IRegionEvent curEvent = getter.GetRegEventByIndex(Repo.currentSituation.Regions[index].Event);
+                curEvent.Moment = Repo.currentSituation;
+                curEvent.action();
+                IslandEvent EventWindow = new IslandEvent(curEvent);
                 EventWindow.ShowDialog();
             }
                 

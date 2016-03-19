@@ -501,7 +501,7 @@ namespace headman.Forms.Maps.Second
 
         private void AddInformation(int ind)
         {
-            RegionInfo Info = new RegionInfo(RepositorySingle.currentSituation, ind);
+            RegionInfo Info = new RegionInfo(RepositorySingle, ind);
             this.Pause_Click(null, null);
             Info.ShowDialog();
             this.Start_Click(null, null);

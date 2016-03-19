@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="Сохранения меню" Height="400" Width="623" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="349" Margin="25,10,0,0" VerticalAlignment="Top" Width="250" IsEnabled="False"/>
+        <ListBox x:Name="SavingList" HorizontalAlignment="Left" Height="349" Margin="25,10,0,0" VerticalAlignment="Top" Width="250"/>
         <TextBox x:Name="Info"  HorizontalAlignment="Left" Height="285" Margin="291,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="314" IsEnabled="False"/>
         <Button x:Name ="Save" Content="Сохранить" HorizontalAlignment="Left" Height="29" Margin="291,330,0,0" VerticalAlignment="Top" Width="102" Click="Save_Click"/>
         <Button x:Name ="Load" Content="Загрузить" HorizontalAlignment="Left" Height="29" Margin="398,330,0,0" VerticalAlignment="Top" Width="102" Click="Load_Click"/>

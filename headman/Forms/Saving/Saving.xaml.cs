@@ -35,7 +35,7 @@ namespace headman.Forms.Saving
             this.RepositirySingle = inputSingle;
             InitializeComponent();
             List<string> saves = new List<string>();
-            DirectoryPath = Directory.GetCurrentDirectory();
+            DirectoryPath = @"C:\Users\Asus\Source\Repos\headman2\headman\Saves\";
             string path = DirectoryPath + "list.txt";
             
             if (File.Exists(path))
@@ -51,7 +51,7 @@ namespace headman.Forms.Saving
                 using (FileStream fs = new FileStream(path, FileMode.CreateNew))
                 {
                 }
-
+            SavingList.ItemsSource = saves;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)
