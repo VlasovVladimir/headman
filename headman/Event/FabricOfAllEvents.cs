@@ -27,6 +27,7 @@ namespace headman.Event
             output.Add(new _51_music());
             output.Add(new _52_treasures());
             output.Add(new _53_why());
+            // { 91, 92, 93, 94,95,96, 13, 14, 15, 16, 17, 70, 51, 52, 53}
 
             return output;
         }
@@ -50,6 +51,7 @@ namespace headman.Event
             output.Add(new _11_thieves());
             output.Add(new _12_robbers());        
             return output;
+            // {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 22, 54, 11, 12}
         }
     }
 }
