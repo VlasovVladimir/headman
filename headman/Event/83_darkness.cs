@@ -14,6 +14,8 @@ namespace headman.Event
     [Serializable]
     class _83_darkness : IRegionEvent
     {
+
+        [XmlIgnore]
         public CurrentMoment Moment { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

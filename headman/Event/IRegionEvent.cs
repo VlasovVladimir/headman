@@ -10,6 +10,7 @@ namespace headman.Event
 {
     public interface IRegionEvent
     {
+        [XmlIgnore]
         CurrentMoment Moment { get; set; }
         string Name { get; set; }
         string Description { get; set; }

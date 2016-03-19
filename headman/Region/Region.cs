@@ -11,8 +11,8 @@ namespace headman.Region
     [Serializable]
     public class Region 
     {
-
-        public IRegionEvent Event;
+        
+        public int Event;
         public string Name;
         public int Wood;
         public int Stone;
@@ -26,7 +26,7 @@ namespace headman.Region
             Water = water;
         }
 
-        public Region(string name, int stone, int wood, int water, IRegionEvent someEvent)
+        public Region(string name, int stone, int wood, int water, int someEvent)
         {
             Name = name;
             Wood = wood;

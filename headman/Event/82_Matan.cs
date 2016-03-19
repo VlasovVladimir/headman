@@ -13,6 +13,8 @@ namespace headman.Event
     [Serializable]
     class _82_Matan : IRegionEvent
     {
+
+        [XmlIgnore]
         public CurrentMoment Moment { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
