@@ -65,6 +65,16 @@ namespace headman.Event
                         curEvent = new _10_cannibals();
                         return curEvent;
                     }
+                case (11):
+                    {
+                        curEvent = new _11_thieves();
+                        return curEvent;
+                    }
+                case (12):
+                    {
+                        curEvent = new _12_robbers();
+                        return curEvent;
+                    }
                 case (13):
                     {
                         curEvent = new _13_people();
@@ -88,6 +98,11 @@ namespace headman.Event
                 case (17):
                     {
                         curEvent = new _17_resources();
+                        return curEvent;
+                    }
+                case (18):
+                    {
+                        curEvent = new _18_damn_boat();
                         return curEvent;
                     }
                 case (22):
