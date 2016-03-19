@@ -86,6 +86,8 @@
     <Compile Include="Event\94_hack.cs" />
     <Compile Include="Event\95_house.cs" />
     <Compile Include="Event\96_pike.cs" />
+    <Compile Include="Event\EventGetter.cs" />
+    <Compile Include="Event\EventIndexs.cs" />
     <Compile Include="Event\FabricOfAllEvents.cs" />
     <Compile Include="Event\IEvent.cs" />
     <Compile Include="Event\IFabricEvent.cs" />

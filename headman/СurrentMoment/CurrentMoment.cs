@@ -25,8 +25,8 @@ namespace headman.СurrentMoment
         public int CurrentRegionIndex { get; set; }
         public List<Path> Islands { get; set; }
         public List<Region.Region> Regions {get; set;}
-        public List<IEvent> GoodEvents { get; set; }
-        public List<IEvent> BadEvents { get; set; }
+        public List<int> GoodEvents { get; set; }
+        public List<int> BadEvents { get; set; }
         public bool[] Items { get; set; }
 
         public CurrentMoment() { }
