@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Shapes;
 using headman.СurrentMoment;
 
 
@@ -16,5 +17,6 @@ namespace headman.Repository
         Window MiniMenu { get; set; }
 
         CurrentMoment currentSituation { get; set; }
+        List<Path> Islands { get; set; }
     }
 }
