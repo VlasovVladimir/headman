@@ -259,6 +259,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Images\firework.jpg" />
     <Content Include="Images\svgMaps\pattern.svg" />
     <Content Include="Images\svgMaps\test_islands.svg" />
   </ItemGroup>
