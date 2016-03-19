@@ -17,6 +17,7 @@ using headman.Event;
 using headman.Forms.EventMenu;
 using headman.Forms.Maps;
 using headman.Forms.Region;
+using headman.Forms;
 
 
 namespace headman.Forms.Maps.First
@@ -372,7 +373,8 @@ namespace headman.Forms.Maps.First
                 Pause_Click(null, null);
                 Start.IsEnabled = false;
                 SpeedUp.IsEnabled = false;
-                MessageBox.Show("GAME OVER");
+                Finish finish = new Finish();
+                finish.ShowDialog();
             }
 
             this.RepositorySingle.currentSituation.Population = people;
