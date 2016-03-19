@@ -32,6 +32,8 @@ namespace headman.Forms.Maps.First
         {
             InitializeComponent();
 
+            List<Path> Islands = new List<Path>();
+
             Islands.Add(this.Green);
             Islands.Add(this.DarkBlue);
             Islands.Add(this.Turquoise);
@@ -94,10 +96,7 @@ namespace headman.Forms.Maps.First
         private Action MonthFinished;
         private Random Randomizator;
 
-        private IEvent currentEvent;
-
-        List<Path> Islands = new List<Path>();
-        
+        private IEvent currentEvent;        
 
         private async void TimeRun()  // главный цикл программы
         {

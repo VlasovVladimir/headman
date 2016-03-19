@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using headman.Repository;
 using headman.Forms.Help;
 using headman.Forms.Maps;
+using headman.Forms.Saving;
 
 namespace headman.Forms.Menus
 {
@@ -27,16 +28,20 @@ namespace headman.Forms.Menus
         public MiniMenu(IRepo InputRepositorySingle)
         {
             InitializeComponent();
-
+            InputRepositorySingle.MiniMenu = this;
             RepositorySingle = InputRepositorySingle;
+            
         }
 
         private void ToMainMenu_Click(object sender, RoutedEventArgs e)
         {
             RepositorySingle.Map.Close();
+            
             this.Close();
-            if (!RepositorySingle.Map.IsActive)
-                RepositorySingle.MainMenu.Show();
+            RepositorySingle.MainMenu.Show();
+            RepositorySingle.Map = null;
+            //RepositorySingle.MainMenu = null;
+            RepositorySingle.currentSituation = null;
         }
 
         private void Help_Click(object sender, RoutedEventArgs e)
@@ -48,6 +53,13 @@ namespace headman.Forms.Menus
         private void BackToGame_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+        }
+
+        private void Save_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            Saving.Saving uploadMenu = new Saving.Saving(RepositorySingle);
+            uploadMenu.ShowDialog();
         }
     }
 }
