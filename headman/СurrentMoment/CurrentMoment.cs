@@ -15,6 +15,7 @@ namespace headman.СurrentMoment
     {
         public string MapName { get; set; }
         public int GameMonth { get; set; }
+        public int LastMonthOfMoving { get; set; }
         public DateTime SaveDate { get; set; }
 
         public int Population { get; set; }
