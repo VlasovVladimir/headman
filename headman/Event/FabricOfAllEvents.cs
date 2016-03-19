@@ -47,7 +47,8 @@ namespace headman.Event
             output.Add(new _10_cannibals());
             output.Add(new _22_meneaters());
             output.Add(new _54_letter());
-        
+            output.Add(new _11_thieves());
+            output.Add(new _12_robbers());        
             return output;
         }
     }
