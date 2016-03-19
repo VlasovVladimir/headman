@@ -26,6 +26,8 @@ namespace headman.Forms.Maps.Second
     public partial class Second : Window
     {
         IRepo RepositorySingle;
+        EventGetter eventGetter;
+
         public Second(IRepo InputRepositorySingle)
         {
             InitializeComponent();
@@ -144,16 +146,16 @@ namespace headman.Forms.Maps.Second
             if ((decision >= 91) && (RepositorySingle.currentSituation.BadEvents.Count != 0))
             {
                 RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
-                currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
+                currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.BadEvents[RandomNum]);
                 RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
             }
             else
                 if ((decision <= 3) && (RepositorySingle.currentSituation.GoodEvents.Count != 0))
-            {
-                RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
-                currentEvent = RepositorySingle.currentSituation.GoodEvents[RandomNum];
-                RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
-            }
+                {
+                    RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
+                    currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.GoodEvents[RandomNum]);
+                    RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
+                }
 
             if (currentEvent != null)
             {

@@ -13,6 +13,7 @@ namespace headman.Event
     [Serializable]
     class _80_sharks : IRegionEvent
     {
+        [XmlIgnore]
         public CurrentMoment Moment { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }

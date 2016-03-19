@@ -16,9 +16,9 @@ namespace headman.Forms.Maps
         {
             CurrentMoment output = new CurrentMoment();
 
-            IFabricEvent eFabric = new FabricOfAllEvents();   // тут поменять при добавлении новой карты
-            output.BadEvents = eFabric.BadEvents();
-            output.GoodEvents = eFabric.GoodEvents();
+            EventIndexs indexs = new EventIndexs();   // тут поменять при добавлении новой карты
+            output.BadEvents = indexs.BadEventsIndexs();
+            output.GoodEvents = indexs.GoodEventsIndexs();
 
             output.Population = 100;
             output.Regions = null; //тут тоже

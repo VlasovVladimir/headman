@@ -21,9 +21,9 @@ namespace headman.Forms.Maps.First
             CurrentMoment output = new CurrentMoment();
 
             output.MapName = "First";
-            IFabricEvent eFabric = new FabricOfAllEvents();   // тут поменять при добавлении новой карты
-            output.BadEvents = eFabric.BadEvents();
-            output.GoodEvents = eFabric.GoodEvents();
+            EventIndexs indexs = new EventIndexs();   // тут поменять при добавлении новой карты
+            output.BadEvents = indexs.BadEventsIndexs();
+            output.GoodEvents = indexs.GoodEventsIndexs();
 
             //output.CurrentRegionIndex = 0;
             output.Islands = islands;

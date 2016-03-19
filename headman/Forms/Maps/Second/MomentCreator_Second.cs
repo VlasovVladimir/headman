@@ -15,10 +15,10 @@ namespace headman.Forms.Maps.Second
         {
 
             CurrentMoment output = new CurrentMoment();
-
-            IFabricEvent eFabric = new FabricOfAllEvents();   // а ведь и тут менять..
-            output.BadEvents = eFabric.BadEvents();
-            output.GoodEvents = eFabric.GoodEvents();
+            output.MapName = "Second";
+            EventIndexs indexs = new EventIndexs(); // а ведь и тут менять..
+            output.BadEvents = indexs.BadEventsIndexs();
+            output.GoodEvents = indexs.GoodEventsIndexs();
 
             output.Population = 100;
             output.Regions = new List<headman.Region.Region>();

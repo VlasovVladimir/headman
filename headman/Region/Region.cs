@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using headman.Event;
+using System.Xml.Serialization;
 
 namespace headman.Region
 {
+    [Serializable]
     public class Region 
     {
+
         public IRegionEvent Event;
         public string Name;
         public int Wood;
@@ -31,6 +34,7 @@ namespace headman.Region
             Water = water;
             Event = someEvent;
         }
+        public Region() { }
         
     }
 }

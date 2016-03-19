@@ -27,6 +27,20 @@ namespace headman.Forms.Maps.First
     public partial class First : Window
     {
         IRepo RepositorySingle;
+        EventGetter eventGetter;
+
+        private int Timer { get; set; }
+        private int Speed { get; set; }
+        private int TikTacSpeed { get; set; }
+        private int RandomNum { get; set; }
+
+        private bool TimeStarted { get; set; }
+        public bool MiniMenuOpened { get; set; }
+
+        private Action MonthFinished;
+        private Random Randomizator;
+
+        private IEvent currentEvent;  
 
         public First(IRepo InputRepositorySingle)
         {
@@ -56,6 +70,7 @@ namespace headman.Forms.Maps.First
 
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
+            eventGetter = new EventGetter();
             MomentCreator_First momentCreator = new MomentCreator_First(); // тут менять при создании новой карты
             RepositorySingle.currentSituation = momentCreator.Create(Islands);
 
@@ -81,22 +96,7 @@ namespace headman.Forms.Maps.First
             MonthFinished += () => { RepositorySingle.currentSituation.GameMonth += 1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
             MonthFinished += EventCaller;
             MonthFinished += StandartTurn;
-        }
-
-
-
-        private int Timer { get; set; }
-        private int Speed { get; set; }
-        private int TikTacSpeed { get; set; }
-        private int RandomNum { get; set; }
-
-        private bool TimeStarted { get; set; }
-        public bool MiniMenuOpened { get; set; }
-
-        private Action MonthFinished;
-        private Random Randomizator;
-
-        private IEvent currentEvent;        
+        }      
 
         private async void TimeRun()  // главный цикл программы
         {
@@ -176,14 +176,14 @@ namespace headman.Forms.Maps.First
             if ((decision >= 91) && (RepositorySingle.currentSituation.BadEvents.Count != 0))
             {
                 RandomNum = Randomizator.Next(RepositorySingle.currentSituation.BadEvents.Count);
-                currentEvent = RepositorySingle.currentSituation.BadEvents[RandomNum];
+                currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.BadEvents[RandomNum]);
                 RepositorySingle.currentSituation.BadEvents.RemoveAt(RandomNum);
             }
             else
                 if ((decision <= 3) && (RepositorySingle.currentSituation.GoodEvents.Count != 0))
                 {
                     RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
-                    currentEvent = RepositorySingle.currentSituation.GoodEvents[RandomNum];
+                    currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.GoodEvents[RandomNum]);
                     RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
                 }
 
