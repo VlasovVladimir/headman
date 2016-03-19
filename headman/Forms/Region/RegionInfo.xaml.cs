@@ -44,14 +44,18 @@ namespace headman.Forms.Region
 
         private void MoveTo_Click(object sender, RoutedEventArgs e)
         {
+            int prev_ind = Moment.CurrentRegionIndex;
             int ind = Moment.CurrentRegionIndex;
 
             Moment.Islands[ind].Stroke = new SolidColorBrush(Colors.Black);
             Moment.Islands[this.index].Stroke = new SolidColorBrush(Colors.Gold);
 
             Moment.CurrentRegionIndex = this.index;
+            Moment.Regions[prev_ind].Wood += Moment.Wood;
+            Moment.Regions[prev_ind].Stone += Moment.Stone;
             Moment.Wood = 0;
             Moment.Stone = 0;
+
 
             if (!Moment.Items[2])
                 Moment.Water = 0;
