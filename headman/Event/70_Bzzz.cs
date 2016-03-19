@@ -27,10 +27,9 @@ namespace headman.Event
         public void Exit_1()
         {
             Moment.Stone += 15;
-
-            result = "☃ бзю-бзю, мой мальчик!";
+            
             Log += "☃";
-            MessageBox.Show(result);
+            MessageBox.Show("☃ бзю-бзю, мой мальчик!");
         }
 
         public void Exit_2()

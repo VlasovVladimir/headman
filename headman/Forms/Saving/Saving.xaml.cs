@@ -97,6 +97,7 @@ namespace headman.Forms.Saving
                                 this.Close();
                                 RepositirySingle.currentSituation = moment;
                                 map.Show();
+                                RepositirySingle.upload();
                                 return;
                             }
 

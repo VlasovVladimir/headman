@@ -78,7 +78,7 @@ namespace headman.Forms.Maps.First
 
             //Islands.Clear();
 
-      
+            RepositorySingle.upload += InfoRefresh;
 
 
             Timer = 0;
@@ -95,7 +95,7 @@ namespace headman.Forms.Maps.First
             RepositorySingle.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
                     = new SolidColorBrush(Colors.Gold);
 
-            MonthFinished += () => { RepositorySingle.currentSituation.GameMonth += 1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
+            MonthFinished += () =>  RepositorySingle.currentSituation.GameMonth += 1;
             MonthFinished += EventCaller;
             MonthFinished += StandartTurn;
         }      
@@ -195,7 +195,10 @@ namespace headman.Forms.Maps.First
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();
 
-                if (currentEvent.result != "" || currentEvent.result != null)
+                if (currentEvent.result == null)
+                    currentEvent.result = "";
+
+                if (currentEvent.result != "") 
                 {
                     Description desc = new Description(currentEvent.result, null);
                     desc.ShowDialog();
@@ -236,7 +239,7 @@ namespace headman.Forms.Maps.First
             WoodenInfo.Text = RepositorySingle.currentSituation.Wood.ToString();
             WaterInfo.Text = RepositorySingle.currentSituation.Water.ToString();
             PeopleInfo.Text = RepositorySingle.currentSituation.Population.ToString();
-
+            this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString();
 
             bool[] items = RepositorySingle.currentSituation.Items;
 

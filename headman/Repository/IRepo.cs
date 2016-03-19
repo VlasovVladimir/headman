@@ -18,5 +18,6 @@ namespace headman.Repository
 
         CurrentMoment currentSituation { get; set; }
         List<Path> Islands { get; set; }
+        Action upload { get; set; }
     }
 }
