@@ -35,7 +35,7 @@ namespace headman.Forms.Saving
             this.RepositirySingle = inputSingle;
             InitializeComponent();
             List<string> saves = new List<string>();
-            DirectoryPath = @"C:\Users\СаняВолков\Source\Repos\headman2\headman\Saves\";
+            DirectoryPath = Directory.GetCurrentDirectory();
             string path = DirectoryPath + "list.txt";
             
             if (File.Exists(path))
@@ -130,7 +130,7 @@ namespace headman.Forms.Saving
         {
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
             CurrentMoment savingMoment= RepositirySingle.currentSituation;
-
+            savingMoment.SaveDate = DateTime.Now;
 
             if (this.Name.Text !=null)
                 using (FileStream fs = new FileStream(DirectoryPath + this.Name.Text + ".xml", FileMode.OpenOrCreate))

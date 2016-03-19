@@ -26,7 +26,6 @@ namespace headman.СurrentMoment
         
         [XmlIgnore]
         public List<Path> Islands { get; set; }
-        
         public List<Region.Region> Regions {get; set;}
         public List<int> GoodEvents { get; set; }
         public List<int> BadEvents { get; set; }

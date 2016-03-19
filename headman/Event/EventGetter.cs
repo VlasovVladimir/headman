@@ -170,5 +170,28 @@ namespace headman.Event
 
             return curEvent;
         }
+
+
+        public IRegionEvent GetRegEventByIndex (int index)
+        {
+            IRegionEvent curEvent = null;
+
+            switch (index)
+            {
+                case (80):
+                    return new _80_sharks();
+
+                case (81):
+                    return new _81_aborigens();
+
+                case (82):
+                    return new _82_Matan();
+
+                case (83):
+                    return new _83_darkness();
+            }
+
+            return curEvent;
+        }
     }
 }
