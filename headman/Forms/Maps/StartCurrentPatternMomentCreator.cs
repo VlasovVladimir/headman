@@ -19,7 +19,8 @@ namespace headman.Forms.Maps
             EventIndexs indexs = new EventIndexs();   // тут поменять при добавлении новой карты
             output.BadEvents = indexs.BadEventsIndexs();
             output.GoodEvents = indexs.GoodEventsIndexs();
-
+            output.LastMonthOfMoving = -10;
+            output.CurrentRegionIndex = 0;
             output.Population = 100;
             output.Regions = null; //тут тоже
             output.Stone = 0;

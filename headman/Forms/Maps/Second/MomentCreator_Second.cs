@@ -20,6 +20,8 @@ namespace headman.Forms.Maps.Second
             output.BadEvents = indexs.BadEventsIndexs();
             output.GoodEvents = indexs.GoodEventsIndexs();
 
+            output.LastMonthOfMoving = -10;
+            output.CurrentRegionIndex = 0;
             output.Population = 100;
             output.Regions = new List<headman.Region.Region>();
             output.Stone = 0;

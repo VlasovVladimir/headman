@@ -38,14 +38,18 @@ namespace headman.Forms.Region
             this.StonesInfo.Text = Repo.currentSituation.Regions[ind].Stone.ToString();
             this.WaterInfo.Text = Repo.currentSituation.Regions[ind].Water.ToString();
             this.WoodenInfo.Text = Repo.currentSituation.Regions[ind].Wood.ToString();
-            if ((this.Repo.currentSituation.CurrentRegionIndex != ind) && (Repo.currentSituation.Items[0]) && (Math.Abs(this.Repo.currentSituation.CurrentRegionIndex - ind) <= 2))
+            if ((this.Repo.currentSituation.CurrentRegionIndex != ind) && (Repo.currentSituation.Items[0]) && (Math.Abs(this.Repo.currentSituation.CurrentRegionIndex - ind) <= 2) && (Repo.currentSituation.GameMonth - Repo.currentSituation.LastMonthOfMoving > 9))
+            {
                 this.MoveTo.IsEnabled = true;
+            }
         }
 
         
 
         private void MoveTo_Click(object sender, RoutedEventArgs e)
         {
+
+            Repo.currentSituation.LastMonthOfMoving = Repo.currentSituation.GameMonth;
             int prev_ind = Repo.currentSituation.CurrentRegionIndex;
             int ind = Repo.currentSituation.CurrentRegionIndex;
 
