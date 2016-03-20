@@ -397,7 +397,7 @@ namespace headman.Forms.Maps.First
 
         private bool CheckWinning()
         {
-            if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) && 
+            if ((RepositorySingle.currentSituation.CurrentRegionIndex == (/*RepositorySingle.Islands.Count - 1*/2)) && 
                 (RepositorySingle.currentSituation.Population > 0))
                 return true;
             else
