@@ -40,7 +40,7 @@ namespace headman.Forms.Menus
             this.Close();
             RepositorySingle.MainMenu.Show();
             RepositorySingle.Map = null;
-            //RepositorySingle.MainMenu = null;
+            RepositorySingle.MiniMenu = null;
             RepositorySingle.currentSituation = null;
             RepositorySingle.Islands = null;
         }
@@ -58,7 +58,7 @@ namespace headman.Forms.Menus
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            this.Hide();
+            // this.Hide();
             Saving.Saving uploadMenu = new Saving.Saving(RepositorySingle);
             uploadMenu.ShowDialog();
         }

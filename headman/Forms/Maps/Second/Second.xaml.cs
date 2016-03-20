@@ -43,6 +43,7 @@ namespace headman.Forms.Maps.Second
             currentEvent = null;
             Pause.IsEnabled = false;
             TikTacSpeed = 200;
+            eventGetter = new EventGetter();
 
             MiniMenuOpened = false;
 

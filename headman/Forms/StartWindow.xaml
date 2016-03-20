@@ -11,7 +11,7 @@
     </Window.Background>
     <Grid>
         <TextBox x:Name="Info" HorizontalAlignment="Left" Height="215" Margin="25,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="470" IsEnabled="False" FontSize="17"/>
-        <Button x:Name="Go" Content="Вперед!" HorizontalAlignment="Left" Height="35" Margin="170,335,0,0" VerticalAlignment="Top" Width="140" Click="button_Click"/>
+        <Button x:Name="Go" Content="Вперед!" HorizontalAlignment="Left" Height="35" Margin="190,365,0,0" VerticalAlignment="Top" Width="140" Click="button_Click"/>
 
     </Grid>
 </Window>

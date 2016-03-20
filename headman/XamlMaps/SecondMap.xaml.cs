@@ -12,22 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace headman.Forms
+namespace headman.XamlMaps
 {
     /// <summary>
-    /// Логика взаимодействия для StartWindow.xaml
+    /// Логика взаимодействия для SecondMap.xaml
     /// </summary>
-    public partial class StartWindow : Window
+    public partial class SecondMap : Window
     {
-        public StartWindow(string info)
+        public SecondMap()
         {
             InitializeComponent();
-            Info.Text = info;
-        }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            this.Close();
         }
     }
 }

@@ -24,11 +24,12 @@ namespace headman.Forms.MapChoise
     public partial class MapChoise : Window
     {
         IRepo currentRepository;
+        GeneralInfo Info;
 
         public MapChoise(IRepo RepositorySingle)
         {
             InitializeComponent();
-            GeneralInfo Info = new GeneralInfo();
+            Info = new GeneralInfo();
             MapsList.ItemsSource = Info.Maps;
             currentRepository = RepositorySingle;
         }
@@ -37,37 +38,25 @@ namespace headman.Forms.MapChoise
         {
             if (MapsList.SelectedIndex >= 0)        // обработка исключения - ФУ ее не проводить!
             {
-                switch (MapsList.SelectedItem.ToString())
+                switch (MapsList.SelectedIndex)
                 {
-                    case ("Pattern"):
+
+                    case (0):
                         {
-                            PatternMap map = new PatternMap(currentRepository);
+                            StartWindow start = new StartWindow(Info.Goals[0]);
                             this.Close();
-                            map.Show();
-                            return;
-                        }
-
-
-                    case ("Test map"):
-                        {
-                            TestMap map = new TestMap(currentRepository);
-                            this.Close();
-                            map.Show();
-                            return;
-                        }
-
-                    case ("First"):
-                        {
+                            start.ShowDialog();
                             First map = new First(currentRepository);
-                            this.Close();
                             map.Show();
                             return;
                         }
 
-                    case ("Second"):
+                    case (1):
                         {
-                            Second map = new Second(currentRepository);
+                            StartWindow start = new StartWindow(Info.Goals[1]);
                             this.Close();
+                            start.ShowDialog();
+                            Second map = new Second(currentRepository);
                             map.Show();
                             return;
                         }

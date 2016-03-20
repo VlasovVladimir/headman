@@ -124,9 +124,6 @@
       <DependentUpon>Second.xaml</DependentUpon>
     </Compile>
     <Compile Include="Forms\Maps\StartCurrentPatternMomentCreator.cs" />
-    <Compile Include="Forms\Maps\TestMap.xaml.cs">
-      <DependentUpon>TestMap.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Forms\Region\RegionInfo.xaml.cs">
       <DependentUpon>RegionInfo.xaml</DependentUpon>
     </Compile>
@@ -152,6 +149,9 @@
     </Compile>
     <Compile Include="XamlMaps\Output.xaml.cs">
       <DependentUpon>Output.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="XamlMaps\SecondMap.xaml.cs">
+      <DependentUpon>SecondMap.xaml</DependentUpon>
     </Compile>
     <Compile Include="СurrentMoment\CurrentMoment.cs" />
     <Page Include="Forms\EventMenu\Description.xaml">
@@ -185,10 +185,6 @@
     <Page Include="Forms\Maps\Second\Second.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Forms\Maps\TestMap.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
     </Page>
     <Page Include="Forms\Maps\PatternMap.xaml">
       <SubType>Designer</SubType>
@@ -241,6 +237,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="XamlMaps\Output.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="XamlMaps\SecondMap.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

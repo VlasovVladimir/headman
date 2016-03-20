@@ -92,8 +92,6 @@ namespace headman.Forms.Maps.First
 
             this.InfoRefresh();
             Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
-            RepositorySingle.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
-                    = new SolidColorBrush(Colors.Gold);
 
             MonthFinished += () =>  RepositorySingle.currentSituation.GameMonth += 1;
             MonthFinished += EventCaller;
@@ -385,6 +383,16 @@ namespace headman.Forms.Maps.First
 
             this.InfoRefresh();
 
+            if (ChekWinning())
+            {
+                Pause_Click(null, null);
+                Start.IsEnabled = false;
+                SpeedUp.IsEnabled = false;
+                UnstandartClose = true;
+                WinWindow winning = new WinWindow(RepositorySingle);
+                winning.ShowDialog();
+            }
+
             if (people <= 0)
             {
                 people = 0;
@@ -395,6 +403,15 @@ namespace headman.Forms.Maps.First
                 Finish finish = new Finish(RepositorySingle);
                 finish.ShowDialog();
             }
+        }
+
+        private bool ChekWinning()
+        {
+            if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) && 
+                (RepositorySingle.currentSituation.Population > 0))
+                return true;
+            else
+                return false; 
         }
 
         #region Get_Resourses

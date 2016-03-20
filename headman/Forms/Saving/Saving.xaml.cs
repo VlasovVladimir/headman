@@ -74,27 +74,6 @@ namespace headman.Forms.Saving
                 
                     switch (moment.MapName)
                     {
-                        case ("Pattern"):
-                            {
-                                PatternMap map = new PatternMap(RepositirySingle);
-                                this.Close();
-                                RepositirySingle.currentSituation = moment;
-                                map.Show();
-                                RepositirySingle.upload();
-                                return;
-                            }
-
-
-                        case ("Test map"):
-                            {
-                                TestMap map = new TestMap(RepositirySingle);
-                                this.Close();
-                                RepositirySingle.currentSituation = moment;
-                                map.Show();
-                                RepositirySingle.upload();
-                                return;
-                            }
-
                         case ("First"):
                             {
                                 First map = new First(RepositirySingle);
@@ -149,6 +128,7 @@ namespace headman.Forms.Saving
                 {
                     ser.Serialize(fs, savingMoment);
                     MessageBox.Show("Готово");
+                    if (!SavingList.Items.Contains(name))
                     using (StreamWriter sw = new StreamWriter(new FileStream(DirectoryPath + "list.txt", FileMode.Append, FileAccess.Write)))
                     {
                         sw.WriteLine(name);
