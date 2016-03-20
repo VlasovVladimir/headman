@@ -25,9 +25,9 @@ namespace headman.Event
 
         public void Exit_1()
         {
-            if (!Moment.Items[3])
+            if (!Moment.Items[5])
             {
-                Moment.Items[3] = true;
+                Moment.Items[5] = true;
                 result = "Боги даровали вам копья";
                 Log += result;
             }
