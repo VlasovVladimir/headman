@@ -208,7 +208,7 @@ namespace headman.Forms.Maps.First
 
         private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!UnstandartClose)
+            if (UnstandartClose)
             {
                 Pause_Click(null, null);
                 Sure sureQuestion = new Sure();
@@ -397,7 +397,7 @@ namespace headman.Forms.Maps.First
 
         private bool CheckWinning()
         {
-            if ((RepositorySingle.currentSituation.CurrentRegionIndex == (/*RepositorySingle.Islands.Count - 1*/2)) && 
+            if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) && 
                 (RepositorySingle.currentSituation.Population > 0))
                 return true;
             else

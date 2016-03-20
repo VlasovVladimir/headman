@@ -8,7 +8,7 @@
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <TextBox HorizontalAlignment="Left" Height="188" Margin="10,31,0,0" TextWrapping="Wrap" Text="&quot;Два дебила&quot; продакшн&#xD;&#xA;Для того чтобы выиграть, попробуйте не проиграть.&#xD;&#xA;Вперед.&#xD;&#xA;&#xD;&#xA;1 месяц это в два раза меньше, чем 2. Но это не точно.&#xD;&#xA;&#xD;&#xA;" VerticalAlignment="Top" Width="372" Grid.ColumnSpan="2" TextOptions.TextFormattingMode="Display" IsEnabled="False"/>
+        <TextBox x:Name ="Info"  VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="188" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Grid.ColumnSpan="2" TextOptions.TextFormattingMode="Display" ScrollViewer.CanContentScroll="True"/>
 
     </Grid>
 </Window>
