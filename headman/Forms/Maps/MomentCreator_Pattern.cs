@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using headman.СurrentMoment;
+﻿using headman.СurrentMoment;
 using headman.Event;
 
 namespace headman.Forms.Maps

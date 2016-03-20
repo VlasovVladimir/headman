@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using headman.Event;
-using headman.СurrentMoment;
+﻿using headman.СurrentMoment;
 using System.Windows;
-using headman.Forms.EventMenu;
-using System.Xml.Serialization;
 
 namespace headman.Event
 {
-    [Serializable]
     class _03_bark_beetles : IEvent
     {
         public CurrentMoment Moment { get; set; }
