@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.EventMenu"
         mc:Ignorable="d"
-        Title="Description" Height="206" Width="300" WindowStartupLocation="CenterScreen">
+        Title="Подробности произошедшего" Height="206" Width="300" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Grid>
         <TextBox x:Name="description" HorizontalAlignment="Left" Height="122" Margin="10,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="272" IsEnabled="False" VerticalScrollBarVisibility="Auto"/>
-        <Button Content="Ok" HorizontalAlignment="Left" Height="28" Margin="98,137,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click"/>
+        <Button Content="Ok" HorizontalAlignment="Left" Height="28" Margin="97,150,0,0" VerticalAlignment="Top" Width="93" Click="Button_Click"/>
 
     </Grid>
 </Window>

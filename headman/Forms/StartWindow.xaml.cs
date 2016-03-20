@@ -19,9 +19,10 @@ namespace headman.Forms
     /// </summary>
     public partial class StartWindow : Window
     {
-        public StartWindow()
+        public StartWindow(string info)
         {
             InitializeComponent();
+            Info.Text = info;
         }
 
         private void button_Click(object sender, RoutedEventArgs e)

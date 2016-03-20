@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms"
         mc:Ignorable="d"
-        Title="Игра закончилась" Height="460" Width="535">
+        Title="Игра закончилась" Height="460" Width="535" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/headman;component/Images/firework.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
+    
     <Grid>
         <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="240" Margin="70,40,0,0" TextWrapping="Wrap" Text="Жизнь - несправедливая штука. Жизнь в виртуальном мире, наполненном островами, еще более несправедлива. К сожалению, вам не удалось достичь поставленной цели. Не надо печалиться, вы можете попробовать еще раз. И еще. Потом налить себе чашечку чая и попробовать вновь. Если вам удастся успешно завершить миссию, мы очень удивимся. Но пусть удача будет на вашей стороне, а валериана на вашем столе." VerticalAlignment="Top" Width="385" IsEnabled="False" FontSize="17"/>
         <Button x:Name="button" Content="Эх." HorizontalAlignment="Left" Height="35" Margin="190,335,0,0" VerticalAlignment="Top" Width="140" Click="button_Click"/>

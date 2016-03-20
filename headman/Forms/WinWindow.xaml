@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms"
         mc:Ignorable="d"
-        Title="Поздравляем!" Height="460" Width="535">
+        Title="Поздравляем!" Height="460" Width="535" WindowStartupLocation="CenterScreen" WindowStyle="None" >
     <Window.Background>
         <ImageBrush ImageSource="/headman;component/Images/firework2.png" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
@@ -14,7 +14,7 @@
             <RowDefinition Height="32*"/>
             <RowDefinition Height="11*"/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="240" Margin="70,40,0,0" TextWrapping="Wrap" Text="Вам удалось победить.&#xD;&#xA;Разработчики игры немного грустят по этому поводу и понимают, что им есть над чем работать. На самом деле, это окошко очень радо появиться на экране, так как оно уже подернулось плесенью в дебрях программы. &#xD;&#xA;Спасибо Вам!&#xD;&#xA;&#xD;&#xA;И до новых встреч." VerticalAlignment="Top" Width="385" IsEnabled="False" FontSize="17"/>
-        <Button x:Name="button" Content="Ура!" HorizontalAlignment="Left" Height="35" Margin="190,15,0,0" VerticalAlignment="Top" Width="140" Grid.Row="1" Click="button_Click"/>
+        <TextBox x:Name="Info" HorizontalAlignment="Left" Height="240" Margin="70,40,0,0" TextWrapping="Wrap" Text="Вам удалось победить.&#xD;&#xA;Разработчики игры немного грустят по этому поводу и понимают, что им есть над чем работать. На самом деле, это окошко очень радо появиться на экране, так как оно уже подернулось плесенью в дебрях программы. &#xD;&#xA;Спасибо Вам!&#xD;&#xA;&#xD;&#xA;И до новых встреч." VerticalAlignment="Top" Width="385" IsEnabled="False" FontSize="17"/>
+        <Button x:Name="Yeah" Content="Ура!" HorizontalAlignment="Left" Height="35" Margin="190,15,0,0" VerticalAlignment="Top" Width="140" Grid.Row="1" Click="button_Click"/>
     </Grid>
 </Window>

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms"
         mc:Ignorable="d"
-        Title="Здравствуйте!" Height="460" Width="535">
+        Title="Здравствуйте!" Height="460" Width="535" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/headman;component/Images/start_boat.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
     <Grid>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="215" Margin="25,25,0,0" TextWrapping="Wrap" Text="раведлива. К сожалению, вам не удалось достичь поставленной цели. Не надо печалиться, вы можете попробовать еще раз. И еще. Потом налить себе чашечку чая и попробовать вновь. Если вам удастся успешно завершить миссию, мы очень удивимся. Но пусть удача будет на вашей стороне, а валериана на вашем столе." VerticalAlignment="Top" Width="470" IsEnabled="False" FontSize="17"/>
-        <Button x:Name="button" Content="Вперед!" HorizontalAlignment="Left" Height="35" Margin="170,335,0,0" VerticalAlignment="Top" Width="140" Click="button_Click"/>
+        <TextBox x:Name="Info" HorizontalAlignment="Left" Height="215" Margin="25,25,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="470" IsEnabled="False" FontSize="17"/>
+        <Button x:Name="Go" Content="Вперед!" HorizontalAlignment="Left" Height="35" Margin="170,335,0,0" VerticalAlignment="Top" Width="140" Click="button_Click"/>
 
     </Grid>
 </Window>
