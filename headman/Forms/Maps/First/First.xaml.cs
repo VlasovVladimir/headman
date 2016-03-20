@@ -383,7 +383,7 @@ namespace headman.Forms.Maps.First
 
             this.InfoRefresh();
 
-            if (ChekWinning())
+            if (CheckWinning())
             {
                 Pause_Click(null, null);
                 Start.IsEnabled = false;
@@ -405,7 +405,7 @@ namespace headman.Forms.Maps.First
             }
         }
 
-        private bool ChekWinning()
+        private bool CheckWinning()
         {
             if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) && 
                 (RepositorySingle.currentSituation.Population > 0))

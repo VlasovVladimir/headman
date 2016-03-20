@@ -363,7 +363,7 @@ namespace headman.Forms.Maps
 
             this.InfoRefresh();
 
-            if (ChekWinning())
+            if (CheckWinning())
             {
                 Pause_Click(null, null);
                 Start.IsEnabled = false;
@@ -385,7 +385,7 @@ namespace headman.Forms.Maps
             }
         }
 
-        private bool ChekWinning() // метод проверки условий победы с примером
+        private bool CheckWinning() // метод проверки условий победы с примером
         {
             //if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) &&
             //    (RepositorySingle.currentSituation.Population > 0))
