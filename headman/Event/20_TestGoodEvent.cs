@@ -10,7 +10,7 @@ using headman.СurrentMoment;
 namespace headman.Event
 {
     [Serializable]
-    public class TestGoodEvent: IEvent 
+    public class _20_TestGoodEvent: IEvent 
     {
 
             public CurrentMoment Moment { get; set; }
@@ -41,7 +41,7 @@ namespace headman.Event
                 Log += "И вы сделали отвратный выбор";
             }
 
-        public TestGoodEvent()
+        public _20_TestGoodEvent()
         {
             Name = "Что-то прекрасное";
             Description = "Ох как хорошо";
