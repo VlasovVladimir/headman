@@ -8,7 +8,7 @@
             <ColumnDefinition Width="34*"/>
             <ColumnDefinition Width="0*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name ="Info"  VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="188" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Grid.ColumnSpan="2" TextOptions.TextFormattingMode="Display" ScrollViewer.CanContentScroll="True"/>
+        <TextBox x:Name ="Info"  VerticalScrollBarVisibility="Visible" HorizontalAlignment="Left" Height="188" Margin="10,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="372" Grid.ColumnSpan="2" TextOptions.TextFormattingMode="Display" ScrollViewer.CanContentScroll="True" TextChanged="Info_TextChanged"/>
 
     </Grid>
 </Window>
