@@ -11,12 +11,11 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using headman.Forms.Menus;
 using headman.Repository;
 using headman.Event;
 using headman.Forms.EventMenu;
 using headman.Forms.Maps;
-using headman.Forms.Region;
+using headman.Forms;
 
 namespace headman.Forms.Maps.Second
 {
@@ -25,7 +24,7 @@ namespace headman.Forms.Maps.Second
     /// </summary>
     public partial class Second : Window
     {
-        IRepo RepositorySingle;
+        Repo RepositorySingle;
         EventGetter eventGetter;
 
         private int Timer { get; set; }
@@ -41,7 +40,7 @@ namespace headman.Forms.Maps.Second
 
         private IEvent currentEvent;
 
-        public Second(IRepo InputRepositorySingle)
+        public Second(Repo InputRepositorySingle)
         {
             InitializeComponent();
 

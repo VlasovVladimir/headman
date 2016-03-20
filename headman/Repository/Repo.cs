@@ -9,7 +9,7 @@ using headman.СurrentMoment;
 
 namespace headman.Repository
 {
-    class FirstRepo: IRepo
+    public class Repo
     {
         public Window MainMenu { get; set; }
         public Window Map { get; set; }

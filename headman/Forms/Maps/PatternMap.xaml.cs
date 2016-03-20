@@ -11,11 +11,10 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using headman.Forms.Menus;
 using headman.Repository;
 using headman.Event;
 using headman.Forms.EventMenu;
-using headman.Forms.Region;
+using headman.Forms;
 using headman.Forms.Maps;
 
 
@@ -26,7 +25,7 @@ namespace headman.Forms.Maps
     /// </summary>
     public partial class PatternMap : Window
     {
-        IRepo RepositorySingle;
+        Repo RepositorySingle;
         EventGetter eventGetter;
 
         private int Timer { get; set; }
@@ -42,7 +41,7 @@ namespace headman.Forms.Maps
 
         private IEvent currentEvent;
 
-        public PatternMap(IRepo InputRepositorySingle)
+        public PatternMap(Repo InputRepositorySingle)
         {
             InitializeComponent();
 

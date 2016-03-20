@@ -16,17 +16,17 @@ using headman.Forms.Maps;
 using headman.Forms.Maps.First;
 using headman.Forms.Maps.Second;
 
-namespace headman.Forms.MapChoise
+namespace headman.Forms
 {
     /// <summary>
     /// Логика взаимодействия для MapChoise.xaml
     /// </summary>
     public partial class MapChoise : Window
     {
-        IRepo currentRepository;
+        Repo currentRepository;
         GeneralInfo Info;
 
-        public MapChoise(IRepo RepositorySingle)
+        public MapChoise(Repo RepositorySingle)
         {
             InitializeComponent();
             Info = new GeneralInfo();
@@ -61,7 +61,7 @@ namespace headman.Forms.MapChoise
                             return;
                         }
                 }
-            }    
+            }
 
         }
 
@@ -79,7 +79,7 @@ namespace headman.Forms.MapChoise
             {
                 case ("Pattern"):
                     {
-                        description.Text= "Название: шаблончик" + "\n" +
+                        description.Text = "Название: шаблончик" + "\n" +
                             "Описание: это очень странное место без каких либо островов. Но там все же живут какие-то люди" + "\n" + "\n" +
                             "Стартовые условия" + "\n" +
                             "Человек: 100" + "\n" +
@@ -131,18 +131,18 @@ namespace headman.Forms.MapChoise
                     }
 
 
-                    //case ("Test map"):
-                    //    {
-                    //        description.Text = "Название: ой... Оно еще осталось тут, ну ладно..." + "\n" +
-                    //            "Описание: тут вы можете посмотреть на какую-то карту, Но зачем?" + "\n" + "\n" +
-                    //            "Стартовые условия" + "\n" +
-                    //            "Человек: 0" + "\n" +
-                    //            "Камня: 0" + "\n" +
-                    //            "Дерева: 0" + "\n" +
-                    //            "Воды: 0" + "\n" +
-                    //            "Сложность: какая сложность?";
-                    //        return;
-                    //    }
+                //case ("Test map"):
+                //    {
+                //        description.Text = "Название: ой... Оно еще осталось тут, ну ладно..." + "\n" +
+                //            "Описание: тут вы можете посмотреть на какую-то карту, Но зачем?" + "\n" + "\n" +
+                //            "Стартовые условия" + "\n" +
+                //            "Человек: 0" + "\n" +
+                //            "Камня: 0" + "\n" +
+                //            "Дерева: 0" + "\n" +
+                //            "Воды: 0" + "\n" +
+                //            "Сложность: какая сложность?";
+                //        return;
+                //    }
             }
 
         }

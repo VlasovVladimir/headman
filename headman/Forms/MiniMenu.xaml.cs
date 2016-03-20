@@ -12,31 +12,30 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using headman.Repository;
-using headman.Forms.Help;
 using headman.Forms.Maps;
-using headman.Forms.Saving;
+using headman.Forms;
 
-namespace headman.Forms.Menus
+namespace headman.Forms
 {
     /// <summary>
     /// Interaction logic for MiniMenu.xaml
     /// </summary>
     public partial class MiniMenu : Window
     {
-        IRepo RepositorySingle;
+        Repo RepositorySingle;
 
-        public MiniMenu(IRepo InputRepositorySingle)
+        public MiniMenu(Repo InputRepositorySingle)
         {
             InitializeComponent();
             InputRepositorySingle.MiniMenu = this;
             RepositorySingle = InputRepositorySingle;
-            
+
         }
 
         private void ToMainMenu_Click(object sender, RoutedEventArgs e)
         {
             RepositorySingle.Map.Close();
-            
+
             this.Close();
             RepositorySingle.MainMenu.Show();
             RepositorySingle.Map = null;
@@ -47,7 +46,7 @@ namespace headman.Forms.Menus
 
         private void Help_Click(object sender, RoutedEventArgs e)
         {
-            HelpWindow HelpWindowSingle = new HelpWindow();
+            Help HelpWindowSingle = new Help();
             HelpWindowSingle.Show();
         }
 
@@ -59,7 +58,7 @@ namespace headman.Forms.Menus
         private void Save_Click(object sender, RoutedEventArgs e)
         {
             // this.Hide();
-            Saving.Saving uploadMenu = new Saving.Saving(RepositorySingle);
+            Saving uploadMenu = new Saving(RepositorySingle);
             uploadMenu.ShowDialog();
         }
     }

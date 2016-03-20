@@ -20,9 +20,9 @@ namespace headman.Forms
     /// </summary>
     public partial class Finish : Window
     {
-        IRepo RepositorySingle;
+        Repo RepositorySingle;
 
-        public Finish(IRepo InputRepositorySingle)
+        public Finish(Repo InputRepositorySingle)
         {
             InitializeComponent();
             RepositorySingle = InputRepositorySingle;

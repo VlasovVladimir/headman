@@ -20,30 +20,30 @@ using headman.Forms.Maps.Second;
 using headman.СurrentMoment;
 using System.Reflection;
 
-namespace headman.Forms.Saving
+namespace headman.Forms
 {
     /// <summary>
-    /// Логика взаимодействия для Saving.xaml
+    /// Interaction logic for Saving.xaml
     /// </summary>
     public partial class Saving : Window
     {
-        IRepo RepositirySingle;
+        Repo RepositirySingle;
         string DirectoryPath;
         private CurrentMoment operatingSave;
 
-        public Saving(IRepo inputSingle)
+        public Saving(Repo inputSingle)
         {
             this.RepositirySingle = inputSingle;
             InitializeComponent();
             List<string> saves = new List<string>();
-            DirectoryPath =  @"..\..\Saves\";
+            DirectoryPath = @"..\..\Saves\";
             string path = DirectoryPath + "list.txt";
-            
+
             if (File.Exists(path))
-                using (StreamReader sr = new StreamReader(path, true))      
+                using (StreamReader sr = new StreamReader(path, true))
                 {
                     string line;
-                    while ((line =  sr.ReadLine()) != null)
+                    while ((line = sr.ReadLine()) != null)
                     {
                         if (line != "")
                             saves.Add(line);
@@ -67,11 +67,11 @@ namespace headman.Forms.Saving
 
         private void Load_Click(object sender, RoutedEventArgs e)
         {
-            if (SavingList.SelectedItem!=null)
+            if (SavingList.SelectedItem != null)
                 if (RepositirySingle.Map == null)
                 {
                     CurrentMoment moment = operatingSave;
-                
+
                     switch (moment.MapName)
                     {
                         case ("First"):
@@ -94,7 +94,7 @@ namespace headman.Forms.Saving
                                 return;
                             }
                     }
-            }
+                }
         }
 
         private void LoadMoment(string name)
@@ -117,7 +117,7 @@ namespace headman.Forms.Saving
 
         }
 
-        private void SaveMoment (string name)
+        private void SaveMoment(string name)
         {
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
             CurrentMoment savingMoment = RepositirySingle.currentSituation;
@@ -129,10 +129,10 @@ namespace headman.Forms.Saving
                     ser.Serialize(fs, savingMoment);
                     MessageBox.Show("Готово");
                     if (!SavingList.Items.Contains(name))
-                    using (StreamWriter sw = new StreamWriter(new FileStream(DirectoryPath + "list.txt", FileMode.Append, FileAccess.Write)))
-                    {
-                        sw.WriteLine(name);
-                    }
+                        using (StreamWriter sw = new StreamWriter(new FileStream(DirectoryPath + "list.txt", FileMode.Append, FileAccess.Write)))
+                        {
+                            sw.WriteLine(name);
+                        }
                 }
             else
             {

@@ -13,10 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Media;
-using headman.Forms.Help;
 using headman.Repository;
-using headman.Forms.MapChoise;
-using headman.Forms.Saving;
+using headman.Forms;
 
 namespace headman
 {
@@ -25,14 +23,14 @@ namespace headman
     /// </summary>
     public partial class MainWindow : Window
     {
-        IRepo RepositorySingle;
+        Repo RepositorySingle;
 
         public MainWindow()
         {
             InitializeComponent();
 
 
-            RepositorySingle = new FirstRepo();  // задание репозитория
+            RepositorySingle = new Repo();  // задание репозитория
             RepositorySingle.MainMenu = this;
         }
 
@@ -43,7 +41,7 @@ namespace headman
 
         private void HelpButton_Click(object sender, RoutedEventArgs e)
         {
-            HelpWindow HelpWindow = new HelpWindow();
+            Help HelpWindow = new Help();
             HelpWindow.Show();
         }
 

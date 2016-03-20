@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace headman.Forms.Help
+namespace headman.Forms
 {
     /// <summary>
     /// Interaction logic for Help.xaml
     /// </summary>
-    public partial class HelpWindow : Window
+    public partial class Help : Window
     {
-        public HelpWindow()
+        public Help()
         {
             InitializeComponent();
         }

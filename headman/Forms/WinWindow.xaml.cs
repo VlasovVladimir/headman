@@ -20,8 +20,8 @@ namespace headman.Forms
     /// </summary>
     public partial class WinWindow : Window
     {
-        IRepo RepositorySingle;
-        public WinWindow(IRepo InputRepositorySingle)
+        Repo RepositorySingle;
+        public WinWindow(Repo InputRepositorySingle)
         {
             InitializeComponent();
             RepositorySingle = InputRepositorySingle;
