@@ -105,6 +105,16 @@ namespace headman.Event
                         curEvent = new _18_damn_boat();
                         return curEvent;
                     }
+                case (19):
+                    {
+                        curEvent = new _19_TestBadEvent();
+                        return curEvent;
+                    }
+                case (20):
+                    {
+                        curEvent = new _20_TestGoodEvent();
+                        return curEvent;
+                    }
                 case (22):
                     {
                         curEvent = new _22_meneaters();
