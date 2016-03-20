@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms.Maps.Second"
         mc:Ignorable="d"
-        Title="Second" Height="690" Width="960" ResizeMode="NoResize" Closed="MapClose" Closing="SureDialog" WindowStartupLocation="CenterScreen">
+        Title="Second" Height="690" Width="960" ResizeMode="NoResize" Closed="MapClose" Closing="SureDialog" WindowStartupLocation="CenterScreen" WindowStyle="None">
     <Window.Background>
         <ImageBrush ImageSource="/headman;component/Images/Image1.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>
