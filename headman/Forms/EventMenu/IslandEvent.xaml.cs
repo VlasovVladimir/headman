@@ -23,6 +23,7 @@ namespace headman.Forms.EventMenu
         public IslandEvent(IRegionEvent regEvent)
         {
             InitializeComponent();
+            this.NameInfo.Text = regEvent.Name;
             this.Description.Text = regEvent.Description;
         }
 

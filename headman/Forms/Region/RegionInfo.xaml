@@ -5,7 +5,7 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:headman.Forms.Region"
       mc:Ignorable="d" 
-      Title="Общая информация" Height="406" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None">
+      Title="Общая информация" Height="406" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="145*"/>
