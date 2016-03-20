@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:headman.Forms"
         mc:Ignorable="d"
-        Title="Игра закончилась" Height="461" Width="534">
+        Title="Игра закончилась" Height="460" Width="535">
     <Window.Background>
         <ImageBrush ImageSource="/headman;component/Images/firework.jpg" Stretch="UniformToFill" TileMode="None"  />
     </Window.Background>

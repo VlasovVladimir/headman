@@ -23,8 +23,11 @@ namespace headman.Event
         public void action()
         {
             bool flag = true;
-            foreach (bool elem in Moment.Items)
-                flag = flag & elem;
+            for (int i = 0; i < Moment.Items.Length; i++)
+            {
+                if (i != 4)
+                    flag = flag & Moment.Items[i];
+            }
             
 
             if (flag)

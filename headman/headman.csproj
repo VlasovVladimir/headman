@@ -133,8 +133,14 @@
     <Compile Include="Forms\Saving\Saving.xaml.cs">
       <DependentUpon>Saving.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Sure.xaml.cs">
       <DependentUpon>Sure.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\WinWindow.xaml.cs">
+      <DependentUpon>WinWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GeneralInfo.cs" />
     <Compile Include="Places.cs" />
@@ -200,7 +206,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Forms\StartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Forms\Sure.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Forms\WinWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -260,6 +274,8 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\firework.jpg" />
+    <Resource Include="Images\firework2.png" />
+    <Resource Include="Images\start_boat.jpg" />
     <Content Include="Images\svgMaps\pattern.svg" />
     <Content Include="Images\svgMaps\test_islands.svg" />
   </ItemGroup>
