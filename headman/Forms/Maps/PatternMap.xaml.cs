@@ -15,6 +15,7 @@ using headman.Forms.Menus;
 using headman.Repository;
 using headman.Event;
 using headman.Forms.EventMenu;
+using headman.Forms.Region;
 using headman.Forms.Maps;
 
 
@@ -28,45 +29,54 @@ namespace headman.Forms.Maps
         IRepo RepositorySingle;
         EventGetter eventGetter;
 
-        public PatternMap(IRepo InputRepositorySingle)
-        {
-            InitializeComponent();
-
-            RepositorySingle = InputRepositorySingle;
-            RepositorySingle.Map = this;
-            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator(); // тут менять при создании новой карты
-            RepositorySingle.currentSituation = momentCreator.Create();
-
-            Timer = 0;
-            Speed = 0;
-            Randomizator = new Random();
-            currentEvent = null;
-            Pause.IsEnabled = false;
-            TikTacSpeed = 200;
-
-            MiniMenuOpened = false;
-
-            this.InfoRefresh();
-            Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
-            MonthFinished += () => { RepositorySingle.currentSituation.GameMonth += 1; this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString(); };
-            MonthFinished += EventCaller;
-            MonthFinished += StandartTurn;
-        }
-
-
-
         private int Timer { get; set; }
         private int Speed { get; set; }
         private int TikTacSpeed { get; set; }
         private int RandomNum { get; set; }
 
         private bool TimeStarted { get; set; }
-        public bool MiniMenuOpened { get; set; }
+        public bool UnstandartClose { get; set; }
 
         private Action MonthFinished;
         private Random Randomizator;
 
         private IEvent currentEvent;
+
+        public PatternMap(IRepo InputRepositorySingle)
+        {
+            InitializeComponent();
+
+            List<Path> newIslands = new List<Path>();
+            //Добавление фигур на карте в коллекцию островов
+            //    Пример
+            //newIslands.Add(this.Green);
+
+            RepositorySingle = InputRepositorySingle;
+            RepositorySingle.Map = this;
+            eventGetter = new EventGetter();
+            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator(); // создание начального положения
+            RepositorySingle.currentSituation = momentCreator.Create();
+            RepositorySingle.Islands = newIslands;
+
+            RepositorySingle.upload += InfoRefresh;
+
+
+            Timer = 0;
+            Speed = 0;
+            Randomizator = new Random();
+            currentEvent = null;
+            Pause.IsEnabled = false;
+            TikTacSpeed = 2000;
+
+            UnstandartClose = false;
+
+            this.InfoRefresh();
+            Timing.Text = "Месяц  №" + RepositorySingle.currentSituation.GameMonth.ToString();
+
+            MonthFinished += () => RepositorySingle.currentSituation.GameMonth += 1;
+            MonthFinished += EventCaller;
+            MonthFinished += StandartTurn;
+        }
 
         private async void TimeRun()  // главный цикл программы
         {
@@ -80,7 +90,6 @@ namespace headman.Forms.Maps
                 {
                     Timer = 0;
                     MonthFinished();  // делегат, который вызывает события по "завершению месяца"
-                    this.InfoRefresh();
                 }
                 await Task.Delay(TikTacSpeed);
             }
@@ -133,11 +142,11 @@ namespace headman.Forms.Maps
 
         private void GoTo_Click(object sender, RoutedEventArgs e) // вызов маленького меню
         {
-            MiniMenuOpened = true;
+            UnstandartClose = true;
             MiniMenu MiniMenuSingle = new MiniMenu(RepositorySingle);
             Pause_Click(null, null);
             MiniMenuSingle.ShowDialog();
-            MiniMenuOpened = false;
+            UnstandartClose = false;
         }
 
         private void EventCaller()
@@ -151,11 +160,11 @@ namespace headman.Forms.Maps
             }
             else
                 if ((decision <= 3) && (RepositorySingle.currentSituation.GoodEvents.Count != 0))
-                {
-                    RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
-                    currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.GoodEvents[RandomNum]);
-                    RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
-                }
+            {
+                RandomNum = Randomizator.Next(RepositorySingle.currentSituation.GoodEvents.Count);
+                currentEvent = eventGetter.GetEventByIndex(RepositorySingle.currentSituation.GoodEvents[RandomNum]);
+                RepositorySingle.currentSituation.GoodEvents.RemoveAt(RandomNum);
+            }
 
             if (currentEvent != null)
             {
@@ -164,13 +173,16 @@ namespace headman.Forms.Maps
                 Pause_Click(null, null);
                 curentEventMenu.ShowDialog();
 
-                if (currentEvent.result != "" || currentEvent.result != null)
+                if (currentEvent.result == null)
+                    currentEvent.result = "";
+
+                if (currentEvent.result != "")
                 {
                     Description desc = new Description(currentEvent.result, null);
                     desc.ShowDialog();
                 }
-                
-                
+
+
                 Log.Text += "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString() + ". " + currentEvent.Log + "\n";
                 currentEvent = null;
                 Start_Click(null, null);
@@ -180,18 +192,21 @@ namespace headman.Forms.Maps
         // обработка нажатия на крестик сверху
         private void MapClose(object sender, EventArgs e)
         {
-            if (!MiniMenuOpened)
+            if (!UnstandartClose)
                 Application.Current.Shutdown();
         }
 
         private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            Pause_Click(null, null);
-            Sure sureQuestion = new Sure();
-            sureQuestion.ShowDialog();
-            if (!(bool)sureQuestion.DialogResult)
+            if (!UnstandartClose)
             {
-                e.Cancel = true;
+                Pause_Click(null, null);
+                Sure sureQuestion = new Sure();
+                sureQuestion.ShowDialog();
+                if (!(bool)sureQuestion.DialogResult)
+                {
+                    e.Cancel = true;
+                }
             }
         }
 
@@ -202,8 +217,16 @@ namespace headman.Forms.Maps
             WoodenInfo.Text = RepositorySingle.currentSituation.Wood.ToString();
             WaterInfo.Text = RepositorySingle.currentSituation.Water.ToString();
             PeopleInfo.Text = RepositorySingle.currentSituation.Population.ToString();
+            this.Timing.Text = "Месяц №" + RepositorySingle.currentSituation.GameMonth.ToString();
 
             bool[] items = RepositorySingle.currentSituation.Items;
+
+            for (int i = 0; i < RepositorySingle.Islands.Count; i++)
+            {
+                RepositorySingle.Islands[i].Stroke = new SolidColorBrush(Colors.Black);
+            }
+            RepositorySingle.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
+                = new SolidColorBrush(Colors.Gold);
 
             #region ButtonsAndColours
 
@@ -326,6 +349,8 @@ namespace headman.Forms.Maps
 
             if (!RepositorySingle.currentSituation.Items[4])
                 people -= 1;
+            else if ((RepositorySingle.currentSituation.GameMonth % 3) == 0)
+                people += 1;
 
 
 
@@ -333,60 +358,121 @@ namespace headman.Forms.Maps
             GetWood.IsEnabled = true;
             GetWater.IsEnabled = true;
 
+
+            this.RepositorySingle.currentSituation.Population = people;
+
+            this.InfoRefresh();
+
+            if (ChekWinning())
+            {
+                Pause_Click(null, null);
+                Start.IsEnabled = false;
+                SpeedUp.IsEnabled = false;
+                UnstandartClose = true;
+                WinWindow winning = new WinWindow(RepositorySingle);
+                winning.ShowDialog();
+            }
+
             if (people <= 0)
             {
                 people = 0;
                 Pause_Click(null, null);
                 Start.IsEnabled = false;
                 SpeedUp.IsEnabled = false;
-                MessageBox.Show("GAME OVER");
+                UnstandartClose = true;
+                Finish finish = new Finish(RepositorySingle);
+                finish.ShowDialog();
             }
-
-            this.RepositorySingle.currentSituation.Population = people;
-
         }
 
-        private void MoveToAnotherIsland()
+        private bool ChekWinning() // метод проверки условий победы с примером
         {
-            
+            //if ((RepositorySingle.currentSituation.CurrentRegionIndex == (RepositorySingle.Islands.Count - 1)) &&
+            //    (RepositorySingle.currentSituation.Population > 0))
+            //    return true;
+            //else
+            //    return false;
 
+            return false;
         }
 
         #region Get_Resourses
         private void GetStones_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[1])
-                RepositorySingle.currentSituation.Stone += 10;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone > 0)
+                if (RepositorySingle.currentSituation.Items[3])
+                {
+                    RepositorySingle.currentSituation.Stone += 10;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone -= 10;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Stone += 5;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone -= 5;
+                }
             else
-                RepositorySingle.currentSituation.Stone += 5;
+            {
+                MessageBox.Show("Вы пошли за камнями, но, к сожалению их не нашли. Видимо закончились. Пора валить");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
 
         private void GetWood_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[1])
-                RepositorySingle.currentSituation.Wood += 10;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood > 0)
+                if (RepositorySingle.currentSituation.Items[1])
+                {
+                    RepositorySingle.currentSituation.Wood += 10;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood -= 10;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Wood += 5;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood -= 5;
+                }
             else
-                RepositorySingle.currentSituation.Wood += 5;
+            {
+                MessageBox.Show("Вы пошли за деревом, но, к сожалению, обнаружили, что вырубили уже весь лес. Надеюсь у вас уже есть лодка, ведь пора валить");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
 
         private void GetWater_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[2])
-                RepositorySingle.currentSituation.Water = 20;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water > 0)
+                if (RepositorySingle.currentSituation.Items[2])
+                {
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water -= 20 - RepositorySingle.currentSituation.Water;
+                    RepositorySingle.currentSituation.Water = 20;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water -= 10 - RepositorySingle.currentSituation.Water;
+                    RepositorySingle.currentSituation.Water = 10;
+                }
             else
-                RepositorySingle.currentSituation.Water = 10;
+            {
+                MessageBox.Show("Во даете! Выпили уже все озеро! \n \n Хотя не то чтобы вам следует этому радоваться, ведь вы скоро умрете...");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
             GetWater.IsEnabled = false;
+
+            this.InfoRefresh();
         }
         #endregion
 
@@ -401,6 +487,7 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Items[0] = true;
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= RepositorySingle.currentSituation.Population / 4;
+                this.InfoRefresh();
             }
             else
             {
@@ -419,6 +506,7 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 12;
                 RepositorySingle.currentSituation.Stone -= 10;
+                this.InfoRefresh();
             }
             else
             {
@@ -435,6 +523,7 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Items[2] = true;
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 25;
+                this.InfoRefresh();
             }
             else
             {
@@ -453,6 +542,7 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 12;
                 RepositorySingle.currentSituation.Stone -= 10;
+                this.InfoRefresh();
             }
             else
             {
@@ -472,6 +562,7 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 10;
                 RepositorySingle.currentSituation.Stone -= 2;
+                this.InfoRefresh();
             }
             else
             {
@@ -491,12 +582,32 @@ namespace headman.Forms.Maps
                 RepositorySingle.currentSituation.Water -= 1;
                 RepositorySingle.currentSituation.Wood -= 15;
                 RepositorySingle.currentSituation.Stone -= 15;
+                this.InfoRefresh();
             }
             else
             {
                 MessageBox.Show("Не хватает ресурсов");
             }
         }
+        #endregion
+
+        private void AddInformation(int ind)
+        {
+            RegionInfo Info = new RegionInfo(RepositorySingle, ind);
+            this.Pause_Click(null, null);
+            Info.ShowDialog();
+            this.Start_Click(null, null);
+            this.InfoRefresh();
+        }
+        // совмещение карты с Регионами в репозитории
+        #region RegionInfoCall
+            
+        //Пример
+        //private void Green_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        //{
+        //    AddInformation(0);
+        //}
+
         #endregion
     }
 }
