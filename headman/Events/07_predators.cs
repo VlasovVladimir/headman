@@ -1,4 +1,4 @@
-﻿using headman.СurrentMoment
+﻿using headman.СurrentMoment;
 
 namespace headman.Event
 {
