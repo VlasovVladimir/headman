@@ -29,6 +29,7 @@ namespace headman.Forms.Saving
     {
         IRepo RepositirySingle;
         string DirectoryPath;
+        private CurrentMoment operatingSave;
 
         public Saving(IRepo inputSingle)
         {
@@ -68,7 +69,7 @@ namespace headman.Forms.Saving
             if (SavingList.SelectedItem!=null)
                 if (RepositirySingle.Map == null)
                 {
-                    CurrentMoment moment = LoadMoment((string)(SavingList.SelectedItem));
+                    CurrentMoment moment = operatingSave;
                 
                     switch (moment.MapName)
                     {
@@ -113,18 +114,17 @@ namespace headman.Forms.Saving
             }
         }
 
-        private CurrentMoment LoadMoment(string name)
+        private void LoadMoment(string name)
         {
-            CurrentMoment output = new CurrentMoment();
+            operatingSave = new CurrentMoment();
 
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
             string path = DirectoryPath + name + ".xml";
             if (File.Exists(path))
                 using (FileStream fs = new FileStream(path, FileMode.Open))
                 {
-                    output = (CurrentMoment)(ser.Deserialize(fs));
+                    operatingSave = (CurrentMoment)(ser.Deserialize(fs));
                 }
-            return output;
         }
 
         private void Save_Click(object sender, RoutedEventArgs e)
@@ -143,7 +143,23 @@ namespace headman.Forms.Saving
                         sw.WriteLine(Name.Text);
                     }
                 }
+            else
+            {
+                operatingSave = null;
+                MessageBox.Show("Шаловливые духи украли карту! Ваше племя потерялось в океане.", "Ошибка...", MessageBoxButton.OK);
+            }
 
+        }
+
+        private void SavingList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.LoadMoment(SavingList.SelectedItem.ToString());
+            if (operatingSave != null)
+            {
+                Info.Text = SavingList.SelectedItem.ToString() + "  " + operatingSave.SaveDate.ToString() + "\n" +
+                    "Население и так далее...";
+            }
+            Name.Text = SavingList.SelectedItem.ToString();
         }
     }
 }

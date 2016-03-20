@@ -38,7 +38,9 @@ namespace headman.Forms.Region
             this.StonesInfo.Text = Repo.currentSituation.Regions[ind].Stone.ToString();
             this.WaterInfo.Text = Repo.currentSituation.Regions[ind].Water.ToString();
             this.WoodenInfo.Text = Repo.currentSituation.Regions[ind].Wood.ToString();
-            if ((this.Repo.currentSituation.CurrentRegionIndex != ind) && (Repo.currentSituation.Items[0]) && (Math.Abs(this.Repo.currentSituation.CurrentRegionIndex - ind) <= 2) && (Repo.currentSituation.GameMonth - Repo.currentSituation.LastMonthOfMoving > 9))
+            if ((this.Repo.currentSituation.CurrentRegionIndex != ind) && (Repo.currentSituation.Items[0]) 
+                && (Math.Abs(this.Repo.currentSituation.CurrentRegionIndex - ind) <= 2) 
+                && (Repo.currentSituation.GameMonth - Repo.currentSituation.LastMonthOfMoving > 9))
             {
                 this.MoveTo.IsEnabled = true;
             }
@@ -53,9 +55,6 @@ namespace headman.Forms.Region
             int prev_ind = Repo.currentSituation.CurrentRegionIndex;
             int ind = Repo.currentSituation.CurrentRegionIndex;
 
-            Repo.Islands[ind].Stroke = new SolidColorBrush(Colors.Black);
-            Repo.Islands[this.index].Stroke = new SolidColorBrush(Colors.Gold);
-
             Repo.currentSituation.CurrentRegionIndex = this.index;
             Repo.currentSituation.Regions[prev_ind].Wood += Repo.currentSituation.Wood;
             Repo.currentSituation.Regions[prev_ind].Stone += Repo.currentSituation.Stone;
@@ -66,11 +65,9 @@ namespace headman.Forms.Region
             if (!Repo.currentSituation.Items[2])
                 Repo.currentSituation.Water = 0;
 
-            for (int i = 0; i < Repo.currentSituation.Items.Length; i++)
-            {
-                if ((i != 0) && (i != 2) && (i != 5))
-                    Repo.currentSituation.Items[i] = false;                
-            }
+            Repo.currentSituation.Items[4] = false;
+
+
 
             this.Close();
 

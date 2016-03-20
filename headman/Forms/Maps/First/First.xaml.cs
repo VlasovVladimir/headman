@@ -243,6 +243,13 @@ namespace headman.Forms.Maps.First
 
             bool[] items = RepositorySingle.currentSituation.Items;
 
+            for (int i = 0; i < RepositorySingle.Islands.Count; i++)
+            {
+                RepositorySingle.Islands[i].Stroke = new SolidColorBrush(Colors.Black);
+            }
+            RepositorySingle.Islands[RepositorySingle.currentSituation.CurrentRegionIndex].Stroke
+                = new SolidColorBrush(Colors.Gold);
+
             #region ButtonsAndColours
 
             if (items[0])
@@ -364,7 +371,7 @@ namespace headman.Forms.Maps.First
 
             if (!RepositorySingle.currentSituation.Items[4])
                 people -= 1;
-            else
+            else if ((RepositorySingle.currentSituation.GameMonth % 3) == 0)
                 people += 1;
 
 
@@ -393,10 +400,22 @@ namespace headman.Forms.Maps.First
         #region Get_Resourses
         private void GetStones_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[1])
-                RepositorySingle.currentSituation.Stone += 10;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone > 0)
+                if (RepositorySingle.currentSituation.Items[3])
+                {
+                    RepositorySingle.currentSituation.Stone += 10;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone -= 10;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Stone += 5;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone -= 5;
+                }
             else
-                RepositorySingle.currentSituation.Stone += 5;
+            {
+                MessageBox.Show("Вы пошли за камнями, но, к сожалению их не нашли. Видимо закончились. Пора валить");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Stone = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
@@ -407,10 +426,22 @@ namespace headman.Forms.Maps.First
 
         private void GetWood_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[1])
-                RepositorySingle.currentSituation.Wood += 10;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood > 0)
+                if (RepositorySingle.currentSituation.Items[1])
+                {
+                    RepositorySingle.currentSituation.Wood += 10;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood -= 10;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Wood += 5;
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood -= 5;
+                }
             else
-                RepositorySingle.currentSituation.Wood += 5;
+            {
+                MessageBox.Show("Вы пошли за деревом, но, к сожалению, обнаружили, что вырубили уже весь лес. Надеюсь у вас уже есть лодка, ведь пора валить");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
@@ -421,10 +452,22 @@ namespace headman.Forms.Maps.First
 
         private void GetWater_Click(object sender, RoutedEventArgs e)
         {
-            if (RepositorySingle.currentSituation.Items[2])
-                RepositorySingle.currentSituation.Water = 20;
+            if (RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water > 0)
+                if (RepositorySingle.currentSituation.Items[2])
+                {
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water -= 20 - RepositorySingle.currentSituation.Water;
+                    RepositorySingle.currentSituation.Water = 20;
+                }
+                else
+                {
+                    RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Water -= 10 - RepositorySingle.currentSituation.Water;
+                    RepositorySingle.currentSituation.Water = 10;
+                }
             else
-                RepositorySingle.currentSituation.Water = 10;
+            {
+                MessageBox.Show("Во даете! Выпили уже все озеро! \n \n Хотя не то чтобы вам следует этому радоваться, ведь вы скоро умрете...");
+                RepositorySingle.currentSituation.Regions[RepositorySingle.currentSituation.CurrentRegionIndex].Wood = 0;
+            }
 
             GetStones.IsEnabled = false;
             GetWood.IsEnabled = false;
