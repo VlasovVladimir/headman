@@ -45,7 +45,8 @@ namespace headman.Forms.Saving
                     string line;
                     while ((line =  sr.ReadLine()) != null)
                     {
-                        saves.Add(line);
+                        if (line != "")
+                            saves.Add(line);
                     }
                 }
             else
@@ -77,8 +78,9 @@ namespace headman.Forms.Saving
                             {
                                 PatternMap map = new PatternMap(RepositirySingle);
                                 this.Close();
-                                map.Show();
                                 RepositirySingle.currentSituation = moment;
+                                map.Show();
+                                RepositirySingle.upload();
                                 return;
                             }
 
@@ -87,8 +89,9 @@ namespace headman.Forms.Saving
                             {
                                 TestMap map = new TestMap(RepositirySingle);
                                 this.Close();
-                                map.Show();
                                 RepositirySingle.currentSituation = moment;
+                                map.Show();
+                                RepositirySingle.upload();
                                 return;
                             }
 
@@ -108,6 +111,7 @@ namespace headman.Forms.Saving
                                 this.Close();
                                 RepositirySingle.currentSituation = moment;
                                 map.Show();
+                                RepositirySingle.upload();
                                 return;
                             }
                     }
@@ -134,13 +138,13 @@ namespace headman.Forms.Saving
 
         }
 
-        private void Save (string name)
+        private void SaveMoment (string name)
         {
             XmlSerializer ser = new XmlSerializer(typeof(CurrentMoment));
             CurrentMoment savingMoment = RepositirySingle.currentSituation;
             savingMoment.SaveDate = DateTime.Now;
 
-            if (name != null)
+            if (name != "")
                 using (FileStream fs = new FileStream(DirectoryPath + name + ".xml", FileMode.OpenOrCreate))
                 {
                     ser.Serialize(fs, savingMoment);
@@ -152,7 +156,7 @@ namespace headman.Forms.Saving
                 }
             else
             {
-                MessageBox.Show("Надо бы ввести название карты!", "Ошибка...", MessageBoxButton.OK);
+                MessageBox.Show("Надо бы ввести название сохранения!", "Ошибка...", MessageBoxButton.OK);
             }
 
         }
@@ -167,13 +171,17 @@ namespace headman.Forms.Saving
                     MessageBoxResult result = MessageBox.Show("Уже есть такое сохранение. Перезаписать?", "У нас вопрос!", MessageBoxButton.YesNo, MessageBoxImage.Question, MessageBoxResult.No);
                     if (result == MessageBoxResult.Yes)
                     {
-                        this.Save(Name.Text);
+                        SaveMoment(Name.Text);
                     }
                 }
                 else
                 {
-                    this.Save(Name.Text);
+                    SaveMoment(Name.Text);
                 }
+            }
+            else
+            {
+                MessageBox.Show("Нечего сохранять", "Эмммм...", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
 
@@ -184,10 +192,12 @@ namespace headman.Forms.Saving
             {
                 Info.Text = SavingList.SelectedItem.ToString() + "  " + operatingSave.SaveDate.ToString() + "\n" + "\n" +
                     "Название карты: " + operatingSave.MapName + "\n" +
-                    "Численность племени: " + operatingSave.Population.ToString()+ "\n" +
+                    "Численность племени: " + operatingSave.Population.ToString() + "\n" +
                     "Текущая локация: " + operatingSave.Regions[operatingSave.CurrentRegionIndex].Name + "\n" +
                     "Шансы на победу: в этой игре вообще вряд ли возможно выиграть";
             }
+            else
+                Info.Text = "";
             Name.Text = SavingList.SelectedItem.ToString();
         }
     }
