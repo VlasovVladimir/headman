@@ -55,46 +55,46 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Event\01_plague.cs" />
-    <Compile Include="Event\02_drought.cs" />
-    <Compile Include="Event\03_bark_beetles.cs" />
-    <Compile Include="Event\04_earthquake.cs" />
-    <Compile Include="Event\05_landslide.cs" />
-    <Compile Include="Event\06_eruption.cs" />
-    <Compile Include="Event\07_predators.cs" />
-    <Compile Include="Event\08_coconuts.cs" />
-    <Compile Include="Event\09_fireball.cs" />
-    <Compile Include="Event\10_cannibals.cs" />
-    <Compile Include="Event\11_thieves.cs" />
-    <Compile Include="Event\12_robbers.cs" />
-    <Compile Include="Event\13_people.cs" />
-    <Compile Include="Event\14_visitors.cs" />
-    <Compile Include="Event\15_resources.cs" />
-    <Compile Include="Event\16_resources.cs" />
-    <Compile Include="Event\17_resources.cs" />
-    <Compile Include="Event\18_damn-boat.cs" />
-    <Compile Include="Event\22_meneaters.cs" />
-    <Compile Include="Event\51_music.cs" />
-    <Compile Include="Event\52_treasures.cs" />
-    <Compile Include="Event\53_why.cs" />
-    <Compile Include="Event\54_letter.cs" />
-    <Compile Include="Event\70_Bzzz.cs" />
-    <Compile Include="Event\80_sharks.cs" />
-    <Compile Include="Event\81_aborigens.cs" />
-    <Compile Include="Event\82_Matan.cs" />
-    <Compile Include="Event\83_darkness.cs" />
-    <Compile Include="Event\91_boat.cs" />
-    <Compile Include="Event\92_axe.cs" />
-    <Compile Include="Event\93_flack.cs" />
-    <Compile Include="Event\94_hack.cs" />
-    <Compile Include="Event\95_house.cs" />
-    <Compile Include="Event\96_pike.cs" />
-    <Compile Include="Event\EventGetter.cs" />
-    <Compile Include="Event\EventIndexs.cs" />
-    <Compile Include="Event\IEvent.cs" />
-    <Compile Include="Event\IRegionEvent.cs" />
-    <Compile Include="Event\19_TestBadEvent.cs" />
-    <Compile Include="Event\20_TestGoodEvent.cs" />
+    <Compile Include="Events\01_plague.cs" />
+    <Compile Include="Events\02_drought.cs" />
+    <Compile Include="Events\03_bark_beetles.cs" />
+    <Compile Include="Events\04_earthquake.cs" />
+    <Compile Include="Events\05_landslide.cs" />
+    <Compile Include="Events\06_eruption.cs" />
+    <Compile Include="Events\07_predators.cs" />
+    <Compile Include="Events\08_coconuts.cs" />
+    <Compile Include="Events\09_fireball.cs" />
+    <Compile Include="Events\10_cannibals.cs" />
+    <Compile Include="Events\11_thieves.cs" />
+    <Compile Include="Events\12_robbers.cs" />
+    <Compile Include="Events\13_people.cs" />
+    <Compile Include="Events\14_visitors.cs" />
+    <Compile Include="Events\15_resources.cs" />
+    <Compile Include="Events\16_resources.cs" />
+    <Compile Include="Events\17_resources.cs" />
+    <Compile Include="Events\18_damn-boat.cs" />
+    <Compile Include="Events\22_meneaters.cs" />
+    <Compile Include="Events\51_music.cs" />
+    <Compile Include="Events\52_treasures.cs" />
+    <Compile Include="Events\53_why.cs" />
+    <Compile Include="Events\54_letter.cs" />
+    <Compile Include="Events\70_Bzzz.cs" />
+    <Compile Include="Events\80_sharks.cs" />
+    <Compile Include="Events\81_aborigens.cs" />
+    <Compile Include="Events\82_Matan.cs" />
+    <Compile Include="Events\83_darkness.cs" />
+    <Compile Include="Events\91_boat.cs" />
+    <Compile Include="Events\92_axe.cs" />
+    <Compile Include="Events\93_flack.cs" />
+    <Compile Include="Events\94_hack.cs" />
+    <Compile Include="Events\95_house.cs" />
+    <Compile Include="Events\96_pike.cs" />
+    <Compile Include="Events\EventGetter.cs" />
+    <Compile Include="Events\EventIndexes.cs" />
+    <Compile Include="Events\IEvent.cs" />
+    <Compile Include="Events\IRegionEvent.cs" />
+    <Compile Include="Events\19_TestBadEvent.cs" />
+    <Compile Include="Events\20_TestGoodEvent.cs" />
     <Compile Include="Forms\EventMenu\Description.xaml.cs">
       <DependentUpon>Description.xaml</DependentUpon>
     </Compile>
@@ -121,7 +121,7 @@
     <Compile Include="Forms\Maps\Second\Second.xaml.cs">
       <DependentUpon>Second.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Maps\StartCurrentPatternMomentCreator.cs" />
+    <Compile Include="Forms\Maps\MomentCreator_Pattern.cs" />
     <Compile Include="Forms\Region\RegionInfo.xaml.cs">
       <DependentUpon>RegionInfo.xaml</DependentUpon>
     </Compile>

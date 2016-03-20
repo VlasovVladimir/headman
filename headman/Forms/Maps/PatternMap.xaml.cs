@@ -54,7 +54,7 @@ namespace headman.Forms.Maps
             RepositorySingle = InputRepositorySingle;
             RepositorySingle.Map = this;
             eventGetter = new EventGetter();
-            StartCurrentPatternMomentCreator momentCreator = new StartCurrentPatternMomentCreator(); // создание начального положения
+            MomentCreator_Pattern momentCreator = new MomentCreator_Pattern(); // создание начального положения
             RepositorySingle.currentSituation = momentCreator.Create();
             RepositorySingle.Islands = newIslands;
 

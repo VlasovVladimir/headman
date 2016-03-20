@@ -16,9 +16,9 @@ namespace headman.Forms.Maps.Second
 
             CurrentMoment output = new CurrentMoment();
             output.MapName = "Second";
-            EventIndexs indexs = new EventIndexs(); // а ведь и тут менять..
-            output.BadEvents = indexs.BadEventsIndexs();
-            output.GoodEvents = indexs.GoodEventsIndexs();
+            EventIndexes indexs = new EventIndexes(); // а ведь и тут менять..
+            output.BadEvents = indexs.BadEventsIndexes();
+            output.GoodEvents = indexs.GoodEventsIndexes();
 
             output.LastMonthOfMoving = -10;
             output.CurrentRegionIndex = 0;

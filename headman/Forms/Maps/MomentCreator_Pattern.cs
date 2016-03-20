@@ -8,17 +8,17 @@ using headman.Event;
 
 namespace headman.Forms.Maps
 {
-    public class StartCurrentPatternMomentCreator
+    public class MomentCreator_Pattern
     {
-        public StartCurrentPatternMomentCreator() { }
+        public MomentCreator_Pattern() { }
 
         public CurrentMoment Create()
         {
             CurrentMoment output = new CurrentMoment();
 
-            EventIndexs indexs = new EventIndexs();   // тут поменять при добавлении новой карты
-            output.BadEvents = indexs.BadEventsIndexs();
-            output.GoodEvents = indexs.GoodEventsIndexs();
+            EventIndexes indexs = new EventIndexes();   // тут поменять при добавлении новой карты
+            output.BadEvents = indexs.BadEventsIndexes();
+            output.GoodEvents = indexs.GoodEventsIndexes();
             output.LastMonthOfMoving = -10;
             output.CurrentRegionIndex = 0;
             output.Population = 100;

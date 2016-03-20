@@ -20,9 +20,9 @@ namespace headman.Forms.Maps.First
             CurrentMoment output = new CurrentMoment();
 
             output.MapName = "First";
-            EventIndexs indexs = new EventIndexs();   // тут поменять при добавлении новой карты
-            output.BadEvents = indexs.BadEventsIndexs();
-            output.GoodEvents = indexs.GoodEventsIndexs();
+            EventIndexes indexs = new EventIndexes();   // тут поменять при добавлении новой карты
+            output.BadEvents = indexs.BadEventsIndexes();
+            output.GoodEvents = indexs.GoodEventsIndexes();
             output.LastMonthOfMoving = -10;
             output.CurrentRegionIndex = 0;
             output.Population = 100;
