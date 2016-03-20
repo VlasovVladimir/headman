@@ -21,13 +21,15 @@ namespace headman.Forms
         private void ToMainMenu_Click(object sender, RoutedEventArgs e)
         {
             RepositorySingle.Map.Close();
-
             this.Close();
-            RepositorySingle.MainMenu.Show();
-            RepositorySingle.Map = null;
-            RepositorySingle.MiniMenu = null;
-            RepositorySingle.currentSituation = null;
-            RepositorySingle.Islands = null;
+            if (!RepositorySingle.Map.IsActive)
+            {
+                RepositorySingle.MainMenu.Show();
+                RepositorySingle.Map = null;
+                RepositorySingle.MiniMenu = null;
+                RepositorySingle.currentSituation = null;
+                RepositorySingle.Islands = null;
+            }
         }
 
         private void Help_Click(object sender, RoutedEventArgs e)

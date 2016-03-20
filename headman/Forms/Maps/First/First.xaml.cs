@@ -208,7 +208,7 @@ namespace headman.Forms.Maps.First
 
         private void SureDialog(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            if (!UnstandartClose)
+            if (UnstandartClose)
             {
                 Pause_Click(null, null);
                 Sure sureQuestion = new Sure();
