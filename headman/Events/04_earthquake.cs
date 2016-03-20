@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using headman.Event;
-using headman.СurrentMoment;
-using headman.Forms.EventMenu;
+﻿using headman.СurrentMoment;
 using System.Windows;
-using System.Xml.Serialization;
 
 namespace headman.Event
 {
-    [Serializable]
     class _04_earthquake : IEvent
     {
         public CurrentMoment Moment { get; set; }

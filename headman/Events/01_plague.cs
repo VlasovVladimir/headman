@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using headman.Event;
-using headman.СurrentMoment;
-using headman.Forms.EventMenu;
-using System.Xml.Serialization;
+﻿using headman.СurrentMoment;
 
 namespace headman.Event
 {
-    [Serializable]
     public class _01_plague : IEvent
     {
         public CurrentMoment Moment { get; set; }
